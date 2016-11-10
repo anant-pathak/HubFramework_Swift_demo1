@@ -16,7 +16,8 @@
 		160517361DBF802000F16131 /* HUBComponentLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160517351DBF802000F16131 /* HUBComponentLayoutManager.swift */; };
 		16068EEE1DCB2DB70062D2D8 /* temp.json in Resources */ = {isa = PBXBuildFile; fileRef = 16068EED1DCB2DB70062D2D8 /* temp.json */; };
 		1609DB1E1DC7B7C4005BEF62 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */; };
-		160AC4531DD48113001BD72C /* lucknow in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4521DD48113001BD72C /* lucknow */; };
+		160AC4551DD48C88001BD72C /* lucknow1 in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4541DD48C88001BD72C /* lucknow1 */; };
+		160AC4571DD4A0BA001BD72C /* DCS_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4561DD4A0BA001BD72C /* DCS_JSON.json */; };
 		16111CE91DC1C967000603D6 /* CitiesContentOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16111CE81DC1C967000603D6 /* CitiesContentOperationFactory.swift */; };
 		16160CA21DC9D690005BBC9E /* CitiesImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16160CA11DC9D690005BBC9E /* CitiesImageComponent.swift */; };
 		16160CA41DC9F0AE005BBC9E /* CitiesImageContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */; };
@@ -42,7 +43,8 @@
 		160517351DBF802000F16131 /* HUBComponentLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUBComponentLayoutManager.swift; sourceTree = "<group>"; };
 		16068EED1DCB2DB70062D2D8 /* temp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = temp.json; sourceTree = "<group>"; };
 		1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
-		160AC4521DD48113001BD72C /* lucknow */ = {isa = PBXFileReference; lastKnownFileType = file; name = lucknow; path = ../lucknow; sourceTree = "<group>"; };
+		160AC4541DD48C88001BD72C /* lucknow1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lucknow1; sourceTree = "<group>"; };
+		160AC4561DD4A0BA001BD72C /* DCS_JSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DCS_JSON.json; sourceTree = "<group>"; };
 		16111CE81DC1C967000603D6 /* CitiesContentOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesContentOperationFactory.swift; sourceTree = "<group>"; };
 		16160CA11DC9D690005BBC9E /* CitiesImageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesImageComponent.swift; sourceTree = "<group>"; };
 		16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesImageContentOperation.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 				16FF07EC1DC33CA100A072BF /* component */,
 				16172E001DC0DECB0059D248 /* cities */,
 				160517211DBF785E00F16131 /* ViewController.swift */,
-				160AC4521DD48113001BD72C /* lucknow */,
+				160AC4541DD48C88001BD72C /* lucknow1 */,
 				160517231DBF785E00F16131 /* Main.storyboard */,
 				160517261DBF785E00F16131 /* lucknow */,
 				160517281DBF785E00F16131 /* LaunchScreen.storyboard */,
@@ -132,6 +134,7 @@
 				16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */,
 				16160CA51DCA0756005BBC9E /* city-images.json */,
 				16068EED1DCB2DB70062D2D8 /* temp.json */,
+				160AC4561DD4A0BA001BD72C /* DCS_JSON.json */,
 			);
 			name = cities;
 			sourceTree = "<group>";
@@ -220,8 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160AC4571DD4A0BA001BD72C /* DCS_JSON.json in Resources */,
 				16160CA61DCA0756005BBC9E /* city-images.json in Resources */,
-				160AC4531DD48113001BD72C /* lucknow in Resources */,
+				160AC4551DD48C88001BD72C /* lucknow1 in Resources */,
 				16452A981DD348B90076657C /* Banner.xib in Resources */,
 				1605172A1DBF785E00F16131 /* LaunchScreen.storyboard in Resources */,
 				16068EEE1DCB2DB70062D2D8 /* temp.json in Resources */,

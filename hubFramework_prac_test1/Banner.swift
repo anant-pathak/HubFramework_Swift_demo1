@@ -26,4 +26,7 @@ class Banner: UIView {
         return UINib(nibName: "Banner", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 
+    func giveMeHeight()-> Double{
+        return Double(self.label.frame.size.height + self.imageView.frame.size.height + 37)
+    }
 }
