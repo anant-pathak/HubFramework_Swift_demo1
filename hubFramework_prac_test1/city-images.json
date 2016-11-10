@@ -1,0 +1,82 @@
+{
+    
+    
+    
+    
+    "body": [
+                 {
+                     "component": {
+                        "id": "cities:image"
+                     },
+                     "id": "image-0",
+                     "images": {
+                         "background": {
+                             "uri": "https:\/\/spotify.github.io\/HubFramework\/resources\/getting-started-tokyo.jpg"
+                         }
+                     }
+                 },
+                 {
+                     "component": {
+                         "id": "cities:image"
+                     },
+                     "id": "image-1",
+                     "images": {
+                     "background": {
+                         "uri": "https:\/\/spotify.github.io\/HubFramework\/resources\/getting-started-gothenburg.jpg"
+                         }
+                     }
+                 },
+                 {
+                     "component": {
+                         "id": "cities:image"
+                     },
+                     "id": "image-2",
+                     "images": {
+                     "background":
+                        {
+                         "uri": "https:\/\/spotify.github.io\/HubFramework\/resources\/getting-started-zurich.jpg"
+                         }
+                     }
+                 },
+                 {
+                     "component": {
+                        "id": "cities:image"
+                     },
+                     "id": "image-3",
+                     "images": {
+                     "background": {
+                        "uri": "https:\/\/spotify.github.io\/HubFramework\/resources\/getting-started-kiev.jpg"
+                        }
+                     }
+                 },
+            
+                 {
+                    "component": {
+                         "id": "cities:row"
+                     },
+                     "custom": {
+                         "mapiURL": "somemapiurl"
+                     },
+                     "id": "row-7",
+                     "text": {
+                         "title" : "delhi",
+                         "subtitle" : "India"
+                     }
+                 },
+             {
+             "component": {
+             "id": "cities:banner"
+             },
+             "id": "row-10",
+             "text": {
+                "title": "moscow",
+             "subtitle": "russia"
+             }
+             
+             }
+             
+
+                 
+             
+             ]
+}
