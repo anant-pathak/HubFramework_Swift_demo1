@@ -36,7 +36,10 @@ class CitiesRowComponent: NSObject, HUBComponent {
         var cell: UITableViewCell = self.view as! UITableViewCell
         cell.textLabel?.text = model.title
         cell.detailTextLabel?.text = model.subtitle
+        
+       
        print(model.customData?["mapiURL"])
+        
         
     }
     
