@@ -10,8 +10,8 @@ import UIKit
 import HubFramework
 class ComponentBanner: NSObject , HUBComponent{
     var view: UIView? //The view that out component is about to create & its
-    var banner: Banner!
-    
+    var bannerObj: Banner!
+    var height_xib: Double!
     var layoutTraits: Set<HUBComponentLayoutTrait>{
         return [.fullWidth,.stackable]
     }
@@ -20,11 +20,20 @@ class ComponentBanner: NSObject , HUBComponent{
     func loadView()
     {
         
+//        self.view = Banner.instanceFromNib()
+//        bannerObj = self.view as! Banner
+//        height_xib = bannerObj.giveMeHeight()
+//        print("MY height...>>> \(height_xib)")
         self.view = Banner.instanceFromNib()
+        bannerObj = self.view as! Banner
+        height_xib = bannerObj.giveMeHeight()
+        print("MY height...>>> \(height_xib)")
+        
     }
     
     func preferredViewSize(forDisplaying model: HUBComponentModel, containerViewSize: CGSize) -> CGSize {
-        return CGSize(width: containerViewSize.width, height: 150)
+        
+        return CGSize(width: containerViewSize.width, height: 300)
     }
     
     func prepareViewForReuse() {
