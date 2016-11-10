@@ -10,12 +10,13 @@
 		160517201DBF785E00F16131 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605171F1DBF785E00F16131 /* AppDelegate.swift */; };
 		160517221DBF785E00F16131 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160517211DBF785E00F16131 /* ViewController.swift */; };
 		160517251DBF785E00F16131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160517231DBF785E00F16131 /* Main.storyboard */; };
-		160517271DBF785E00F16131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 160517261DBF785E00F16131 /* Assets.xcassets */; };
+		160517271DBF785E00F16131 /* lucknow in Resources */ = {isa = PBXBuildFile; fileRef = 160517261DBF785E00F16131 /* lucknow */; };
 		1605172A1DBF785E00F16131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160517281DBF785E00F16131 /* LaunchScreen.storyboard */; };
 		160517331DBF787E00F16131 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160517321DBF787E00F16131 /* SystemConfiguration.framework */; };
 		160517361DBF802000F16131 /* HUBComponentLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160517351DBF802000F16131 /* HUBComponentLayoutManager.swift */; };
 		16068EEE1DCB2DB70062D2D8 /* temp.json in Resources */ = {isa = PBXBuildFile; fileRef = 16068EED1DCB2DB70062D2D8 /* temp.json */; };
 		1609DB1E1DC7B7C4005BEF62 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */; };
+		160AC4531DD48113001BD72C /* lucknow in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4521DD48113001BD72C /* lucknow */; };
 		16111CE91DC1C967000603D6 /* CitiesContentOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16111CE81DC1C967000603D6 /* CitiesContentOperationFactory.swift */; };
 		16160CA21DC9D690005BBC9E /* CitiesImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16160CA11DC9D690005BBC9E /* CitiesImageComponent.swift */; };
 		16160CA41DC9F0AE005BBC9E /* CitiesImageContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */; };
@@ -34,13 +35,14 @@
 		1605171F1DBF785E00F16131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		160517211DBF785E00F16131 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		160517241DBF785E00F16131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		160517261DBF785E00F16131 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		160517261DBF785E00F16131 /* lucknow */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lucknow; sourceTree = "<group>"; };
 		160517291DBF785E00F16131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1605172B1DBF785E00F16131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		160517321DBF787E00F16131 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		160517351DBF802000F16131 /* HUBComponentLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUBComponentLayoutManager.swift; sourceTree = "<group>"; };
 		16068EED1DCB2DB70062D2D8 /* temp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = temp.json; sourceTree = "<group>"; };
 		1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
+		160AC4521DD48113001BD72C /* lucknow */ = {isa = PBXFileReference; lastKnownFileType = file; name = lucknow; path = ../lucknow; sourceTree = "<group>"; };
 		16111CE81DC1C967000603D6 /* CitiesContentOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesContentOperationFactory.swift; sourceTree = "<group>"; };
 		16160CA11DC9D690005BBC9E /* CitiesImageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesImageComponent.swift; sourceTree = "<group>"; };
 		16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesImageContentOperation.swift; sourceTree = "<group>"; };
@@ -95,8 +97,9 @@
 				16FF07EC1DC33CA100A072BF /* component */,
 				16172E001DC0DECB0059D248 /* cities */,
 				160517211DBF785E00F16131 /* ViewController.swift */,
+				160AC4521DD48113001BD72C /* lucknow */,
 				160517231DBF785E00F16131 /* Main.storyboard */,
-				160517261DBF785E00F16131 /* Assets.xcassets */,
+				160517261DBF785E00F16131 /* lucknow */,
 				160517281DBF785E00F16131 /* LaunchScreen.storyboard */,
 				1605172B1DBF785E00F16131 /* Info.plist */,
 			);
@@ -218,10 +221,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16160CA61DCA0756005BBC9E /* city-images.json in Resources */,
+				160AC4531DD48113001BD72C /* lucknow in Resources */,
 				16452A981DD348B90076657C /* Banner.xib in Resources */,
 				1605172A1DBF785E00F16131 /* LaunchScreen.storyboard in Resources */,
 				16068EEE1DCB2DB70062D2D8 /* temp.json in Resources */,
-				160517271DBF785E00F16131 /* Assets.xcassets in Resources */,
+				160517271DBF785E00F16131 /* lucknow in Resources */,
 				160517251DBF785E00F16131 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

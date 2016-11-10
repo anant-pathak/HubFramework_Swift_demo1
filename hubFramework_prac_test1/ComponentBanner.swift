@@ -16,14 +16,15 @@ class ComponentBanner: NSObject , HUBComponent{
         return [.fullWidth,.stackable]
     }
     
+    
     func loadView()
     {
-       
+        
         self.view = Banner.instanceFromNib()
     }
     
     func preferredViewSize(forDisplaying model: HUBComponentModel, containerViewSize: CGSize) -> CGSize {
-        return CGSize(width: containerViewSize.width, height: 50)
+        return CGSize(width: containerViewSize.width, height: 150)
     }
     
     func prepareViewForReuse() {
@@ -40,6 +41,7 @@ class ComponentBanner: NSObject , HUBComponent{
         let bannerTemp: Banner = self.view as! Banner
         print(model.title)
         bannerTemp.label.text = model.title
+        bannerTemp.imageView.image = model.mainImageData?.localImage
         print("Anant  \(bannerTemp.label.text)")
         
     }

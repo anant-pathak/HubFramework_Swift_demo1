@@ -33,6 +33,13 @@ class CitiesContentOperation: NSObject , HUBContentOperation{
             rowBuilder.componentNamespace = "cities"
             rowBuilder.componentName = "row"
             rowBuilder.title = city
+            /*
+             IF YOU WISH TO USE LOCAL IMAGES THEN FOLLOW:
+             
+              rowBuilder.mainImageDataBuilder.localImage = nil 
+             & then in component file : model.mainImageData
+             */
+         //
             guard let capital = countries[city] else{
                 return
             }
@@ -40,6 +47,14 @@ class CitiesContentOperation: NSObject , HUBContentOperation{
             
             
         }
+        
+        var rowBuilder:HUBComponentModelBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "row-image")
+        rowBuilder.componentNamespace = "cities"
+        rowBuilder.componentName = "banner"
+        rowBuilder.title = "lucknow"
+        let lkoImage: UIImage = UIImage(named: "lucknow")!
+        rowBuilder.mainImageDataBuilder.localImage = lkoImage
+        
         
         
 //        var rowBuilder: HUBComponentModelBuilder =  viewModelBuilder.builderForBodyComponentModel(withIdentifier: "row-0") //Create a Component Model Builder with a name "row-0" if it doesn't exist already else creates a new 1.
