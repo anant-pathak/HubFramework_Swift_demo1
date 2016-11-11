@@ -14,7 +14,7 @@
 		1605172A1DBF785E00F16131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 160517281DBF785E00F16131 /* LaunchScreen.storyboard */; };
 		160517331DBF787E00F16131 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160517321DBF787E00F16131 /* SystemConfiguration.framework */; };
 		160517361DBF802000F16131 /* HUBComponentLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160517351DBF802000F16131 /* HUBComponentLayoutManager.swift */; };
-		16068EEE1DCB2DB70062D2D8 /* temp.json in Resources */ = {isa = PBXBuildFile; fileRef = 16068EED1DCB2DB70062D2D8 /* temp.json */; };
+		16057E651DD5AEFF0013FC87 /* JSON_custom_schema_Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16057E641DD5AEFF0013FC87 /* JSON_custom_schema_Banner.swift */; };
 		1609DB1E1DC7B7C4005BEF62 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */; };
 		160AC4551DD48C88001BD72C /* lucknow1 in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4541DD48C88001BD72C /* lucknow1 */; };
 		160AC4571DD4A0BA001BD72C /* DCS_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4561DD4A0BA001BD72C /* DCS_JSON.json */; };
@@ -41,7 +41,7 @@
 		1605172B1DBF785E00F16131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		160517321DBF787E00F16131 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		160517351DBF802000F16131 /* HUBComponentLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUBComponentLayoutManager.swift; sourceTree = "<group>"; };
-		16068EED1DCB2DB70062D2D8 /* temp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = temp.json; sourceTree = "<group>"; };
+		16057E641DD5AEFF0013FC87 /* JSON_custom_schema_Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON_custom_schema_Banner.swift; sourceTree = "<group>"; };
 		1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
 		160AC4541DD48C88001BD72C /* lucknow1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lucknow1; sourceTree = "<group>"; };
 		160AC4561DD4A0BA001BD72C /* DCS_JSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DCS_JSON.json; sourceTree = "<group>"; };
@@ -98,6 +98,7 @@
 				160517341DBF7FB000F16131 /* Hub_manager */,
 				16FF07EC1DC33CA100A072BF /* component */,
 				16172E001DC0DECB0059D248 /* cities */,
+				16057E611DD5AE280013FC87 /* Utilities */,
 				160517211DBF785E00F16131 /* ViewController.swift */,
 				160AC4541DD48C88001BD72C /* lucknow1 */,
 				160517231DBF785E00F16131 /* Main.storyboard */,
@@ -126,6 +127,14 @@
 			name = Hub_manager;
 			sourceTree = "<group>";
 		};
+		16057E611DD5AE280013FC87 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				16057E641DD5AEFF0013FC87 /* JSON_custom_schema_Banner.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		16172E001DC0DECB0059D248 /* cities */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,7 +142,6 @@
 				16172E011DC0DEFC0059D248 /* CitiesContentOperation.swift */,
 				16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */,
 				16160CA51DCA0756005BBC9E /* city-images.json */,
-				16068EED1DCB2DB70062D2D8 /* temp.json */,
 				160AC4561DD4A0BA001BD72C /* DCS_JSON.json */,
 			);
 			name = cities;
@@ -228,7 +236,6 @@
 				160AC4551DD48C88001BD72C /* lucknow1 in Resources */,
 				16452A981DD348B90076657C /* Banner.xib in Resources */,
 				1605172A1DBF785E00F16131 /* LaunchScreen.storyboard in Resources */,
-				16068EEE1DCB2DB70062D2D8 /* temp.json in Resources */,
 				160517271DBF785E00F16131 /* lucknow in Resources */,
 				160517251DBF785E00F16131 /* Main.storyboard in Resources */,
 			);
@@ -293,6 +300,7 @@
 				16111CE91DC1C967000603D6 /* CitiesContentOperationFactory.swift in Sources */,
 				16160CA41DC9F0AE005BBC9E /* CitiesImageContentOperation.swift in Sources */,
 				16160CA21DC9D690005BBC9E /* CitiesImageComponent.swift in Sources */,
+				16057E651DD5AEFF0013FC87 /* JSON_custom_schema_Banner.swift in Sources */,
 				16452A9A1DD348F10076657C /* Banner.swift in Sources */,
 				16452A9C1DD349990076657C /* ComponentBanner.swift in Sources */,
 				160517221DBF785E00F16131 /* ViewController.swift in Sources */,

@@ -1,0 +1,37 @@
+{
+    
+    "meta": {
+        "pageName": "/IGHS-TH/homepage",
+        "pageTitle": null,
+        "keyword": null,
+        "description": null
+    },
+    "content": [
+                {
+                "type": "Panel",
+                "props": null,
+                "children": [
+                             {
+                             "type": "Banner",
+                             "props": {
+                             "catId": "banner",
+                             "contentLocation": "/assets/contentModels/IGHS-TH/homepage/banner/banner/Banner/contentmodel.json",
+                             "treeContent": {
+                             "id": "",
+                             "heading": "Banner content model",
+                             "module": {
+                             "resource": {
+                             "image": "https://s3-ap-southeast-1.amazonaws.com/tescoghsuseruploads/assets/banner19_v1_984x360.png",
+                             "linkNewWindow": "No",
+                             "linkText": "http://thtes.co/web_finest_wk30_en"
+                             }
+                             },
+                             "path": "/groceries/ContentModels/IGHS-TH/homepage/banner/banner/Banner/0/contentModel.json"
+                             }
+                             },
+                             "children": null
+                             }
+                             ]
+                }
+        ]
+}
