@@ -53,6 +53,7 @@ class CitiesContentOperation: NSObject , HUBContentOperation{
         rowBuilder.componentName = "banner"
         rowBuilder.title = "lucknow"
         let lkoImage: UIImage = UIImage(named: "lucknow1")!
+       
         rowBuilder.mainImageDataBuilder.localImage = lkoImage
         
         

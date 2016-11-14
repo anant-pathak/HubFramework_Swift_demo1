@@ -22,11 +22,12 @@ extension HUBJSONSchemaRegistry{
         //Tell when its inside a model where to look for children:
         schema.componentModelSchema.childDictionariesPath = schema.createNewPath().go(to: "children").forEach().dictionaryPath()
         //When its inside of a Model where to look for a Title
-        schema.componentModelSchema.titlePath = schema.createNewPath().go(to: "heading").stringPath()
+        schema.componentModelSchema.titlePath = schema.createNewPath().go(to: "props").go(to: "treeContent").go(to: "heading").stringPath()
         //WHere to look for an mainImage:
-        schema.componentModelSchema.mainImageDataDictionaryPath = schema.createNewPath().go(to: "resource").dictionaryPath()
+        schema.componentModelSchema.mainImageDataDictionaryPath = schema.createNewPath().go(to: "props").go(to: "treeContent").go(to: "module").go(to: "resource").dictionaryPath()
         //When inside of a Image.main where to look for
         schema.componentImageDataSchema.urlPath = schema.createNewPath().go(to: "image").urlPath()
+        //go(to: "props").go(to: "treeContent").go(to: "module").go(to: "resource").
         
         registerCustomSchema(schema, forIdentifier: bannerSchemaId)
         

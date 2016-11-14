@@ -39,6 +39,7 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
     func prepareViewForReuse() {
         let bannerTemp: Banner = self.view as! Banner
         bannerTemp.label = nil
+        bannerTemp.imageView.image = nil
     }
     
     func configureView(with model: HUBComponentModel, containerViewSize: CGSize) {
@@ -50,7 +51,7 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
         let bannerTemp: Banner = self.view as! Banner
         print(model.title)
         bannerTemp.label.text = model.title
-        bannerTemp.imageView.image = model.mainImageData?.localImage
+    //    bannerTemp.imageView.image = model.mainImageData?.localImage
         print("Anant  \(bannerTemp.label.text)")
         
     }
@@ -63,6 +64,7 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
     
     func updateView(forLoadedImage image: UIImage, from imageData: HUBComponentImageData, model: HUBComponentModel, animated: Bool) {
 //        (self.view as! Banner).label.text = 
+       print("URL \(model.mainImageData?.url) ")
         (self.view as! Banner).imageView.image = image
     }
     

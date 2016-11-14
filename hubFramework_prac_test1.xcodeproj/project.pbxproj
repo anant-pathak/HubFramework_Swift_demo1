@@ -19,7 +19,7 @@
 		16057E6B1DD5E3790013FC87 /* FoodContent_generalized_JSON_operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16057E6A1DD5E3790013FC87 /* FoodContent_generalized_JSON_operation.swift */; };
 		1609DB1E1DC7B7C4005BEF62 /* ComponentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */; };
 		160AC4551DD48C88001BD72C /* lucknow1 in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4541DD48C88001BD72C /* lucknow1 */; };
-		160AC4571DD4A0BA001BD72C /* DCS_JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4561DD4A0BA001BD72C /* DCS_JSON.json */; };
+		160AC4571DD4A0BA001BD72C /* dcs-json.json in Resources */ = {isa = PBXBuildFile; fileRef = 160AC4561DD4A0BA001BD72C /* dcs-json.json */; };
 		16111CE91DC1C967000603D6 /* CitiesContentOperationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16111CE81DC1C967000603D6 /* CitiesContentOperationFactory.swift */; };
 		16160CA21DC9D690005BBC9E /* CitiesImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16160CA11DC9D690005BBC9E /* CitiesImageComponent.swift */; };
 		16160CA41DC9F0AE005BBC9E /* CitiesImageContentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */; };
@@ -48,7 +48,7 @@
 		16057E6A1DD5E3790013FC87 /* FoodContent_generalized_JSON_operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodContent_generalized_JSON_operation.swift; sourceTree = "<group>"; };
 		1609DB1D1DC7B7C4005BEF62 /* ComponentFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentFactory.swift; sourceTree = "<group>"; };
 		160AC4541DD48C88001BD72C /* lucknow1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lucknow1; sourceTree = "<group>"; };
-		160AC4561DD4A0BA001BD72C /* DCS_JSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DCS_JSON.json; sourceTree = "<group>"; };
+		160AC4561DD4A0BA001BD72C /* dcs-json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "dcs-json.json"; sourceTree = "<group>"; };
 		16111CE81DC1C967000603D6 /* CitiesContentOperationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesContentOperationFactory.swift; sourceTree = "<group>"; };
 		16160CA11DC9D690005BBC9E /* CitiesImageComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesImageComponent.swift; sourceTree = "<group>"; };
 		16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesImageContentOperation.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				16172E011DC0DEFC0059D248 /* CitiesContentOperation.swift */,
 				16160CA31DC9F0AE005BBC9E /* CitiesImageContentOperation.swift */,
 				16160CA51DCA0756005BBC9E /* city-images.json */,
-				160AC4561DD4A0BA001BD72C /* DCS_JSON.json */,
+				160AC4561DD4A0BA001BD72C /* dcs-json.json */,
 			);
 			name = cities;
 			sourceTree = "<group>";
@@ -253,7 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				160AC4571DD4A0BA001BD72C /* DCS_JSON.json in Resources */,
+				160AC4571DD4A0BA001BD72C /* dcs-json.json in Resources */,
 				16160CA61DCA0756005BBC9E /* city-images.json in Resources */,
 				160AC4551DD48C88001BD72C /* lucknow1 in Resources */,
 				16452A981DD348B90076657C /* Banner.xib in Resources */,

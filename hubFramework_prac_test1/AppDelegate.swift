@@ -48,10 +48,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             title: "food",
             contentOperationFactories: [FoodContentOperationFactory()],
             contentReloadPolicy: nil,
-            customJSONSchemaIdentifier: nil,
+            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.bannerSchemaId,
             actionHandler: nil,
             viewControllerScrollHandler: nil)
-        //For the above "FOOD" feature lets register the custom JSON schema
+                //For the above "FOOD" feature lets register the custom JSON schema
+        //hubManager.jsonSchemaRegistry.bannerSchemaId
         hubManager.jsonSchemaRegistry.registerBannerSchema()
         //3 opening the viewController
 //        let citiesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "cities")

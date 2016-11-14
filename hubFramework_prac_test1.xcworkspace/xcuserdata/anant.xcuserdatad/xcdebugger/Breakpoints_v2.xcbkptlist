@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hubFramework_prac_test1/AppDelegate.swift"
-            timestampString = "500794653.147429"
+            timestampString = "500803503.775435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hubFramework_prac_test1/ComponentBanner.swift"
-            timestampString = "500794874.187081"
+            timestampString = "500811690.067658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "updateView(forLoadedImage:from:model:animated:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,15 +102,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hubFramework_prac_test1/ComponentBanner.swift"
-            timestampString = "500794875.826495"
+            timestampString = "500811690.067658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "preferredSizeForImage(from:model:containerViewSize:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hubFramework_prac_test1/ComponentBanner.swift"
-            timestampString = "500794887.326665"
+            timestampString = "500811690.067658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "configureView(with:containerViewSize:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hubFramework_prac_test1/AppDelegate.swift"
-            timestampString = "500795495.876827"
+            timestampString = "500803503.775435"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -169,13 +169,92 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "hubFramework_prac_test1/FoodContent_generalized_JSON_operation.swift"
-            timestampString = "500798008.171861"
+            filePath = "hubFramework_prac_test1/ComponentBanner.swift"
+            timestampString = "500798698.272121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ComponentBanner"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hubFramework_prac_test1.ComponentBanner.view.getter : Swift.Optional&lt;__ObjC.UIView&gt;"
+                  moduleName = "hubFramework_prac_test1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anant/Documents/anant_ios_practice/temp_apps/hubFramework_prac_test1/hubFramework_prac_test1/ComponentBanner.swift"
+                  timestampString = "500817517.345529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hubFramework_prac_test1.ComponentBanner.view.setter : Swift.Optional&lt;__ObjC.UIView&gt;"
+                  moduleName = "hubFramework_prac_test1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anant/Documents/anant_ios_practice/temp_apps/hubFramework_prac_test1/hubFramework_prac_test1/ComponentBanner.swift"
+                  timestampString = "500817517.346753"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "54">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "hubFramework_prac_test1.ComponentBanner.init () -&gt; hubFramework_prac_test1.ComponentBanner"
+                  moduleName = "hubFramework_prac_test1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anant/Documents/anant_ios_practice/temp_apps/hubFramework_prac_test1/hubFramework_prac_test1/ComponentBanner.swift"
+                  timestampString = "500817517.347967"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "hubFramework_prac_test1/FoodContent_generalized_JSON_operation.swift"
+            timestampString = "500808708.445509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "perform(forViewURI:featureInfo:connectivityState:viewModelBuilder:previousError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/HubFramework/sources/HUBViewModelBuilderImplementation.m"
+            timestampString = "500808897.280047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "-addJSONData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
