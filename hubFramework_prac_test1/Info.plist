@@ -34,19 +34,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <!--Adding URL types for out HubFramework Have given a new name(hubFramework_prac_test1)-->
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLName</key>
-            <string>com.spotify.hubFramework_prac_test1</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.spotify.hubFramework_prac_test1</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
                 <string>cities</string>
-            </array>
-        </dict>
-    </array>
-    
-    
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
