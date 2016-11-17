@@ -13,7 +13,7 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
     var bannerObj: Banner!
     var height_xib: Double!
     var layoutTraits: Set<HUBComponentLayoutTrait>{
-        return [.fullWidth,.stackable]
+        return [.fullWidth]
     }
     
     
