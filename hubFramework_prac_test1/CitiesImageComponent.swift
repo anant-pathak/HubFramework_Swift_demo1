@@ -10,7 +10,7 @@ import UIKit
 import HubFramework
 
 class CitiesImageComponent: NSObject, HUBComponentWithImageHandling {
-   var view: UIView?
+    var view: UIView?
     
     var imageView:UIImageView!
     

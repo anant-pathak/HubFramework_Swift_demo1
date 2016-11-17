@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         //2 setting up a feature:
+        
+//        //2.1 Feature Cities
         let home_uri = URL(string: "cities:overview") //cities is the scheme name
         hubManager.featureRegistry.registerFeature(
             withIdentifier: "cities",
@@ -37,15 +39,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             customJSONSchemaIdentifier: nil,
             actionHandler: nil,
             viewControllerScrollHandler: nil)
+        
+        //2.2 Feature Food
+        let food_uri = URL(string: "cities:food") //
+        hubManager.featureRegistry.registerFeature(
+            withIdentifier: "food",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: food_uri!)  ,
+            title: "food",
+            contentOperationFactories: [FoodContentOperationFactory()],
+            contentReloadPolicy: nil,
+            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.bannerSchemaId,
+            actionHandler: nil,
+            viewControllerScrollHandler: nil)
+                //For the above "FOOD" feature lets register the custom JSON schema
+        //hubManager.jsonSchemaRegistry.bannerSchemaId
+        hubManager.jsonSchemaRegistry.registerBannerSchema()
         //3 opening the viewController
 //        let citiesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "cities")
 //        citiesRowBuilder.title = "Cities"
 //        citiesRowBuilder.subtitle = "A feature that renders beautiful cities"
 //        citiesRowBuilder.targetBuilder.uri = URL(viewURI: "cities:overview")
         
+        //4 Setting up a factory -> component
         registerComponentFactory()
         
-        if openView_custom(open: home_uri!)
+        //Calling a featue to open it:
+        if openView_custom(open: food_uri!)
         {
             print("view successfully opened")
         }else
@@ -54,11 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //4 Setting up a factory -> component
-        
-        
-        
-        
-        
         
         return true
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 import HubFramework
-class ComponentBanner: NSObject , HUBComponent{
+class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
     var view: UIView? //The view that out component is about to create & its
     var bannerObj: Banner!
     var height_xib: Double!
@@ -39,6 +39,7 @@ class ComponentBanner: NSObject , HUBComponent{
     func prepareViewForReuse() {
         let bannerTemp: Banner = self.view as! Banner
         bannerTemp.label = nil
+        bannerTemp.imageView.image = nil
     }
     
     func configureView(with model: HUBComponentModel, containerViewSize: CGSize) {
@@ -50,10 +51,24 @@ class ComponentBanner: NSObject , HUBComponent{
         let bannerTemp: Banner = self.view as! Banner
         print(model.title)
         bannerTemp.label.text = model.title
-        bannerTemp.imageView.image = model.mainImageData?.localImage
+    //    bannerTemp.imageView.image = model.mainImageData?.localImage
         print("Anant  \(bannerTemp.label.text)")
         
     }
+    
+    //MARK: Image Rendering from Network
+    
+    func preferredSizeForImage(from imageData: HUBComponentImageData, model: HUBComponentModel, containerViewSize: CGSize) -> CGSize {
+        return CGSize(width: containerViewSize.width, height: 220)
+    }
+    
+    func updateView(forLoadedImage image: UIImage, from imageData: HUBComponentImageData, model: HUBComponentModel, animated: Bool) {
+//        (self.view as! Banner).label.text = 
+       print("URL \(model.mainImageData?.url) ")
+        (self.view as! Banner).imageView.image = image
+    }
+    
+    
     
 
 }
