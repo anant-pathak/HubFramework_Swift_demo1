@@ -1,0 +1,59 @@
+{
+    "body": [
+                {
+                    "component": {
+                        "id": "cities:banner"
+                    },
+                    "id": "row-10",
+                    "text": {
+                        "title": "moscow",
+                        "subtitle": "russia"
+                    },
+                    "children": [
+                                 {
+                                 "id": "featured-0",
+                                 "component": {
+                                 "id": "cities:row"
+                                 },
+                                 "text": {
+                                 "title": "Hamburger",
+                                 "subtitle": "Very popular around the world - and quick both to make and eat!"
+                                 }
+                                 
+                                 }
+                                 ]
+                    
+                },
+
+
+                {
+                    "component": {
+                        "id": "cities:plainView"
+                    },
+                    "id": "block1",
+                    "text": {
+                        "title": "moscow",
+                        "subtitle": "russia"
+                    },
+                    "children": [
+                                 
+                                 {
+                                 "component": {
+                                 "id": "cities:image"
+                                 },
+                                 "id": "image-31",
+                                 "images": {
+                                 "main": {
+                                 "uri": "https:\/\/spotify.github.io\/HubFramework\/resources\/getting-started-kiev.jpg"
+                                 }
+                                 }
+                                 }
+                                 
+                                 
+                                 ]
+                    
+                }
+            ]
+
+
+}

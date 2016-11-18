@@ -62,27 +62,10 @@
                          "title" : "delhi",
                          "subtitle" : "India"
                      }
-                 },
-             {
-             "component": {
-             "id": "cities:banner"
-             },
-             "id": "row-10",
-             "text": {
-                "title": "moscow",
-             "subtitle": "russia"
-             },
-             "images": {
-                 "background": {
-                     "uri": "https://s3-ap-southeast-1.amazonaws.com/tescoghsuseruploads/assets/banner10_v1_984x360.png"
                  }
-             }
-             
-             
-             }
              
 
-                 
+             
              
              ]
 }

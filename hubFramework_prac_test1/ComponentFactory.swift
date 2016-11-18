@@ -24,6 +24,10 @@ class ComponentFactory: NSObject, HUBComponentFactory {
         {
             return ComponentBanner()
         }
+        if name == "plainView"
+        {
+            return ComponentPlainView()
+        }
         return nil
     }
 }

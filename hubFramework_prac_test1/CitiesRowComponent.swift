@@ -38,7 +38,7 @@ class CitiesRowComponent: NSObject, HUBComponent {
         cell.detailTextLabel?.text = model.subtitle
         
        
-       print(model.customData?["mapiURL"])
+     //  print(model.customData?["mapiURL"])
         
         
     }

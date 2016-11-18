@@ -14,7 +14,7 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
+    var component_plainview: ComponentPlainView?
     var hubManager: HUBManager!
     var navigationController: UINavigationController!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -48,12 +48,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             title: "food",
             contentOperationFactories: [FoodContentOperationFactory()],
             contentReloadPolicy: nil,
-            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.bannerSchemaId,
+            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.bannerSchemaId, //NOTE MAKE IT NIL IF TRYING TO PARSE A NORMAL JSON FILE
             actionHandler: nil,
             viewControllerScrollHandler: nil)
                 //For the above "FOOD" feature lets register the custom JSON schema
         //hubManager.jsonSchemaRegistry.bannerSchemaId
         hubManager.jsonSchemaRegistry.registerBannerSchema()
+        //2.3 Root Feature regirtry
+        let root_uri = URL(string: "cities:root")
+        
+        hubManager.featureRegistry.registerFeature(
+            withIdentifier: "root",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: root_uri!),
+            title: "Root feature",
+            contentOperationFactories: [FoodContentOperationFactory()],
+            contentReloadPolicy: nil,
+            customJSONSchemaIdentifier: nil,
+            actionHandler: nil,
+            viewControllerScrollHandler: nil
+        )
+        
+        
         //3 opening the viewController
 //        let citiesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "cities")
 //        citiesRowBuilder.title = "Cities"
@@ -64,7 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerComponentFactory()
         
         //Calling a featue to open it:
-        if openView_custom(open: food_uri!)
+        var feature_call_uri: URL?
+        //feature_call_uri = home_uri
+        feature_call_uri = food_uri
+        if openView_custom(open: feature_call_uri!)
         {
             print("view successfully opened")
         }else
