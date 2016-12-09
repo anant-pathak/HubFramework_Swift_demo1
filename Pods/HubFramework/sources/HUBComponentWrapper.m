@@ -21,20 +21,17 @@
 
 #import "HUBComponentWrapper.h"
 
-#import "HUBComponentWithChildren.h"
-#import "HUBComponentWithRestorableUIState.h"
-#import "HUBComponentViewObserver.h"
-#import "HUBComponentWithImageHandling.h"
-#import "HUBComponentContentOffsetObserver.h"
 #import "HUBComponentActionPerformer.h"
 #import "HUBComponentModel.h"
 #import "HUBComponentUIStateManager.h"
 #import "HUBComponentResizeObservingView.h"
+#import "HUBActionPerformer.h"
+#import "HUBComponentGestureRecognizer.h"
 #import "HUBUtilities.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HUBComponentWrapper () <HUBComponentChildDelegate, HUBComponentActionDelegate, HUBComponentResizeObservingViewDelegate>
+@interface HUBComponentWrapper () <HUBComponentChildDelegate, HUBComponentResizeObservingViewDelegate, HUBActionPerformer, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong, readwrite) id<HUBComponentModel> model;
 @property (nonatomic, assign) BOOL viewHasAppearedSinceLastModelChange;
@@ -42,21 +39,29 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) HUBComponentUIStateManager *UIStateManager;
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSNumber *, HUBComponentWrapper *> *childrenByIndex;
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSNumber *, UIView *> *visibleChildViewsByIndex;
+@property (nonatomic, strong, readonly) HUBComponentGestureRecognizer *gestureRecognizer;
 @property (nonatomic, assign) BOOL hasBeenConfigured;
+@property (nonatomic, assign) BOOL shouldPerformDelayedHighlight;
+@property (nonatomic, assign) NSUInteger appearanceCount;
+@property (nonatomic, assign) HUBComponentSelectionState selectionState;
 
 @end
 
 @implementation HUBComponentWrapper
 
+@synthesize childDelegate;
+
 - (instancetype)initWithComponent:(id<HUBComponent>)component
                             model:(id<HUBComponentModel>)model
                    UIStateManager:(HUBComponentUIStateManager *)UIStateManager
                          delegate:(id<HUBComponentWrapperDelegate>)delegate
+                gestureRecognizer:(HUBComponentGestureRecognizer *)gestureRecognizer
                            parent:(nullable HUBComponentWrapper *)parent
 {
     NSParameterAssert(component != nil);
     NSParameterAssert(model != nil);
     NSParameterAssert(UIStateManager != nil);
+    NSParameterAssert(gestureRecognizer != nil);
     NSParameterAssert(delegate != nil);
     
     self = [super init];
@@ -66,32 +71,38 @@ NS_ASSUME_NONNULL_BEGIN
         _model = model;
         _component = component;
         _UIStateManager = UIStateManager;
+        _gestureRecognizer = gestureRecognizer;
         _delegate = delegate;
         _parent = parent;
         _childrenByIndex = [NSMutableDictionary new];
         _visibleChildViewsByIndex = [NSMutableDictionary new];
 
+        _gestureRecognizer.delegate = self;
+        [_gestureRecognizer addTarget:self action:@selector(handleGestureRecognizer:)];
+        
         if ([_component conformsToProtocol:@protocol(HUBComponentWithChildren)]) {
             ((id<HUBComponentWithChildren>)_component).childDelegate = self;
         }
         
         if ([_component conformsToProtocol:@protocol(HUBComponentActionPerformer)]) {
-            ((id<HUBComponentActionPerformer>)_component).actionDelegate = self;
+            ((id<HUBComponentActionPerformer>)_component).actionPerformer = self;
         }
     }
     
     return self;
 }
 
+- (void)dealloc
+{
+    [_gestureRecognizer.view removeGestureRecognizer:_gestureRecognizer];
+}
+
 #pragma mark - API
 
-- (void)updateViewForChangedContentOffset:(CGPoint)contentOffset
+- (void)viewDidMoveToSuperview:(UIView *)superview
 {
-    if (![self.component conformsToProtocol:@protocol(HUBComponentContentOffsetObserver)]) {
-        return;
-    }
-    
-    [(id<HUBComponentContentOffsetObserver>)self.component updateViewForChangedContentOffset:contentOffset];
+    [self.gestureRecognizer.view removeGestureRecognizer:self.gestureRecognizer];
+    [superview addGestureRecognizer:self.gestureRecognizer];
 }
 
 - (void)saveComponentUIState
@@ -109,6 +120,27 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
+- (nullable HUBComponentWrapper *)visibleChildComponentAtIndex:(NSUInteger)index
+{
+    NSNumber * const boxedIndex = @(index);
+    if (self.visibleChildViewsByIndex[boxedIndex] != nil) {
+        return self.childrenByIndex[boxedIndex];
+    }
+    return nil;
+}
+
+- (NSArray<HUBComponentWrapper *> *)visibleChildren
+{
+    NSMutableArray<HUBComponentWrapper *> *visibleChildren = [NSMutableArray array];
+    for (NSNumber *visibleViewIndex in self.visibleChildViewsByIndex) {
+        HUBComponentWrapper *childComponentWrapper = self.childrenByIndex[visibleViewIndex];
+        if (childComponentWrapper != nil) {
+            [visibleChildren addObject:childComponentWrapper];
+        }
+    }
+    return [visibleChildren copy];
+}
+
 #pragma mark - Property overrides
 
 - (BOOL)handlesImages
@@ -119,6 +151,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isContentOffsetObserver
 {
     return [self.component conformsToProtocol:@protocol(HUBComponentContentOffsetObserver)];
+}
+
+- (BOOL)isActionObserver
+{
+    return [self.component conformsToProtocol:@protocol(HUBComponentActionObserver)];
 }
 
 - (BOOL)isRootComponent
@@ -222,6 +259,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)viewWillAppear
 {
+    self.appearanceCount++;
+    
     if ([self.component conformsToProtocol:@protocol(HUBComponentViewObserver)]) {
         [(id<HUBComponentViewObserver>)self.component viewWillAppear];
     }
@@ -250,6 +289,50 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     [(id<HUBComponentViewObserver>)self.component viewDidResize];
+}
+
+#pragma mark - HUBComponentContentOffsetObserver
+
+- (void)updateViewForChangedContentOffset:(CGPoint)contentOffset
+{
+    if (![self.component conformsToProtocol:@protocol(HUBComponentContentOffsetObserver)]) {
+        return;
+    }
+    
+    [(id<HUBComponentContentOffsetObserver>)self.component updateViewForChangedContentOffset:contentOffset];
+}
+
+#pragma mark - HUBComponentActionObserver
+
+- (void)actionPerformedWithContext:(id<HUBActionContext>)context
+{
+    if (![self.component conformsToProtocol:@protocol(HUBComponentActionObserver)]) {
+        return;
+    }
+    
+    [(id<HUBComponentActionObserver>)self.component actionPerformedWithContext:context];
+}
+
+#pragma mark - HUBComponentWithSelectionState
+
+- (void)updateViewForSelectionState:(HUBComponentSelectionState)selectionState
+{
+    [self updateViewForSelectionState:selectionState notifyDelegate:NO];
+}
+
+#pragma mark - HUBComponentWithScrolling
+
+- (void)scrollToComponentAtIndex:(NSUInteger)childIndex
+                  scrollPosition:(HUBScrollPosition)scrollPosition
+                        animated:(BOOL)animated
+                      completion:(void (^)(void))completion
+{
+    if ([self.component conformsToProtocol:@protocol(HUBComponentWithScrolling)]) {
+        [(id<HUBComponentWithScrolling>)self.component scrollToComponentAtIndex:childIndex
+                                                                 scrollPosition:scrollPosition
+                                                                       animated:animated
+                                                                     completion:completion];
+    }
 }
 
 #pragma mark - HUBComponentChildDelegate
@@ -295,24 +378,13 @@ NS_ASSUME_NONNULL_BEGIN
                 didDisappearAtIndex:childIndex];
 }
 
-- (void)component:(id<HUBComponentWithChildren>)component childSelectedAtIndex:(NSUInteger)childIndex
+- (void)component:(id<HUBComponentWithChildren>)component childSelectedAtIndex:(NSUInteger)childIndex customData:(nullable NSDictionary<NSString *, id> *)customData
 {
     if (self.component != component) {
         return;
     }
     
-    [self.delegate componentWrapper:self childSelectedAtIndex:childIndex];
-}
-
-#pragma mark - HUBComponentActionDelegate
-
-- (BOOL)component:(id<HUBComponentActionPerformer>)component performActionWithIdentifier:(HUBIdentifier *)identifier customData:(nullable NSDictionary<NSString *, id> *)customData
-{
-    if (self.component != component) {
-        return NO;
-    }
-    
-    return [self.delegate componentWrapper:self performActionWithIdentifier:identifier customData:customData];
+    [self.delegate componentWrapper:self childSelectedAtIndex:childIndex customData:customData];
 }
 
 #pragma mark - HUBComponentResizeObservingViewDelegate
@@ -320,6 +392,88 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)resizeObservingViewDidResize:(HUBComponentResizeObservingView *)view
 {
     [(id<HUBComponentViewObserver>)self.component viewDidResize];
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    CGPoint const touchLocation = [touch locationInView:self.view];
+    
+    if (!CGRectContainsPoint(self.view.bounds, touchLocation)) {
+        return NO;
+    }
+    
+    UIView *currentView = touch.view;
+    
+    while (currentView != nil && currentView != self.view) {
+        if ([currentView isKindOfClass:[UIButton class]]) {
+            return NO;
+        }
+        
+        if ([currentView isKindOfClass:[UICollectionViewCell class]]) {
+            return NO;
+        }
+        
+        if ([currentView isKindOfClass:[UITableViewCell class]]) {
+            return NO;
+        }
+        
+        currentView = currentView.superview;
+    }
+    
+    return YES;
+}
+
+#pragma mark - HUBActionPerformer
+
+- (BOOL)performActionWithIdentifier:(HUBIdentifier *)identifier customData:(nullable NSDictionary<NSString *, id> *)customData
+{
+    return [self.delegate componentWrapper:self performActionWithIdentifier:identifier customData:customData];
+}
+
+#pragma mark - Gesture recognizer handling
+
+- (void)handleGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+{
+    id<HUBComponentWrapperDelegate> const delegate = self.delegate;
+    
+    switch (gestureRecognizer.state) {
+        case UIGestureRecognizerStatePossible:
+        case UIGestureRecognizerStateChanged:
+            break;
+        case UIGestureRecognizerStateBegan: {
+            self.shouldPerformDelayedHighlight = YES;
+            [delegate componentWrapper:self willUpdateSelectionState:HUBComponentSelectionStateHighlighted];
+            
+            // Delay highlight for a short time, to prevent the UI from flashing when the user scrolls over multiple components
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (!self.shouldPerformDelayedHighlight) {
+                    return;
+                }
+                
+                [self updateViewForSelectionState:HUBComponentSelectionStateHighlighted notifyDelegate:YES];
+            });
+            
+            break;
+        }
+        case UIGestureRecognizerStateEnded: {
+            [delegate componentWrapper:self willUpdateSelectionState:HUBComponentSelectionStateSelected];
+            [self updateViewForSelectionState:HUBComponentSelectionStateSelected notifyDelegate:YES];
+            break;
+        }
+        case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStateFailed: {
+            [delegate componentWrapper:self willUpdateSelectionState:HUBComponentSelectionStateNone];
+            [self updateViewForSelectionState:HUBComponentSelectionStateNone notifyDelegate:YES];
+            break;
+        }
+    }
 }
 
 #pragma mark - Private utilities
@@ -334,6 +488,63 @@ NS_ASSUME_NONNULL_BEGIN
     
     if (restoredUIState != nil) {
         [(id<HUBComponentWithRestorableUIState>)self.component restoreUIState:restoredUIState];
+    }
+}
+
+- (void)updateViewForSelectionState:(HUBComponentSelectionState)selectionState notifyDelegate:(BOOL)notifyDelegate
+{
+    if (selectionState == HUBComponentSelectionStateNone) {
+        [self.gestureRecognizer cancel];
+    }
+    
+    self.shouldPerformDelayedHighlight = NO;
+    
+    if (self.selectionState == selectionState) {
+        return;
+    }
+    
+    self.selectionState = selectionState;
+    
+    if ([self.component conformsToProtocol:@protocol(HUBComponentWithSelectionState)]) {
+        [(id<HUBComponentWithSelectionState>)self.component updateViewForSelectionState:selectionState];
+    } else if ([self.view isKindOfClass:[UITableViewCell class]]) {
+        UITableViewCell * const tableViewCell = self.view;
+        
+        switch (selectionState) {
+            case HUBComponentSelectionStateNone:
+                tableViewCell.highlighted = NO;
+                tableViewCell.selected = NO;
+                break;
+            case HUBComponentSelectionStateHighlighted:
+                tableViewCell.highlighted = YES;
+                tableViewCell.selected = NO;
+                break;
+            case HUBComponentSelectionStateSelected:
+                tableViewCell.highlighted = NO;
+                tableViewCell.selected = YES;
+                break;
+        }
+    } else if ([self.view isKindOfClass:[UICollectionViewCell class]]) {
+        UICollectionViewCell * const collectionViewCell = self.view;
+        
+        switch (selectionState) {
+            case HUBComponentSelectionStateNone:
+                collectionViewCell.highlighted = NO;
+                collectionViewCell.selected = NO;
+                break;
+            case HUBComponentSelectionStateHighlighted:
+                collectionViewCell.highlighted = YES;
+                collectionViewCell.selected = NO;
+                break;
+            case HUBComponentSelectionStateSelected:
+                collectionViewCell.highlighted = NO;
+                collectionViewCell.selected = YES;
+                break;
+        }
+    }
+    
+    if (notifyDelegate) {
+        [self.delegate componentWrapper:self didUpdateSelectionState:selectionState];
     }
 }
 

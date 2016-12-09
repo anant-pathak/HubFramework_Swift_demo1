@@ -24,14 +24,16 @@
 #import "HUBViewModelLoaderFactoryImplementation.h"
 #import "HUBFeatureRegistryImplementation.h"
 #import "HUBComponentRegistryImplementation.h"
+#import "HUBComponentReusePool.h"
 #import "HUBImageLoaderFactory.h"
 #import "HUBFeatureRegistration.h"
-#import "HUBViewControllerImplementation.h"
+#import "HUBViewController+Initializer.h"
 #import "HUBCollectionViewFactory.h"
 #import "HUBInitialViewModelRegistry.h"
 #import "HUBViewControllerDefaultScrollHandler.h"
 #import "HUBActionHandlerWrapper.h"
 #import "HUBViewModelLoaderImplementation.h"
+#import "HUBViewModelRenderer.h"
 #import "HUBViewURIPredicate.h"
 #import "HUBBlockContentOperationFactory.h"
 
@@ -91,7 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
     return [self.viewModelLoaderFactory canCreateViewModelLoaderForViewURI:viewURI];
 }
 
-- (nullable UIViewController<HUBViewController> *)createViewControllerForViewURI:(NSURL *)viewURI
+- (nullable HUBViewController *)createViewControllerForViewURI:(NSURL *)viewURI
 {
     HUBFeatureRegistration * const featureRegistration = [self.featureRegistry featureRegistrationForViewURI:viewURI];
     
@@ -102,10 +104,22 @@ NS_ASSUME_NONNULL_BEGIN
     return [self createViewControllerForViewURI:viewURI featureRegistration:featureRegistration];
 }
 
-- (UIViewController<HUBViewController> *)createViewControllerForViewURI:(NSURL *)viewURI
-                                                      contentOperations:(NSArray<id<HUBContentOperation>> *)contentOperations
-                                                      featureIdentifier:(NSString *)featureIdentifier
-                                                           featureTitle:(NSString *)featureTitle
+- (HUBViewController *)createViewControllerWithContentOperations:(NSArray<id<HUBContentOperation>> *)contentOperations
+                                                    featureTitle:(NSString *)featureTitle
+{
+    NSString * const identifier = [featureTitle lowercaseString];
+    NSURL * const viewURI = [NSURL URLWithString:identifier];
+    
+    return [self createViewControllerForViewURI:viewURI
+                              contentOperations:contentOperations
+                              featureIdentifier:identifier
+                                   featureTitle:featureTitle];
+}
+
+- (HUBViewController *)createViewControllerForViewURI:(NSURL *)viewURI
+                                    contentOperations:(NSArray<id<HUBContentOperation>> *)contentOperations
+                                    featureIdentifier:(NSString *)featureIdentifier
+                                         featureTitle:(NSString *)featureTitle
 {
     HUBViewURIPredicate * const viewURIPredicate = [HUBViewURIPredicate predicateWithViewURI:viewURI];
     id<HUBContentOperationFactory> const contentOperationFactory = [[HUBBlockContentOperationFactory alloc] initWithBlock:^NSArray<id<HUBContentOperation>> *(NSURL *_) {
@@ -123,14 +137,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Private utilities
 
-- (UIViewController<HUBViewController> *)createViewControllerForViewURI:(NSURL *)viewURI
-                                                    featureRegistration:(HUBFeatureRegistration *)featureRegistration
+- (HUBViewController *)createViewControllerForViewURI:(NSURL *)viewURI
+                                  featureRegistration:(HUBFeatureRegistration *)featureRegistration
 {
     HUBViewModelLoaderImplementation * const viewModelLoader = [self.viewModelLoaderFactory createViewModelLoaderForViewURI:viewURI
                                                                                                         featureRegistration:featureRegistration];
     
+    HUBViewModelRenderer * const viewModelRenderer = [HUBViewModelRenderer new];
     id<HUBImageLoader> const imageLoader = [self.imageLoaderFactory createImageLoader];
     HUBCollectionViewFactory * const collectionViewFactory = [HUBCollectionViewFactory new];
+    HUBComponentReusePool * const componentReusePool = [[HUBComponentReusePool alloc] initWithComponentRegistry:self.componentRegistry];
     
     id<HUBActionHandler> const actionHandler = featureRegistration.actionHandler ?: self.defaultActionHandler;
     id<HUBActionHandler> const actionHandlerWrapper = [[HUBActionHandlerWrapper alloc] initWithActionHandler:actionHandler
@@ -140,15 +156,17 @@ NS_ASSUME_NONNULL_BEGIN
     
     id<HUBViewControllerScrollHandler> const scrollHandlerToUse = featureRegistration.viewControllerScrollHandler ?: [HUBViewControllerDefaultScrollHandler new];
     
-    return [[HUBViewControllerImplementation alloc] initWithViewURI:viewURI
-                                                  featureIdentifier:featureRegistration.featureIdentifier
-                                                    viewModelLoader:viewModelLoader
-                                              collectionViewFactory:collectionViewFactory
-                                                  componentRegistry:self.componentRegistry
-                                             componentLayoutManager:self.componentLayoutManager
-                                                      actionHandler:actionHandlerWrapper
-                                                      scrollHandler:scrollHandlerToUse
-                                                        imageLoader:imageLoader];
+    return [[HUBViewController alloc] initWithViewURI:viewURI
+                                    featureIdentifier:featureRegistration.featureIdentifier
+                                      viewModelLoader:viewModelLoader
+                                    viewModelRenderer:viewModelRenderer
+                                collectionViewFactory:collectionViewFactory
+                                    componentRegistry:self.componentRegistry
+                                   componentReusePool:componentReusePool
+                               componentLayoutManager:self.componentLayoutManager
+                                        actionHandler:actionHandlerWrapper
+                                        scrollHandler:scrollHandlerToUse
+                                          imageLoader:imageLoader];
 }
 
 @end

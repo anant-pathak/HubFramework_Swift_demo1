@@ -19,16 +19,25 @@
  *  under the License.
  */
 
-#import <Foundation/Foundation.h>
+#import "HUBContentOperationExecutionInfo.h"
 
-/// Enum describing various phases of a touch event
-typedef NS_ENUM(NSUInteger, HUBTouchPhase) {
-    /// The touch begun
-    HUBTouchPhaseBegan,
-    /// The touch was moved on the screen
-    HUBTouchPhaseMoved,
-    /// The touch ended (finished successfully)
-    HUBTouchPhaseEnded,
-    /// The touch was cancelled
-    HUBTouchPhaseCancelled
-};
+NS_ASSUME_NONNULL_BEGIN
+
+@implementation HUBContentOperationExecutionInfo
+
+- (instancetype)initWithContentOperationIndex:(NSUInteger)contentOperationIndex
+                                executionMode:(HUBContentOperationExecutionMode)executionMode
+{
+    self = [super init];
+    
+    if (self) {
+        _contentOperationIndex = contentOperationIndex;
+        _executionMode = executionMode;
+    }
+    
+    return self;
+}
+
+@end
+
+NS_ASSUME_NONNULL_END

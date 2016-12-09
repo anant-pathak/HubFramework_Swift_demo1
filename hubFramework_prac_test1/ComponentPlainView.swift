@@ -33,7 +33,7 @@ class ComponentPlainView: NSObject, HUBComponentWithChildren {
 //        stackView.distribution  = UIStackViewDistribution.equalSpacing
 //        stackView.alignment = UIStackViewAlignment.center
 //        stackView.spacing   = 16.0
-        
+    
         self.view = UIView()
         
         componentPlainView_imageView = UIImageView()

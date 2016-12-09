@@ -24,8 +24,7 @@
 
 @protocol HUBViewModel;
 @protocol HUBComponentLayoutManager;
-@class HUBComponentRegistryImplementation;
-@class HUBScrollBehaviorWrapper;
+@protocol HUBComponentRegistry;
 @class HUBViewModelDiff;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -39,18 +38,20 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param componentRegistry The registry to use to retrieve components for calculations
  *  @param componentLayoutManager The manager responsible for component layout
  */
-- (instancetype)initWithComponentRegistry:(HUBComponentRegistryImplementation *)componentRegistry
+- (instancetype)initWithComponentRegistry:(id<HUBComponentRegistry>)componentRegistry
                    componentLayoutManager:(id<HUBComponentLayoutManager>)componentLayoutManager HUB_DESIGNATED_INITIALIZER;
 /**
  *  Compute this layout for a given collection view size
  *
  *  @param collectionViewSize The size of the collection view that will use this layout
  *  @param viewModel The view model used to compute the layout with
- *  @param diff The diff between the previous and current data model.
+ *  @param diff The diff between the previous and current data model
+ *  @param addHeaderMargin Whether margin should be added to account for any header component
  */
 - (void)computeForCollectionViewSize:(CGSize)collectionViewSize
                            viewModel:(id<HUBViewModel>)viewModel
-                                diff:(nullable HUBViewModelDiff *)diff;
+                                diff:(nullable HUBViewModelDiff *)diff
+                     addHeaderMargin:(BOOL)addHeaderMargin;
 
 @end
 

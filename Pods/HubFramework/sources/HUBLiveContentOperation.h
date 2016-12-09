@@ -19,9 +19,28 @@
  *  under the License.
  */
 
-#import "UIGestureRecognizer+HUBTouchForwardingTarget.h"
-#import <UIKit/UIGestureRecognizerSubclass.h>
+#import "HUBContentOperation.h"
+#import "HUBHeaderMacros.h"
 
-@implementation UIGestureRecognizer (HUBTouchForwardingTarget)
+#if HUB_DEBUG
+
+NS_ASSUME_NONNULL_BEGIN
+
+/// Content operation used by the Hub Framework Live service.
+@interface HUBLiveContentOperation : NSObject <HUBContentOperation>
+
+/// The JSON data that should be render. When set, the content operation will reschedule itself.
+@property (nonatomic, strong) NSData *JSONData;
+
+/**
+ *  Initialize an instance of this class with JSON data
+ *
+ *  @param JSONData The JSON data to use
+ */
+- (instancetype)initWithJSONData:(NSData *)JSONData HUB_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#endif // DEBUG

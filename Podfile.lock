@@ -1,11 +1,11 @@
 PODS:
-  - HubFramework (2.0.3)
+  - HubFramework (2.0.7)
 
 DEPENDENCIES:
   - HubFramework
 
 SPEC CHECKSUMS:
-  HubFramework: 50350b1e5721cf651c9ec810a80750cb04f8928b
+  HubFramework: cc408d9336dc32d395206ac9605b59e25f027848
 
 PODFILE CHECKSUM: 45956f2710fe6b1a57a95228efa596fb163c0580
 

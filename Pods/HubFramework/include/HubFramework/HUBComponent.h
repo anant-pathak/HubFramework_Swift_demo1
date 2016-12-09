@@ -51,11 +51,15 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  `HUBComponentWithRestorableUIState`: For saving & restoring the UI state of a component.
  *
+ *  `HUBComponentWithSelectionState`: For responding to highlight & selection events in a component.
+ *
  *  `HUBComponentContentOffsetObserver`: For components that react to the view's content offset.
  *
  *  `HUBComponentViewObserver`: For components that observe their view for various events.
  *
  *  `HUBComponentActionPerformer`: For components that can perform actions (see `HUBAction`).
+ *
+ *  `HUBComponentActionObserver`: For components that can observe actions (see `HUBAction`).
  */
 @protocol HUBComponent <NSObject>
 

@@ -22,7 +22,10 @@
 #import "HUBComponentWithImageHandling.h"
 #import "HUBComponentViewObserver.h"
 #import "HUBComponentContentOffsetObserver.h"
+#import "HUBComponentActionObserver.h"
 #import "HUBComponentWithRestorableUIState.h"
+#import "HUBComponentWithSelectionState.h"
+#import "HUBComponentWithScrolling.h"
 #import "HUBHeaderMacros.h"
 
 @protocol HUBComponent;
@@ -31,11 +34,30 @@
 @class HUBIdentifier;
 @class HUBComponentWrapper;
 @class HUBComponentUIStateManager;
+@class HUBComponentGestureRecognizer;
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// Delegate protocol for `HUBComponentWrapper`
 @protocol HUBComponentWrapperDelegate <NSObject>
+
+/**
+ *  Notify the delegate that a component wrapper will update its selection state
+ *
+ *  @param componentWrapper The component wrapper that is about to update its selection state
+ *  @param selectionState The new selection state that the component wrapper will enter
+ */
+- (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
+willUpdateSelectionState:(HUBComponentSelectionState)selectionState;
+
+/**
+ *  Notify the delegate that a component wrapper updated its selection state
+ *
+ *  @param componentWrapper The component wrapper that updated its selection state
+ *  @param selectionState The selection state that the component wrapper entered
+ */
+- (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
+ didUpdateSelectionState:(HUBComponentSelectionState)selectionState;
 
 /**
  *  Return a child component wrapper for a given model
@@ -77,9 +99,11 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param componentWrapper The wrapper of the component in which the event occured
  *  @param childIndex The index of the child component that was selected
+ *  @param customData Any custom data that should be passed to the action
  */
 - (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
-    childSelectedAtIndex:(NSUInteger)childIndex;
+    childSelectedAtIndex:(NSUInteger)childIndex
+              customData:(nullable NSDictionary<NSString *, id> *)customData;
 
 /**
  *  Ask the delegate to perform an action on behalf of a component wrapper
@@ -110,7 +134,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HUBComponentWrapper : NSObject <
     HUBComponentWithImageHandling,
     HUBComponentViewObserver,
-    HUBComponentContentOffsetObserver
+    HUBComponentContentOffsetObserver,
+    HUBComponentActionObserver,
+    HUBComponentWithSelectionState,
+    HUBComponentWithScrolling
 >
 
 /// A unique identifier for this component wrapper. Can be used to track it accross various operations.
@@ -123,7 +150,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) id<HUBComponentWrapperDelegate> delegate;
 
 /// The components parent wrapper if it is a child component
-@property (nonatomic, weak, nullable, readonly) HUBComponentWrapper *parent;
+@property (nonatomic, weak, nullable) HUBComponentWrapper *parent;
 
 /// Whether the wrapper is for a root component, or for a child component
 @property (nonatomic, readonly) BOOL isRootComponent;
@@ -134,8 +161,21 @@ NS_ASSUME_NONNULL_BEGIN
 /// Whether the wrapped component is observing the container view's content offset
 @property (nonatomic, readonly) BOOL isContentOffsetObserver;
 
+/// Whether the wrapped component is observing actions
+@property (nonatomic, readonly) BOOL isActionObserver;
+
 /// Whether the wrapped component's view has appeared since the model was last changed
 @property (nonatomic, readonly) BOOL viewHasAppearedSinceLastModelChange;
+
+/**
+ *  The number of times the wrapped component has appeared on the screen
+ *
+ *  Incremented every time the component gets sent the -viewWillAppear message.
+ */
+@property (nonatomic, assign, readonly) NSUInteger appearanceCount;
+
+/// Returns an array of all direct child component wrappers that are currently being displayed.
+@property (nonatomic, readonly) NSArray<HUBComponentWrapper *> *visibleChildren;
 
 /**
  *  Initialize an instance of this class with a component to wrap and its identifier
@@ -144,19 +184,35 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param model The model that the component wrapper will represent
  *  @param UIStateManager The manager to use to save & restore UI states for the component
  *  @param delegate The object that will act as the component wrapper's delegate
+ *  @param gestureRecognizer The gesture recognizer to use to detect touches & taps for highlight & selection
  *  @param parent The parent component wrapper if this component wrapper is a child component
  */
 - (instancetype)initWithComponent:(id<HUBComponent>)component
                             model:(id<HUBComponentModel>)model
                    UIStateManager:(HUBComponentUIStateManager *)UIStateManager
                          delegate:(id<HUBComponentWrapperDelegate>)delegate
+                gestureRecognizer:(HUBComponentGestureRecognizer *)gestureRecognizer
                            parent:(nullable HUBComponentWrapper *)parent HUB_DESIGNATED_INITIALIZER;
 
+/**
+ *  Notify the component wrapper that its view was added to a new superview
+ *
+ *  @param superview The new superview of the component's view
+ */
+- (void)viewDidMoveToSuperview:(UIView *)superview;
+
 /** 
- * Manually saves the underlying component's UI state. This is normally called before the component
- * is prepared for reuse.
+ *  Manually saves the underlying component's UI state. This is normally called before the component
+ *  is prepared for reuse.
  */
 - (void)saveComponentUIState;
+
+/** 
+ *  Returns the child component wrapper located at the provided index – if visible. 
+ *
+ *  @param index The index of the component to retrieve.
+ */
+- (nullable HUBComponentWrapper *)visibleChildComponentAtIndex:(NSUInteger)index;
 
 @end
 

@@ -19,8 +19,29 @@
  *  under the License.
  */
 
-#import "UIView+HUBTouchForwardingTarget.h"
+#import "HUBCollectionView.h"
 
-@implementation UIView (HUBTouchForwardingTarget)
+NS_ASSUME_NONNULL_BEGIN
+
+@implementation HUBCollectionView
+
+@dynamic delegate;
+
+- (void)setContentOffset:(CGPoint)contentOffset
+{
+    id<HUBCollectionViewDelegate> const delegate = self.delegate;
+    
+    if (delegate != nil) {
+        if (![delegate collectionViewShouldBeginScrolling:self]) {
+            self.panGestureRecognizer.enabled = NO;
+            self.panGestureRecognizer.enabled = YES;
+            return;
+        }
+    }
+    
+    [super setContentOffset:contentOffset];
+}
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -19,9 +19,27 @@
  *  under the License.
  */
 
-#import "HUBTouchForwardingTarget.h"
+#import "HUBComponentLayoutManager.h"
+#import "HUBHeaderMacros.h"
 
-/// Category making `UIGestureRecognizer` a touch forwarding target
-@interface UIGestureRecognizer (HUBTouchForwardingTarget) <HUBTouchForwardingTarget>
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ *  A default component layout manager implementation, used for applications that don't supply their own
+ *
+ *  This layout manager applies a given `margin` (set in the initializer) to all components, except if
+ *  two components are both stackable (vertical), or if a component is full width (horizontal). Adjustment
+ *  is also made for centered components.
+ */
+@interface HUBDefaultComponentLayoutManager : NSObject <HUBComponentLayoutManager>
+
+/**
+ *  Initialize an instance of this class
+ *
+ *  @param margin The margin that this layout manager should use
+ */
+- (instancetype)initWithMargin:(CGFloat)margin HUB_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

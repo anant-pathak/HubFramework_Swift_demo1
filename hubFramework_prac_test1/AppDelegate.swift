@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()
-        //2 setting up a feature:
+        //MARK: 2 setting up a feature:
         
 //        //2.1 Feature Cities
         let home_uri = URL(string: "cities:overview") //cities is the scheme name
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             title: "food",
             contentOperationFactories: [FoodContentOperationFactory()],
             contentReloadPolicy: nil,
-            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.bannerSchemaId, //NOTE MAKE IT NIL IF TRYING TO PARSE A NORMAL JSON FILE
+            customJSONSchemaIdentifier: nil, //NOTE MAKE IT NIL IF TRYING TO PARSE A NORMAL JSON FILE
             actionHandler: nil,
             viewControllerScrollHandler: nil)
                 //For the above "FOOD" feature lets register the custom JSON schema
@@ -75,13 +75,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        citiesRowBuilder.subtitle = "A feature that renders beautiful cities"
 //        citiesRowBuilder.targetBuilder.uri = URL(viewURI: "cities:overview")
         
-        //4 Setting up a factory -> component
+        //MARK:4 Setting up a factory -> component
         registerComponentFactory()
+        
+        //MARK: 5 Registering Action Factory:
+        registerActionFactory()
         
         //Calling a featue to open it:
         var feature_call_uri: URL?
-        //feature_call_uri = home_uri
-        feature_call_uri = food_uri
+        feature_call_uri = home_uri
+        //feature_call_uri = food_uri
         if openView_custom(open: feature_call_uri!)
         {
             print("view successfully opened")
@@ -93,6 +96,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //4 Setting up a factory -> component
         
         return true
+    }
+    
+    func registerActionFactory()
+    {
+        self.hubManager.actionRegistry.register(CitiesContentActionFactory(), forNamespace: "cities")
     }
     
     func registerComponentFactory()
@@ -138,6 +146,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let viewCont = hubManager?.viewControllerFactory.createViewController(forViewURI: url) else {
             return false
         }
+       // print(type(of:viewCont))
         print("url " + url.absoluteString)
         viewCont.view.backgroundColor = UIColor.white
         navigationController?.pushViewController(viewCont, animated: false)
