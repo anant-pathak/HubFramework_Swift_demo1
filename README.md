@@ -1,4 +1,4 @@
-# HubFramework_Swift_demo1
+# HubFramework_Swift_demo1- Compiled in Swift 3.0.2 & XCode 8.2
 
 ####NEW Updates: <br/>
 #####1) In Cities Page: Created a Carousel component using CollectionView whose cells are another independent component. Interesting point being that Cell Component(which includes Labels etc.) is using a XIB to load itself up. NOTE: Creating a cell from the Code itself and AutoConstraints using VFL is coming up as well. If I might forget then just remind me ;)<br/>
