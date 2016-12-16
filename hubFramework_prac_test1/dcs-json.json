@@ -30,7 +30,7 @@
                 "contentLocation": "/assets/contentModels/IGHS-TH/homepage/banner/banner/Banner/contentmodel.json",
                 "treeContent": {
                 "id": "",
-                "heading": "Banner content model2",
+                 "heading": "Anant is a boy"
                 "module": {
                 "resource": {
                 "image": "https://s3-ap-southeast-1.amazonaws.com/tescoghsuseruploads/assets/banner10_v1_984x360.png",

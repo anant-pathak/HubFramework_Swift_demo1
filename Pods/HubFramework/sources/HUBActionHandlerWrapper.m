@@ -22,8 +22,10 @@
 #import "HUBActionHandlerWrapper.h"
 
 #import "HUBActionRegistryImplementation.h"
-#import "HUBActionContext.h"
+#import "HUBActionContextImplementation.h"
 #import "HUBAction.h"
+#import "HUBAsyncAction.h"
+#import "HUBAsyncActionWrapper.h"
 #import "HUBInitialViewModelRegistry.h"
 #import "HUBComponentModel.h"
 #import "HUBComponentTarget.h"
@@ -31,12 +33,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HUBActionHandlerWrapper ()
+@interface HUBActionHandlerWrapper () <HUBAsyncActionWrapperDelegate>
 
 @property (nonatomic, strong, readonly, nullable) id<HUBActionHandler> actionHandler;
 @property (nonatomic, strong, readonly) HUBActionRegistryImplementation *actionRegistry;
 @property (nonatomic, strong, readonly) HUBInitialViewModelRegistry *initialViewModelRegistry;
 @property (nonatomic, strong, readonly) HUBViewModelLoaderImplementation *viewModelLoader;
+@property (nonatomic, strong, readonly) NSMutableSet<HUBAsyncActionWrapper *> *ongoingAsyncActions;
 
 @end
 
@@ -60,6 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
         _actionRegistry = actionRegistry;
         _initialViewModelRegistry = initialViewModelRegistry;
         _viewModelLoader = viewModelLoader;
+        _ongoingAsyncActions = [NSMutableSet new];
     }
     
     return self;
@@ -91,6 +95,13 @@ NS_ASSUME_NONNULL_BEGIN
     if ([self.actionHandler handleActionWithContext:context]) {
         actionPerformed = YES;
     } else {
+        if ([action conformsToProtocol:@protocol(HUBAsyncAction)]) {
+            id<HUBAsyncAction> const asyncAction = (id<HUBAsyncAction>)action;
+            HUBAsyncActionWrapper * const wrapper = [[HUBAsyncActionWrapper alloc] initWithAction:asyncAction context:context];
+            wrapper.delegate = self;
+            [self.ongoingAsyncActions addObject:wrapper];
+        }
+        
         actionPerformed = [action performWithContext:context];
     }
     
@@ -102,6 +113,29 @@ NS_ASSUME_NONNULL_BEGIN
     [self.viewModelLoader actionPerformedWithContext:context];
     
     return actionPerformed;
+}
+
+#pragma mark - HUBAsyncActionWrapperDelegate
+
+- (void)actionDidFinish:(HUBAsyncActionWrapper *)action
+        withContext:(id<HUBActionContext>)context
+        chainToActionWithIdentifier:(nullable HUBIdentifier *)nextActionIdentifier
+        customData:(nullable NSDictionary<NSString *, id> *)nextActionCustomData
+{
+    [self.ongoingAsyncActions removeObject:action];
+    
+    if (nextActionIdentifier != nil) {
+        HUBIdentifier * const chainedActionIdentifier = nextActionIdentifier;
+        HUBActionContextImplementation * const chainedActionContext = [[HUBActionContextImplementation alloc] initWithTrigger:context.trigger
+                                                                                                       customActionIdentifier:chainedActionIdentifier
+                                                                                                                   customData:nextActionCustomData
+                                                                                                                      viewURI:context.viewURI
+                                                                                                                    viewModel:context.viewModel
+                                                                                                               componentModel:context.componentModel
+                                                                                                               viewController:context.viewController];
+        
+        [self handleActionWithContext:chainedActionContext];
+    }
 }
 
 @end

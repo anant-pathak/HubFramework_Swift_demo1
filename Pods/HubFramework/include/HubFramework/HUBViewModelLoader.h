@@ -83,6 +83,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) id<HUBViewModel> initialViewModel;
 
 /**
+ *  Whether the view model loader is currently loading
+ *
+ *  True whenever one or more content operations are currently in the process of loading content, either as part
+ *  of the main content loading chain, or as part of appending paginated content.
+ */
+@property (nonatomic, assign, readonly) BOOL isLoading;
+
+/**
  *  Load a view model using this loader
  *
  *  Depending on the current connectivity state (determined by the current `HUBConnectivityStateResolver`),
@@ -93,6 +101,25 @@ NS_ASSUME_NONNULL_BEGIN
  *  See `HUBViewModelLoaderDelegate` for more information.
  */
 - (void)loadViewModel;
+
+/**
+ *  Load the next set of paginated content for the current view model this loader is for
+ *
+ *  Use this method to extend the current view model with additional paginated content. The view model loader
+ *  automatically manages the current state of the view and the page index for you, so all you have to do is to
+ *  call this method whenever additional content should be loaded.
+ *
+ *  Content loaded this way will be appended to the current view model, so if it already contains 2 component
+ *  models (A & B), and a new one (C) is added through this mechanism - the resulting view model will now contain
+ *  A, B & C.
+ *
+ *  Calling this method invokes content operations conforming to `HUBContentOperationWithPaginatedContent`.
+ *
+ *  The same delegate methods are called for success/error when the view model loader finishes this task.
+ *
+ *  Calling this method before first loading a view model using `loadViewModel` does nothing.
+ */
+- (void)loadNextPageForCurrentViewModel;
 
 @end
 

@@ -17,7 +17,10 @@ class CitiesImageContentOperation: NSObject, HUBContentOperation {
         let jsonURL = Bundle.main.url(forResource: "city-images", withExtension: "json")
         // Bundle.main.path(forResource: "city-images", ofType: "json")
         let jsonData = NSData(contentsOf: jsonURL!)
+        
         viewModelBuilder.addJSONData(jsonData as! Data)
+       
+                
         delegate!.contentOperationDidFinish(self)
 
     }

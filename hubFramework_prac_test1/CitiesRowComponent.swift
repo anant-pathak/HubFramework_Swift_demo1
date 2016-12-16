@@ -8,9 +8,11 @@
 
 import UIKit
 import HubFramework
-class CitiesRowComponent: NSObject, HUBComponent {
+class CitiesRowComponent: NSObject, HUBComponent{
     var view: UIView? //The view that out component is about to create & its
     
+
+   // weak var actionPerformer: HUBActionPerformer?
     var cell:UITableViewCell! //imp: Always make it unwrapped or optional else the class wont get initialized
     //
     var layoutTraits: Set<HUBComponentLayoutTrait>{
@@ -38,7 +40,7 @@ class CitiesRowComponent: NSObject, HUBComponent {
         cell.detailTextLabel?.text = model.subtitle
         
        
-       print(model.customData?["mapiURL"])
+     //  print(model.customData?["mapiURL"])
         
         
     }

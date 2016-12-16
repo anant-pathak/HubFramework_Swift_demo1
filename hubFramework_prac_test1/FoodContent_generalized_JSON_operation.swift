@@ -9,11 +9,14 @@
 import UIKit
 import HubFramework
 
-class FoodContent_generalized_JSON_operation: NSObject,HUBContentOperation {
+class FoodContent_standard_JSON_operation: NSObject,HUBContentOperation {
     var delegate: HUBContentOperationDelegate?
     
     func perform(forViewURI viewURI: URL, featureInfo: HUBFeatureInfo, connectivityState: HUBConnectivityState, viewModelBuilder: HUBViewModelBuilder, previousError: Error?) {
-        let jsonURL = Bundle.main.url(forResource: "dcs-json", withExtension: "json")
+        var json_file_name: String?
+        json_file_name = "food_hubFrm_default"
+        
+        let jsonURL = Bundle.main.url(forResource: json_file_name, withExtension: "json")
         // Bundle.main.path(forResource: "city-images", ofType: "json")
         let jsonData = NSData(contentsOf: jsonURL!)
         viewModelBuilder.addJSONData(jsonData as! Data)

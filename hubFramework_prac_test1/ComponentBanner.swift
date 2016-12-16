@@ -8,13 +8,15 @@
 
 import UIKit
 import HubFramework
-class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
-    var view: UIView? //The view that out component is about to create & its
+class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling, HUBComponentWithChildren {    var view: UIView? //The view that out component is about to create & its
     var bannerObj: Banner!
     var height_xib: Double!
+    var childDelegate: HUBComponentChildDelegate? // came from "HUBComponentWithChildren"
+    
     var layoutTraits: Set<HUBComponentLayoutTrait>{
         return [.fullWidth]
     }
+    
     
     
     func loadView()
@@ -42,6 +44,10 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
         bannerTemp.imageView.image = nil
     }
     
+    /**
+     
+     */
+    
     func configureView(with model: HUBComponentModel, containerViewSize: CGSize) {
 //        var cell: UITableViewCell = self.view as! UITableViewCell
 //        cell.textLabel?.text = model.title
@@ -51,9 +57,21 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
         let bannerTemp: Banner = self.view as! Banner
         print(model.title)
         bannerTemp.label.text = model.title
-    //    bannerTemp.imageView.image = model.mainImageData?.localImage
+        bannerTemp.imageView.image = model.mainImageData?.localImage
         print("Anant  \(bannerTemp.label.text)")
         
+//        if  model.children != nil {
+//        let hubComponentModel: HUBComponentModel = (model.children?[0])!
+//        let child1 = self.childDelegate?.component(self, childComponentFor: hubComponentModel)
+//        self.view?.addSubview((child1?.view)!)
+//        
+//        
+//        debugPrint(child1)
+//         }
+    
+        
+        
+//        childDelegate?.component(<#T##component: HUBComponentWithChildren##HUBComponentWithChildren#>, willDisplayChildAt: <#T##UInt#>, view: <#T##UIView#>)
     }
     
     //MARK: Image Rendering from Network
@@ -67,6 +85,10 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling {
        print("URL \(model.mainImageData?.url) ")
         (self.view as! Banner).imageView.image = image
     }
+    
+    //MARK: Handling Child components
+    
+    
     
     
     

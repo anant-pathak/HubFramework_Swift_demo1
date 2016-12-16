@@ -22,15 +22,17 @@
 #import "HUBComponentReusePool.h"
 
 #import "HUBComponentWrapper.h"
+#import "HUBComponentUIStateManager.h"
 #import "HUBIdentifier.h"
 #import "HUBComponentModel.h"
-#import "HUBComponentRegistryImplementation.h"
+#import "HUBComponentRegistry.h"
+#import "HUBComponentGestureRecognizer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HUBComponentReusePool ()
 
-@property (nonatomic, strong, readonly) HUBComponentRegistryImplementation *componentRegistry;
+@property (nonatomic, strong, readonly) id<HUBComponentRegistry> componentRegistry;
 @property (nonatomic, strong, readonly) HUBComponentUIStateManager *UIStateManager;
 @property (nonatomic, strong, readonly) NSMutableDictionary<HUBIdentifier *, NSMutableSet<HUBComponentWrapper *> *> *componentWrappers;
 
@@ -38,17 +40,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation HUBComponentReusePool
 
-- (instancetype)initWithComponentRegistry:(HUBComponentRegistryImplementation *)componentRegistry
-                           UIStateManager:(HUBComponentUIStateManager *)UIStateManager
+- (instancetype)initWithComponentRegistry:(id<HUBComponentRegistry>)componentRegistry
 {
     NSParameterAssert(componentRegistry != nil);
-    NSParameterAssert(UIStateManager != nil);
     
     self = [super init];
     
     if (self) {
         _componentRegistry = componentRegistry;
-        _UIStateManager = UIStateManager;
+        _UIStateManager = [HUBComponentUIStateManager new];
         _componentWrappers = [NSMutableDictionary new];
     }
     
@@ -76,6 +76,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (existingWrappers.count > 0) {
         HUBComponentWrapper * const wrapper = [existingWrappers anyObject];
         wrapper.delegate = delegate;
+        wrapper.parent = parent;
         [existingWrappers removeObject:wrapper];
         return wrapper;
     }
@@ -86,6 +87,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                     model:model
                                            UIStateManager:self.UIStateManager
                                                  delegate:delegate
+                                        gestureRecognizer:[HUBComponentGestureRecognizer new]
                                                    parent:parent];
 }
 

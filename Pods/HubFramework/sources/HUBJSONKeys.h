@@ -51,9 +51,6 @@ static NSString * const HUBJSONKeyDate = @"date";
 /// JSON key used to encode a description text
 static NSString * const HUBJSONKeyDescription = @"description";
 
-/// JSON key used to encode extension information
-static NSString * const HUBJSONKeyExtension = @"extension";
-
 /// JSON key used to encode a feature identifier
 static NSString * const HUBJSONKeyFeature = @"feature";
 
@@ -71,6 +68,9 @@ static NSString * const HUBJSONKeyIdentifier = @"id";
 
 /// JSON key used to encode a set of image data
 static NSString * const HUBJSONKeyImages = @"images";
+
+/// JSON key used to encode local data
+static NSString * const HUBJSONKeyLocal = @"local";
 
 /// JSON key used to encode logging data
 static NSString * const HUBJSONKeyLogging = @"logging";

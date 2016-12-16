@@ -25,10 +25,8 @@
 #import "HUBComponentImageData.h"
 #import "HUBComponentTarget.h"
 #import "HUBJSONKeys.h"
-#import "HUBViewModel.h"
 #import "HUBUtilities.h"
 #import "HUBIcon.h"
-#import "HUBKeyPath.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -65,7 +63,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable NSSet<NSString *> *)ignoredAutoEquatablePropertyNames
 {
-    return [NSSet setWithObjects:HUBKeyPath((id<HUBComponentModel>)nil, parent), HUBKeyPath((id<HUBComponentModel>)nil, index), nil];
+    return [NSSet setWithObjects:HUBKeyPath((id<HUBComponentModel>)nil, parent),
+        HUBKeyPath((id<HUBComponentModel>)nil, index),
+        HUBKeyPath((id<HUBComponentModel>)nil, indexPath),
+        nil];
 }
 
 #pragma mark - Initializer
@@ -176,6 +177,7 @@ NS_ASSUME_NONNULL_BEGIN
 {
     NSMutableDictionary<NSString *, NSObject<NSCoding> *> const * serialization = [NSMutableDictionary new];
     serialization[HUBJSONKeyIdentifier] = self.identifier;
+    serialization[HUBJSONKeyGroup] = self.groupIdentifier;
     serialization[HUBJSONKeyComponent] = [self serializedComponentData];
     serialization[HUBJSONKeyText] = [self serializedTextData];
     serialization[HUBJSONKeyImages] = [self serializedImageData];
@@ -189,6 +191,25 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 #pragma mark - HUBComponentModel
+
+- (NSIndexPath *)indexPath
+{
+    NSMutableArray<NSNumber *> * const indices = [NSMutableArray arrayWithObject:@(self.index)];
+
+    id<HUBComponentModel> parent = self.parent;
+    while (parent != nil) {
+        // Add the next index at the start of the array as we're traversing up the hierarchy.
+        [indices insertObject:@(parent.index) atIndex:0];
+        parent = parent.parent;
+    }
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathWithIndex:indices.firstObject.unsignedIntegerValue];
+    for (NSUInteger i = 1; i < indices.count; i++) {
+        indexPath = [indexPath indexPathByAddingIndex:indices[i].unsignedIntegerValue];
+    }
+
+    return indexPath;
+}
 
 - (nullable id<HUBComponentModel>)childAtIndex:(NSUInteger)childIndex
 {

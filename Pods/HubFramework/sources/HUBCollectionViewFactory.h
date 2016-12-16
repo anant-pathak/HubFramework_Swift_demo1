@@ -21,13 +21,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class HUBCollectionView;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// Factory used to create collection views for use in a `HUBViewController`
 @interface HUBCollectionViewFactory : NSObject
 
-/// Create a collection view. It will be setup with an appropritate layout.
-- (UICollectionView *)createCollectionView;
+/// Create a collection view. It will be setup with a default layout.
+- (HUBCollectionView *)createCollectionView;
 
 @end
 

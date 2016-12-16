@@ -24,6 +24,22 @@ class ComponentFactory: NSObject, HUBComponentFactory {
         {
             return ComponentBanner()
         }
+        if name == "plainView"
+        {
+            return ComponentPlainView()
+        }
+        if name == "button"
+        {
+            return ComponentButton()
+        }
+        if name == "carousel"
+        {
+            return Cities_carousal_PayTM()
+        }
+        if name == "collectionViewCell"
+        {
+            return CarouselCollectionCell()
+        }
         return nil
     }
 }

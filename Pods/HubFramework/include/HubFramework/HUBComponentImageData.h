@@ -81,6 +81,14 @@ typedef NS_ENUM(NSInteger, HUBComponentImageType) {
  */
 @property (nonatomic, strong, readonly, nullable) UIImage *localImage;
 
+/**
+ *  Any custom data that is associated with the image data
+ *
+ *  You can use custom data to easily add new pieces of data to an image data object, that can then be picked
+ *  up by a component using the object.
+ */
+@property (nonatomic, copy, readonly, nullable) NSDictionary<NSString *, id> *customData;
+
 @end
 
 NS_ASSUME_NONNULL_END

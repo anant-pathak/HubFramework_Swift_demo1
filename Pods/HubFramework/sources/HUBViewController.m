@@ -19,70 +19,85 @@
  *  under the License.
  */
 
-#import "HUBViewControllerImplementation.h"
+#import "HUBViewController+Initializer.h"
 
 #import "HUBIdentifier.h"
-#import "HUBViewModelLoader.h"
+#import "HUBViewModelLoaderImplementation.h"
 #import "HUBViewModel.h"
 #import "HUBComponentModel.h"
 #import "HUBComponentImageData.h"
 #import "HUBComponentTarget.h"
 #import "HUBComponentWithImageHandling.h"
+#import "HUBComponentWithChildren.h"
 #import "HUBComponentContentOffsetObserver.h"
 #import "HUBComponentViewObserver.h"
 #import "HUBComponentWrapper.h"
-#import "HUBComponentRegistryImplementation.h"
+#import "HUBComponentRegistry.h"
 #import "HUBComponentCollectionViewCell.h"
 #import "HUBUtilities.h"
 #import "HUBImageLoader.h"
 #import "HUBComponentImageLoadingContext.h"
 #import "HUBCollectionViewFactory.h"
+#import "HUBCollectionView.h"
 #import "HUBCollectionViewLayout.h"
 #import "HUBContainerView.h"
 #import "HUBContentReloadPolicy.h"
-#import "HUBComponentUIStateManager.h"
 #import "HUBViewControllerScrollHandler.h"
 #import "HUBComponentReusePool.h"
 #import "HUBActionContextImplementation.h"
-#import "HUBActionRegistry.h"
-#import "HUBActionHandler.h"
-#import "HUBViewModelDiff.h"
+#import "HUBActionHandlerWrapper.h"
+#import "HUBActionPerformer.h"
+#import "HUBViewModelRenderer.h"
+
+static NSTimeInterval const HUBImageDownloadTimeThreshold = 0.07;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HUBViewControllerImplementation () <HUBViewModelLoaderDelegate, HUBImageLoaderDelegate, HUBComponentWrapperDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface HUBViewController () <
+    HUBViewModelLoaderDelegate,
+    HUBImageLoaderDelegate,
+    HUBComponentWrapperDelegate,
+    HUBActionPerformer,
+    UICollectionViewDataSource,
+    HUBCollectionViewDelegate
+>
 
 @property (nonatomic, copy, readonly) NSURL *viewURI;
-@property (nonatomic, strong, readonly) id<HUBViewModelLoader> viewModelLoader;
+@property (nonatomic, strong, readonly) HUBViewModelLoaderImplementation *viewModelLoader;
 @property (nonatomic, strong, readonly) HUBCollectionViewFactory *collectionViewFactory;
-@property (nonatomic, strong, readonly) HUBComponentRegistryImplementation *componentRegistry;
+@property (nonatomic, strong, readonly) id<HUBComponentRegistry> componentRegistry;
+@property (nonatomic, strong, readonly) HUBComponentReusePool *componentReusePool;
 @property (nonatomic, strong, readonly) id<HUBComponentLayoutManager> componentLayoutManager;
 @property (nonatomic, strong, readonly) id<HUBActionHandler> actionHandler;
 @property (nonatomic, strong, readonly) id<HUBViewControllerScrollHandler> scrollHandler;
 @property (nonatomic, strong, nullable, readonly) id<HUBContentReloadPolicy> contentReloadPolicy;
 @property (nonatomic, strong, nullable, readonly) id<HUBImageLoader> imageLoader;
 @property (nonatomic, strong, nullable) UICollectionView *collectionView;
+@property (nonatomic, strong, readonly) HUBViewModelRenderer *viewModelRenderer;
 @property (nonatomic, assign) BOOL collectionViewIsScrolling;
 @property (nonatomic, strong, readonly) NSMutableSet<NSString *> *registeredCollectionViewCellReuseIdentifiers;
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSURL *, NSMutableArray<HUBComponentImageLoadingContext *> *> *componentImageLoadingContexts;
 @property (nonatomic, strong, readonly) NSHashTable<id<HUBComponentContentOffsetObserver>> *contentOffsetObservingComponentWrappers;
+@property (nonatomic, strong, readonly) NSHashTable<id<HUBComponentActionObserver>> *actionObservingComponentWrappers;
 @property (nonatomic, strong, nullable) HUBComponentWrapper *headerComponentWrapper;
 @property (nonatomic, strong, readonly) NSMutableArray<HUBComponentWrapper *> *overlayComponentWrappers;
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSUUID *, HUBComponentWrapper *> *componentWrappersByIdentifier;
 @property (nonatomic, strong, readonly) NSMutableDictionary<NSUUID *, HUBComponentWrapper *> *componentWrappersByCellIdentifier;
-@property (nonatomic, strong, readonly) HUBComponentUIStateManager *componentUIStateManager;
-@property (nonatomic, strong, readonly) HUBComponentReusePool *childComponentReusePool;
+@property (nonatomic, strong, readonly) NSMutableDictionary<NSString *, HUBComponentWrapper *> *componentWrappersByModelIdentifier;
+@property (nonatomic, strong, nullable) HUBComponentWrapper *highlightedComponentWrapper;
+@property (nonatomic, strong, nullable) id<HUBViewModel> pendingViewModel;
 @property (nonatomic, strong, nullable) id<HUBViewModel> viewModel;
-@property (nonatomic, strong, nullable) HUBViewModelDiff *lastViewModelDiff;
 @property (nonatomic, assign) BOOL viewHasAppeared;
 @property (nonatomic, assign) BOOL viewHasBeenLaidOut;
-@property (nonatomic) BOOL viewModelIsInitial;
 @property (nonatomic) BOOL viewModelHasChangedSinceLastLayoutUpdate;
 @property (nonatomic) CGFloat visibleKeyboardHeight;
+@property (nonatomic, assign) CGPoint lastContentOffset;
+@property (nonatomic, copy, nullable) void(^pendingScrollAnimationCallback)(void);
+@property (nonatomic, getter=isRendering) BOOL rendering;
 
 @end
 
-@implementation HUBViewControllerImplementation
+@implementation HUBViewController
 
 @synthesize delegate = _delegate;
 @synthesize featureIdentifier = _featureIdentifier;
@@ -91,20 +106,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithViewURI:(NSURL *)viewURI
               featureIdentifier:(NSString *)featureIdentifier
-                viewModelLoader:(id<HUBViewModelLoader>)viewModelLoader
+                viewModelLoader:(HUBViewModelLoaderImplementation *)viewModelLoader
+              viewModelRenderer:(HUBViewModelRenderer *)viewModelRenderer
           collectionViewFactory:(HUBCollectionViewFactory *)collectionViewFactory
-              componentRegistry:(HUBComponentRegistryImplementation *)componentRegistry
+              componentRegistry:(id<HUBComponentRegistry>)componentRegistry
+             componentReusePool:(HUBComponentReusePool *)componentReusePool
          componentLayoutManager:(id<HUBComponentLayoutManager>)componentLayoutManager
                   actionHandler:(id<HUBActionHandler>)actionHandler
                   scrollHandler:(id<HUBViewControllerScrollHandler>)scrollHandler
                     imageLoader:(id<HUBImageLoader>)imageLoader
-
 {
     NSParameterAssert(viewURI != nil);
     NSParameterAssert(featureIdentifier != nil);
     NSParameterAssert(viewModelLoader != nil);
+    NSParameterAssert(viewModelRenderer != nil);
     NSParameterAssert(collectionViewFactory != nil);
     NSParameterAssert(componentRegistry != nil);
+    NSParameterAssert(componentReusePool != nil);
     NSParameterAssert(componentLayoutManager != nil);
     NSParameterAssert(actionHandler != nil);
     NSParameterAssert(scrollHandler != nil);
@@ -117,25 +135,26 @@ NS_ASSUME_NONNULL_BEGIN
     _viewURI = [viewURI copy];
     _featureIdentifier = [featureIdentifier copy];
     _viewModelLoader = viewModelLoader;
+    _viewModelRenderer = viewModelRenderer;
     _collectionViewFactory = collectionViewFactory;
     _componentRegistry = componentRegistry;
+    _componentReusePool = componentReusePool;
     _componentLayoutManager = componentLayoutManager;
     _actionHandler = actionHandler;
     _scrollHandler = scrollHandler;
     _imageLoader = imageLoader;
-    _viewModelIsInitial = YES;
     _registeredCollectionViewCellReuseIdentifiers = [NSMutableSet new];
     _componentImageLoadingContexts = [NSMutableDictionary new];
     _contentOffsetObservingComponentWrappers = [NSHashTable hashTableWithOptions:NSPointerFunctionsWeakMemory];
+    _actionObservingComponentWrappers = [NSHashTable hashTableWithOptions:NSPointerFunctionsWeakMemory];
     _overlayComponentWrappers = [NSMutableArray new];
     _componentWrappersByIdentifier = [NSMutableDictionary new];
     _componentWrappersByCellIdentifier = [NSMutableDictionary new];
-    _componentUIStateManager = [HUBComponentUIStateManager new];
-    _childComponentReusePool = [[HUBComponentReusePool alloc] initWithComponentRegistry:_componentRegistry
-                                                                         UIStateManager:_componentUIStateManager];
+    _componentWrappersByModelIdentifier = [NSMutableDictionary new];
     
-    _viewModelLoader.delegate = self;
-    _imageLoader.delegate = self;
+    viewModelLoader.delegate = self;
+    viewModelLoader.actionPerformer = self;
+    imageLoader.delegate = self;
     
     self.automaticallyAdjustsScrollViewInsets = [_scrollHandler shouldAutomaticallyAdjustContentInsetsInViewController:self];
     
@@ -153,6 +172,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadView
 {
     self.view = [[HUBContainerView alloc] initWithFrame:CGRectZero];
+
     [self createCollectionViewIfNeeded];
 }
 
@@ -211,8 +231,11 @@ NS_ASSUME_NONNULL_BEGIN
     self.viewHasBeenLaidOut = YES;
 
     if (self.viewModel != nil) {
-        id<HUBViewModel> const viewModel = self.viewModel;
-        [self reloadCollectionViewWithViewModel:viewModel animated:NO];
+        if (self.viewModelHasChangedSinceLastLayoutUpdate || !CGRectEqualToRect(self.collectionView.frame, self.view.bounds)) {
+            self.collectionView.frame = self.view.bounds;
+            id<HUBViewModel> const viewModel = self.viewModel;
+            [self reloadCollectionViewWithViewModel:viewModel animated:NO];
+        }
     }
 }
 
@@ -234,37 +257,145 @@ NS_ASSUME_NONNULL_BEGIN
         return;
     }
 
-    [self.collectionView removeFromSuperview];
-    self.collectionView = nil;
+    if (self.collectionView != nil) {
+        UICollectionView * const collectionView = self.collectionView;
+        [collectionView removeFromSuperview];
+        [self.view removeGestureRecognizer:collectionView.panGestureRecognizer];
+        
+        self.collectionView = nil;
+    }
+    
     self.viewModel = nil;
 }
 
 #pragma mark - HUBViewController
 
-- (NSDictionary<NSNumber *, UIView *> *)visibleBodyComponentViews
+- (BOOL)isViewScrolling
 {
-    NSMutableDictionary<NSNumber *, UIView *> * const visibleViews = [NSMutableDictionary new];
+    return self.collectionView.isDragging || self.collectionView.isDecelerating;
+}
+
+- (NSDictionary<NSIndexPath *, UIView *> *)visibleComponentViewsForComponentType:(HUBComponentType)componentType
+{
+    NSMutableDictionary<NSIndexPath *, UIView *> * const visibleViewIndexPaths = [NSMutableDictionary new];
+    NSMutableArray<HUBComponentWrapper *> * const visibleComponents = [NSMutableArray array];
+
+    for (HUBComponentWrapper * const rootComponentWrapper in [self rootComponentWrappersForComponentType:componentType]) {
+        [self addComponentWrapper:rootComponentWrapper toArray:visibleComponents];
+    }
+
+    for (HUBComponentWrapper * const visibleComponent in visibleComponents) {
+        NSIndexPath * const indexPath = visibleComponent.model.indexPath;
+        visibleViewIndexPaths[indexPath] = HUBComponentLoadViewIfNeeded(visibleComponent);
+    }
+
+    return [visibleViewIndexPaths copy];
+}
+
+- (nullable UIView *)visibleViewForComponentOfType:(HUBComponentType)componentType indexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger const rootIndex = [indexPath indexAtPosition:0];
     
-    for (HUBComponentCollectionViewCell * const cell in self.collectionView.visibleCells) {
-        HUBComponentWrapper * const wrapper = [self componentWrapperFromCell:cell];
-        visibleViews[@(wrapper.model.index)] = HUBComponentLoadViewIfNeeded(wrapper);
+    if (rootIndex == NSNotFound) {
+        return nil;
     }
     
-    return [visibleViews copy];
+    HUBComponentWrapper *componentWrapper;
+    
+    switch (componentType) {
+        case HUBComponentTypeHeader:
+            componentWrapper = self.headerComponentWrapper;
+            break;
+        case HUBComponentTypeBody: {
+            NSIndexPath * const rootIndexPath = [NSIndexPath indexPathForItem:(NSInteger)rootIndex inSection:0];
+            HUBComponentCollectionViewCell * const cell = (HUBComponentCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:rootIndexPath];
+            
+            if (cell == nil) {
+                return nil;
+            }
+            
+            componentWrapper = [self componentWrapperFromCell:cell];
+            break;
+        }
+        case HUBComponentTypeOverlay: {
+            if (rootIndex >= self.overlayComponentWrappers.count) {
+                return nil;
+            }
+            
+            componentWrapper = self.overlayComponentWrappers[rootIndex];
+            break;
+        }
+    }
+    
+    if (indexPath.length == 1) {
+        return componentWrapper.view;
+    }
+    
+    for (NSUInteger indexPosition = 1; indexPosition < indexPath.length; indexPosition++) {
+        NSArray<HUBComponentWrapper *> * const visibleChildren = componentWrapper.visibleChildren;
+        NSUInteger const childIndex = [indexPath indexAtPosition:indexPosition];
+        
+        if (childIndex >= visibleChildren.count) {
+            return nil;
+        }
+        
+        componentWrapper = visibleChildren[childIndex];
+    }
+    
+    return componentWrapper.view;
+}
+
+- (NSArray<HUBComponentWrapper *> *)rootComponentWrappersForComponentType:(HUBComponentType)componentType
+{
+    NSMutableArray<HUBComponentWrapper *> * const rootComponentWrappers = [NSMutableArray array];
+
+    switch (componentType) {
+        case HUBComponentTypeHeader: {
+            if (self.headerComponentWrapper != nil) {
+                HUBComponentWrapper * const headerComponentWrapper = self.headerComponentWrapper;
+                [rootComponentWrappers addObject:headerComponentWrapper];
+            }
+            break;
+        }
+        case HUBComponentTypeBody: {
+            for (HUBComponentCollectionViewCell * const cell in self.collectionView.visibleCells) {
+                HUBComponentWrapper * const wrapper = [self componentWrapperFromCell:cell];
+                [rootComponentWrappers addObject:wrapper];
+            }
+            break;
+        }
+        case HUBComponentTypeOverlay: {
+            // All root overlay components are implicitly visible.
+            [rootComponentWrappers addObjectsFromArray:self.overlayComponentWrappers];
+            break;
+        }
+    }
+
+    return rootComponentWrappers;
+}
+
+- (void)addComponentWrapper:(HUBComponentWrapper *)componentWrapper toArray:(NSMutableArray<HUBComponentWrapper *> *)array
+{
+    [array addObject:componentWrapper];
+    for (HUBComponentWrapper *childComponentWrapper in componentWrapper.visibleChildren) {
+        [self addComponentWrapper:childComponentWrapper toArray:array];
+    }
 }
 
 - (CGRect)frameForBodyComponentAtIndex:(NSUInteger)index
 {
-    if (index >= self.viewModel.bodyComponentModels.count) {
+    if (index >= (NSUInteger)[self.collectionView numberOfItemsInSection:0]) {
         return CGRectZero;
     }
     
     NSIndexPath * const indexPath = [NSIndexPath indexPathForItem:(NSInteger)index inSection:0];
-    return [self.collectionView layoutAttributesForItemAtIndexPath:indexPath].frame;
+    return [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath].frame;
 }
 
 - (NSUInteger)indexOfBodyComponentAtPoint:(CGPoint)point
 {
+    point.y += self.collectionView.contentOffset.y;
+    
     NSIndexPath * const indexPath = [self.collectionView indexPathForItemAtPoint:point];
     
     if (indexPath == nil) {
@@ -279,7 +410,39 @@ NS_ASSUME_NONNULL_BEGIN
     const CGFloat x = contentOffset.x;
     const CGFloat y = contentOffset.y - self.collectionView.contentInset.top;
     
-    [self.collectionView setContentOffset:CGPointMake(x, y) animated:animated];
+    [self setContentOffset:CGPointMake(x, y) animated:animated];
+}
+
+- (void)scrollToComponentOfType:(HUBComponentType)componentType
+                      indexPath:(NSIndexPath *)indexPath
+                 scrollPosition:(HUBScrollPosition)scrollPosition
+                       animated:(BOOL)animated
+                     completion:(void (^ _Nullable)(NSIndexPath *))completion
+{
+    if (componentType == HUBComponentTypeBody) {
+        NSAssert([indexPath indexAtPosition:0] < (NSUInteger)[self.collectionView numberOfItemsInSection:0],
+                 @"Root index %@ specified but there are only %@ components in the list.",
+                 @([indexPath indexAtPosition:0]), @([self.collectionView numberOfItemsInSection:0]));
+    } else if (componentType == HUBComponentTypeHeader) {
+        NSAssert(self.headerComponentWrapper != nil, @"Attempted to scroll to component within header, but no header was found.");
+    } else if (componentType == HUBComponentTypeOverlay) {
+        NSAssert([indexPath indexAtPosition:0] < self.overlayComponentWrappers.count,
+                 @"Root index %@ specified but there are only %@ overlays in the list.",
+                 @([indexPath indexAtPosition:0]), @(self.overlayComponentWrappers.count));
+    }
+    
+    [self scrollToRemainingComponentsOfType:componentType
+                              startPosition:0
+                                  indexPath:indexPath
+                                  component:nil
+                             scrollPosition:scrollPosition
+                                   animated:animated
+                                 completion:completion];
+}
+
+-(void)reload
+{
+    [self.viewModelLoader loadViewModelRegardlessOfReloadPolicy];
 }
 
 #pragma mark - HUBViewModelLoaderDelegate
@@ -289,19 +452,20 @@ NS_ASSUME_NONNULL_BEGIN
     if ([self.viewModel.buildDate isEqual:viewModel.buildDate]) {
         return;
     }
-    
+
+    if (self.isRendering) {
+        self.pendingViewModel = viewModel;
+        return;
+    }
+
+    self.rendering = YES;
+
     id<HUBViewControllerDelegate> const delegate = self.delegate;
     [delegate viewController:self willUpdateWithViewModel:viewModel];
-
-    if (self.viewModel != nil && !self.viewModelIsInitial) {
-        id<HUBViewModel> const currentModel = self.viewModel;
-        self.lastViewModelDiff = [HUBViewModelDiff diffFromViewModel:currentModel toViewModel:viewModel];
-    }
     
     HUBCopyNavigationItemProperties(self.navigationItem, viewModel.navigationItem);
     
     self.viewModel = viewModel;
-    self.viewModelIsInitial = NO;
     self.viewModelHasChangedSinceLastLayoutUpdate = YES;
     [self.view setNeedsLayout];
     
@@ -317,21 +481,65 @@ NS_ASSUME_NONNULL_BEGIN
     [self.delegate viewController:self didFailToUpdateWithError:error];
 }
 
-- (BOOL)selectComponentWithModel:(id<HUBComponentModel>)componentModel
+- (BOOL)selectComponentWithModel:(id<HUBComponentModel>)componentModel customData:(nullable NSDictionary<NSString *, id> *)customData
 {
-    return [self handleSelectionForComponentWithModel:componentModel cellIndexPath:nil];
+    HUBComponentWrapper * const componentWrapper = self.componentWrappersByModelIdentifier[componentModel.identifier];
+    
+    if (componentWrapper != nil) {
+        [componentWrapper updateViewForSelectionState:HUBComponentSelectionStateSelected];
+        
+        // Deselect after a short time, to enable the user to see the selection for a brief time
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [componentWrapper updateViewForSelectionState:HUBComponentSelectionStateNone];
+        });
+        
+        if (componentWrapper == self.highlightedComponentWrapper) {
+            self.highlightedComponentWrapper = nil;
+        }
+    }
+    
+    BOOL selectionHandled = NO;
+    
+    for (HUBIdentifier * const identifier in componentModel.target.actionIdentifiers) {
+        selectionHandled = [self performActionForTrigger:HUBActionTriggerSelection
+                                        customIdentifier:identifier
+                                              customData:customData
+                                          componentModel:componentModel];
+        
+        if (selectionHandled) {
+            break;
+        }
+    }
+    
+    if (!selectionHandled) {
+        selectionHandled = [self performActionForTrigger:HUBActionTriggerSelection
+                                        customIdentifier:nil
+                                              customData:customData
+                                          componentModel:componentModel];
+    }
+    
+    if (selectionHandled) {
+        [self.delegate viewController:self componentSelectedWithModel:componentModel];
+    }
+    
+    return selectionHandled;
+}
+
+- (void)cancelComponentSelection
+{
+    [self.highlightedComponentWrapper updateViewForSelectionState:HUBComponentSelectionStateNone];
 }
 
 #pragma mark - HUBImageLoaderDelegate
 
-- (void)imageLoader:(id<HUBImageLoader>)imageLoader didLoadImage:(UIImage *)image forURL:(NSURL *)imageURL fromCache:(BOOL)loadedFromCache
+- (void)imageLoader:(id<HUBImageLoader>)imageLoader didLoadImage:(UIImage *)image forURL:(NSURL *)imageURL
 {
     HUBPerformOnMainQueue(^{
         NSArray * const contexts = self.componentImageLoadingContexts[imageURL];
         self.componentImageLoadingContexts[imageURL] = nil;
         
         for (HUBComponentImageLoadingContext * const context in contexts) {
-            [self handleLoadedComponentImage:image forURL:imageURL fromCache:loadedFromCache context:context];
+            [self handleLoadedComponentImage:image forURL:imageURL context:context];
         }
     });
 }
@@ -345,17 +553,43 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - HUBComponentWrapperDelegate
 
+- (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
+willUpdateSelectionState:(HUBComponentSelectionState)selectionState
+{
+    if (selectionState == HUBComponentSelectionStateHighlighted) {
+        self.highlightedComponentWrapper = componentWrapper;
+    }
+}
+
+- (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
+ didUpdateSelectionState:(HUBComponentSelectionState)selectionState
+{
+    switch (selectionState) {
+        case HUBComponentSelectionStateNone:
+            if (componentWrapper == (HUBComponentWrapper *)self.highlightedComponentWrapper) {
+                self.highlightedComponentWrapper = nil;
+            }
+            
+            break;
+        case HUBComponentSelectionStateHighlighted:
+            break;
+        case HUBComponentSelectionStateSelected:
+            [self selectComponentWithModel:componentWrapper.model customData:nil];
+            break;
+    }
+}
+
 - (HUBComponentWrapper *)componentWrapper:(HUBComponentWrapper *)componentWrapper
                    childComponentForModel:(id<HUBComponentModel>)model
 {
-    CGSize const containerViewSize = HUBComponentLoadViewIfNeeded(componentWrapper).frame.size;
+    CGSize const containerViewSize = [self childComponentContainerViewSizeForParentWrapper:componentWrapper];
     
-    HUBComponentWrapper * const childComponentWrapper = [self.childComponentReusePool componentWrapperForModel:model
-                                                                                                      delegate:self
-                                                                                                        parent:componentWrapper];
+    HUBComponentWrapper * const childComponentWrapper = [self.componentReusePool componentWrapperForModel:model
+                                                                                                 delegate:self
+                                                                                                   parent:componentWrapper];
     
     UIView * const childComponentView = HUBComponentLoadViewIfNeeded(childComponentWrapper);
-    [childComponentWrapper configureViewWithModel:model containerViewSize:containerViewSize];
+    [self configureComponentWrapper:childComponentWrapper withModel:model containerViewSize:containerViewSize];
     [self didAddComponentWrapper:childComponentWrapper];
     
     CGSize const preferredViewSize = [childComponentWrapper preferredViewSizeForDisplayingModel:model
@@ -378,14 +612,18 @@ NS_ASSUME_NONNULL_BEGIN
     if (childIndex >= componentModel.children.count) {
         return;
     }
+    
+    [self loadImagesForComponentWrapper:componentWrapper childIndex:@(childIndex)];
 
     id<HUBComponentModel> const childComponentModel = componentModel.children[childIndex];
-    [self loadImagesForComponentWrapper:componentWrapper childIndex:@(childIndex)];
-    [self.delegate viewController:self componentWithModel:childComponentModel willAppearInView:childView];
+    NSSet<HUBComponentLayoutTrait> * const layoutTraits = childComponent.layoutTraits ?: [NSSet new];
+    
+    [self.delegate viewController:self
+               componentWithModel:childComponentModel
+                     layoutTraits:layoutTraits
+                 willAppearInView:childView];
 
-    if (childComponent.isContentOffsetObserver) {
-        [self.contentOffsetObservingComponentWrappers addObject:childComponent];
-    }
+    [self addComponentWrapperToLookupTables:childComponent];
 }
 
 - (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
@@ -400,16 +638,19 @@ NS_ASSUME_NONNULL_BEGIN
     }
 
     id<HUBComponentModel> const childComponentModel = componentModel.children[childIndex];
-    [self.delegate viewController:self componentWithModel:childComponentModel didDisappearFromView:childView];
-
-    if (childComponent.isContentOffsetObserver) {
-        [self.contentOffsetObservingComponentWrappers removeObject:childComponent];
-    }
+    NSSet<HUBComponentLayoutTrait> * const layoutTraits = childComponent.layoutTraits ?: [NSSet new];
     
+    [self.delegate viewController:self
+               componentWithModel:childComponentModel
+                     layoutTraits:layoutTraits
+             didDisappearFromView:childView];
+
+    [self removeComponentWrapperFromLookupTables:childComponent];
 }
 
 - (void)componentWrapper:(HUBComponentWrapper *)componentWrapper
     childSelectedAtIndex:(NSUInteger)childIndex
+              customData:(nullable NSDictionary<NSString *, id> *)customData
 {
     id<HUBComponentModel> const componentModel = componentWrapper.model;
     
@@ -418,7 +659,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     id<HUBComponentModel> const childComponentModel = componentModel.children[childIndex];
-    [self handleSelectionForComponentWithModel:childComponentModel cellIndexPath:nil];
+    [self selectComponentWithModel:childComponentModel customData:customData];
 }
 
 - (BOOL)componentWrapper:(HUBComponentWrapper *)componentWrapper performActionWithIdentifier:(HUBIdentifier *)identifier customData:(nullable NSDictionary<NSString *, id> *)customData
@@ -431,11 +672,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)sendComponentWrapperToReusePool:(HUBComponentWrapper *)componentWrapper
 {
-    if (componentWrapper.isRootComponent) {
-        return;
+    if (!componentWrapper.isRootComponent) {
+        [self.componentReusePool addComponentWrappper:componentWrapper];
     }
-    
-    [self.childComponentReusePool addComponentWrappper:componentWrapper];
+
+    if (componentWrapper.view) {
+        UIView *componentView = componentWrapper.view;
+        [self.delegate viewController:self willReuseComponentWithView:componentView];
+    }
+}
+
+#pragma mark - HUBActionPerformer
+
+- (BOOL)performActionWithIdentifier:(HUBIdentifier *)identifier customData:(nullable NSDictionary<NSString *, id> *)customData
+{
+    return [self performActionForTrigger:HUBActionTriggerContentOperation
+                        customIdentifier:identifier
+                              customData:customData
+                          componentModel:nil];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -463,14 +717,18 @@ NS_ASSUME_NONNULL_BEGIN
                                                                                             forIndexPath:indexPath];
     
     if (cell.component == nil) {
-        id<HUBComponent> const component = [self.componentRegistry createComponentForModel:componentModel];
-        HUBComponentWrapper * const componentWrapper = [self wrapComponent:component withModel:componentModel];
+        HUBComponentWrapper * const componentWrapper = [self.componentReusePool componentWrapperForModel:componentModel
+                                                                                                delegate:self
+                                                                                                  parent:nil];
+        
         self.componentWrappersByCellIdentifier[cell.identifier] = componentWrapper;
         cell.component = componentWrapper;
+        [componentWrapper viewDidMoveToSuperview:cell];
+        [self didAddComponentWrapper:componentWrapper];
     }
     
     HUBComponentWrapper * const componentWrapper = [self componentWrapperFromCell:cell];
-    [componentWrapper configureViewWithModel:componentModel containerViewSize:collectionView.frame.size];
+    [self configureComponentWrapper:componentWrapper withModel:componentModel containerViewSize:collectionView.frame.size];
     
     [self loadImagesForComponentWrapper:componentWrapper
                              childIndex:nil];
@@ -478,13 +736,7 @@ NS_ASSUME_NONNULL_BEGIN
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    id<HUBComponentModel> const componentModel = self.viewModel.bodyComponentModels[(NSUInteger)indexPath.item];
-    [self handleSelectionForComponentWithModel:componentModel cellIndexPath:indexPath];
-}
+#pragma mark - HUBCollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView
        willDisplayCell:(UICollectionViewCell *)cell
@@ -494,22 +746,33 @@ NS_ASSUME_NONNULL_BEGIN
               ignorePreviousAppearance:self.collectionViewIsScrolling];
     
     HUBComponentWrapper * const componentWrapper = [self componentWrapperFromCell:(HUBComponentCollectionViewCell *)cell];
-    if (componentWrapper.isContentOffsetObserver) {
-        [self.contentOffsetObservingComponentWrappers addObject:componentWrapper];
-    }
+
+    [self addComponentWrapperToLookupTables:componentWrapper];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView
   didEndDisplayingCell:(UICollectionViewCell *)cell
     forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<HUBComponentModel> const componentModel = [self componentWrapperFromCell:(HUBComponentCollectionViewCell *)cell].model;
-    [self.delegate viewController:self componentWithModel:componentModel didDisappearFromView:cell];
-    
     HUBComponentWrapper * const componentWrapper = [self componentWrapperFromCell:(HUBComponentCollectionViewCell *)cell];
-    if (componentWrapper.isContentOffsetObserver) {
-        [self.contentOffsetObservingComponentWrappers removeObject:componentWrapper];
+    
+    [self.delegate viewController:self
+               componentWithModel:componentWrapper.model
+                     layoutTraits:componentWrapper.layoutTraits
+             didDisappearFromView:cell];
+
+    [self removeComponentWrapperFromLookupTables:componentWrapper];
+}
+
+- (BOOL)collectionViewShouldBeginScrolling:(HUBCollectionView *)collectionView
+{
+    id<HUBViewControllerDelegate> const delegate = self.delegate;
+    
+    if (delegate == nil) {
+        return YES;
     }
+    
+    return [delegate viewControllerShouldStartScrolling:self];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -519,6 +782,8 @@ NS_ASSUME_NONNULL_BEGIN
     for (HUBComponentWrapper * const componentWrapper in self.contentOffsetObservingComponentWrappers) {
         [componentWrapper updateViewForChangedContentOffset:scrollView.contentOffset];
     }
+    
+    [self.highlightedComponentWrapper updateViewForSelectionState:HUBComponentSelectionStateNone];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -526,6 +791,8 @@ NS_ASSUME_NONNULL_BEGIN
     CGRect const contentRect = [self contentRectForScrollView:scrollView];
     [self.scrollHandler scrollingWillStartInViewController:self currentContentRect:contentRect];
     self.collectionViewIsScrolling = YES;
+    
+    [self.highlightedComponentWrapper updateViewForSelectionState:HUBComponentSelectionStateNone];
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
@@ -539,6 +806,12 @@ NS_ASSUME_NONNULL_BEGIN
                                                                                     contentInset:scrollView.contentInset
                                                                             currentContentOffset:scrollView.contentOffset
                                                                            proposedContentOffset:*targetContentOffset];
+    
+    if (targetContentOffset->y >= (scrollView.contentSize.height - CGRectGetHeight(scrollView.frame))) {
+        if (!self.viewModelLoader.isLoading) {
+            [self.viewModelLoader loadNextPageForCurrentViewModel];
+        }
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -551,6 +824,14 @@ NS_ASSUME_NONNULL_BEGIN
 {
     if (!decelerate) {
         [self notifyScrollingDidEndInScrollView:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    if (self.pendingScrollAnimationCallback) {
+        self.pendingScrollAnimationCallback();
+        self.pendingScrollAnimationCallback = nil;
     }
 }
 
@@ -570,7 +851,14 @@ NS_ASSUME_NONNULL_BEGIN
     return contentRect;
 }
 
-#pragma mark - NSNotification selectors
+#pragma mark - UIGestureRecognizerDelegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
+
+#pragma mark - Notification handling
 
 - (void)handleKeyboardWillShowNotification:(NSNotification *)notification
 {
@@ -593,80 +881,59 @@ NS_ASSUME_NONNULL_BEGIN
         return;
     }
     
-    UICollectionView * const collectionView = [self.collectionViewFactory createCollectionView];
+    HUBCollectionView * const collectionView = [self.collectionViewFactory createCollectionView];
     self.collectionView = collectionView;
     collectionView.showsVerticalScrollIndicator = [self.scrollHandler shouldShowScrollIndicatorsInViewController:self];
     collectionView.showsHorizontalScrollIndicator = collectionView.showsVerticalScrollIndicator;
     collectionView.decelerationRate = [self.scrollHandler scrollDecelerationRateForViewController:self];
     collectionView.dataSource = self;
     collectionView.delegate = self;
-    
-    [self.view insertSubview:collectionView atIndex:0];
+
+    self.lastContentOffset = self.collectionView.contentOffset;
+
+    HUBContainerView *containerView = (HUBContainerView *)self.view;
+    containerView.collectionView = self.collectionView;
 }
 
 - (void)reloadCollectionViewWithViewModel:(id<HUBViewModel>)viewModel animated:(BOOL)animated
 {
-    if (!self.viewModelHasChangedSinceLastLayoutUpdate) {
-        if (CGRectEqualToRect(self.collectionView.frame, self.view.bounds)) {
-            return;
-        }
-    }
-    
-    self.collectionView.frame = self.view.bounds;
-    
-    [self saveStatesForVisibleComponents];
-    
     if (![self.collectionView.collectionViewLayout isKindOfClass:[HUBCollectionViewLayout class]]) {
         self.collectionView.collectionViewLayout = [[HUBCollectionViewLayout alloc] initWithComponentRegistry:self.componentRegistry
                                                                                        componentLayoutManager:self.componentLayoutManager];
     }
-    
-    HUBCollectionViewLayout * const layout = (HUBCollectionViewLayout *)self.collectionView.collectionViewLayout;
-    
-    /* Performing batch updates inbetween viewDidLoad and viewDidAppear is seemingly not allowed, as it
-     causes an assertion inside a private UICollectionView method. If no diff exists, fall back to
-     a complete reload. */
-    if (!self.viewHasAppeared || self.lastViewModelDiff == nil) {
-        [self.collectionView reloadData];
-        
-        [layout computeForCollectionViewSize:self.collectionView.frame.size viewModel:viewModel diff:self.lastViewModelDiff];
 
-        if (self.viewHasAppeared) {
-            /* Forcing a re-layout as the reloadData-call doesn't trigger the numberOfItemsInSection:-calls
-             by itself, and batch update calls don't play well without having an initial item count. */
-            [self.collectionView setNeedsLayout];
-            [self.collectionView layoutIfNeeded];
-        }
-        
-        self.lastViewModelDiff = nil;
-    } else {
-        void (^updateBlock)() = ^{
-            [self.collectionView performBatchUpdates:^{
-                HUBViewModelDiff * const lastDiff = self.lastViewModelDiff;
-                
-                [self.collectionView insertItemsAtIndexPaths:lastDiff.insertedBodyComponentIndexPaths];
-                [self.collectionView deleteItemsAtIndexPaths:lastDiff.deletedBodyComponentIndexPaths];
-                [self.collectionView reloadItemsAtIndexPaths:lastDiff.reloadedBodyComponentIndexPaths];
-                
-                [layout computeForCollectionViewSize:self.collectionView.frame.size viewModel:viewModel diff:self.lastViewModelDiff];
-            } completion:^(BOOL finished) {
-                self.lastViewModelDiff = nil;
-            }];
-        };
-        
-        if (animated) {
-            updateBlock();
-        } else {
-            [UIView performWithoutAnimation:updateBlock];
-        }
-    }
-    
+    [self saveStatesForVisibleComponents];
+
     [self configureHeaderComponent];
     [self configureOverlayComponents];
-    [self headerAndOverlayComponentViewsWillAppear];
+    [self adjustCollectionViewContentInsetWithProposedTopValue:[self calculateTopContentInset]];
+    
+    BOOL const shouldAddHeaderMargin = [self shouldAutomaticallyManageTopContentInset];
+    
+    UICollectionView * const nonnullCollectionView = self.collectionView;
+    [self.viewModelRenderer renderViewModel:viewModel
+                           inCollectionView:nonnullCollectionView
+                          usingBatchUpdates:self.viewHasAppeared
+                                   animated:animated
+                            addHeaderMargin:shouldAddHeaderMargin
+                                 completion:^{
+        self.rendering = NO;
+
+        if (self.pendingViewModel != nil) {
+            id<HUBViewModel> pendingViewModel = self.pendingViewModel;
+            self.pendingViewModel = nil;
+            [self viewModelLoader:self.viewModelLoader didLoadViewModel:pendingViewModel];
+            return;
+        }
+
+        id<HUBViewControllerDelegate> delegate = self.delegate;
+
+        [self headerAndOverlayComponentViewsWillAppear];
+        [self adjustCollectionViewContentInsetWithProposedTopValue:[self calculateTopContentInset]];
+        [delegate viewControllerDidFinishRendering:self];
+    }];
     
     self.viewModelHasChangedSinceLastLayoutUpdate = NO;
-    [self.delegate viewControllerDidFinishRendering:self];
 }
 
 - (void)saveStatesForVisibleComponents
@@ -677,22 +944,32 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (HUBComponentWrapper *)wrapComponent:(id<HUBComponent>)component withModel:(id<HUBComponentModel>)model
-{
-    HUBComponentWrapper * const wrapper = [[HUBComponentWrapper alloc] initWithComponent:component
-                                                                                   model:model
-                                                                          UIStateManager:self.componentUIStateManager
-                                                                                delegate:self
-                                                                                  parent:nil];
-    
-    [self didAddComponentWrapper:wrapper];
-    return wrapper;
-}
-
 - (void)didAddComponentWrapper:(HUBComponentWrapper *)wrapper
 {
     wrapper.delegate = self;
     self.componentWrappersByIdentifier[wrapper.identifier] = wrapper;
+}
+
+- (void)configureComponentWrapper:(HUBComponentWrapper *)wrapper withModel:(id<HUBComponentModel>)model containerViewSize:(CGSize)containerViewSize
+{
+    NSString * const currentModelIdentifier = wrapper.model.identifier;
+    
+    if (self.componentWrappersByModelIdentifier[currentModelIdentifier] == wrapper) {
+        self.componentWrappersByModelIdentifier[currentModelIdentifier] = nil;
+    }
+    
+    [wrapper configureViewWithModel:model containerViewSize:containerViewSize];
+    self.componentWrappersByModelIdentifier[model.identifier] = wrapper;
+}
+
+- (CGSize)childComponentContainerViewSizeForParentWrapper:(HUBComponentWrapper *)parentWrapper
+{
+    if (parentWrapper.isRootComponent && parentWrapper.model.type == HUBComponentTypeBody) {
+        NSIndexPath * const indexPath = [NSIndexPath indexPathForItem:(NSInteger)parentWrapper.model.index inSection:0];
+        return [self.collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath].frame.size;
+    }
+    
+    return HUBComponentLoadViewIfNeeded(parentWrapper).frame.size;
 }
 
 - (nullable HUBComponentWrapper *)componentWrapperFromCell:(HUBComponentCollectionViewCell *)cell
@@ -700,35 +977,51 @@ NS_ASSUME_NONNULL_BEGIN
     return self.componentWrappersByCellIdentifier[cell.identifier];
 }
 
+- (CGFloat)calculateTopContentInset
+{
+    if (![self shouldAutomaticallyManageTopContentInset]) {
+        return 0;
+    }
+
+    if (self.headerComponentWrapper != nil) {
+        return 0;
+    }
+
+    CGFloat const statusBarWidth = CGRectGetWidth([UIApplication sharedApplication].statusBarFrame);
+    CGFloat const statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    CGFloat const navigationBarWidth = CGRectGetWidth(self.navigationController.navigationBar.frame);
+    CGFloat const navigationBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
+    CGFloat const topBarHeight = MIN(statusBarWidth, statusBarHeight) + MIN(navigationBarWidth, navigationBarHeight);
+    return topBarHeight;
+}
+
+- (BOOL)shouldAutomaticallyManageTopContentInset
+{
+    id<HUBViewControllerDelegate> delegate = self.delegate;
+    
+    if (delegate == nil) {
+        return YES;
+    }
+    
+    return [delegate viewControllerShouldAutomaticallyManageTopContentInset:self];
+}
+
 - (void)configureHeaderComponent
 {
     id<HUBComponentModel> const componentModel = self.viewModel.headerComponentModel;
     
     if (componentModel == nil) {
-        [self removeHeaderComponent];
-        
-        CGFloat const statusBarWidth = CGRectGetWidth([UIApplication sharedApplication].statusBarFrame);
-        CGFloat const statusBarHeight = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
-        CGFloat const navigationBarWidth = CGRectGetWidth(self.navigationController.navigationBar.frame);
-        CGFloat const navigationBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
-        CGFloat const proposedTopInset = MIN(statusBarWidth, statusBarHeight) + MIN(navigationBarWidth, navigationBarHeight);
-
-        [self adjustCollectionViewContentInsetWithProposedTopValue:proposedTopInset];
+        if (self.headerComponentWrapper != nil) {
+            HUBComponentWrapper * const headerComponentWrapper = self.headerComponentWrapper;
+            [self removeComponentWrapper:headerComponentWrapper];
+            self.headerComponentWrapper = nil;
+        }
         
         return;
     }
     
     self.headerComponentWrapper = [self configureHeaderOrOverlayComponentWrapperWithModel:componentModel
                                                                  previousComponentWrapper:self.headerComponentWrapper];
-    
-    CGFloat const headerViewHeight = CGRectGetHeight(self.headerComponentWrapper.view.frame);
-    [self adjustCollectionViewContentInsetWithProposedTopValue:headerViewHeight];
-}
-
-- (void)removeHeaderComponent
-{
-    [self.headerComponentWrapper.view removeFromSuperview];
-    self.headerComponentWrapper = nil;
 }
 
 - (void)configureOverlayComponents
@@ -754,7 +1047,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     for (HUBComponentWrapper * const unusedOverlayComponentWrapper in currentOverlayComponentWrappers) {
-        [self removeOverlayComponentWrapper:unusedOverlayComponentWrapper];
+        [self removeComponentWrapper:unusedOverlayComponentWrapper];
     }
 }
 
@@ -782,15 +1075,13 @@ NS_ASSUME_NONNULL_BEGIN
     [UIView commitAnimations];
 }
 
-- (void)removeOverlayComponentWrapper:(HUBComponentWrapper *)wrapper
-{
-    self.componentWrappersByIdentifier[wrapper.identifier] = nil;
-    [wrapper.view removeFromSuperview];
-}
-
 - (HUBComponentWrapper *)configureHeaderOrOverlayComponentWrapperWithModel:(id<HUBComponentModel>)componentModel
-                                                                previousComponentWrapper:(nullable HUBComponentWrapper *)previousComponentWrapper
+                                                  previousComponentWrapper:(nullable HUBComponentWrapper *)previousComponentWrapper
 {
+    if ([previousComponentWrapper.model isEqual:componentModel]) {
+        return (HUBComponentWrapper *)previousComponentWrapper;
+    }
+    
     BOOL const shouldReuseCurrentComponent = [previousComponentWrapper.model.componentIdentifier isEqual:componentModel.componentIdentifier];
     HUBComponentWrapper *componentWrapper;
     
@@ -800,11 +1091,11 @@ NS_ASSUME_NONNULL_BEGIN
     } else {
         if (previousComponentWrapper != nil) {
             HUBComponentWrapper * const nonNilPreviousComponentWrapper = previousComponentWrapper;
-            [self removeOverlayComponentWrapper:nonNilPreviousComponentWrapper];
+            [self removeComponentWrapper:nonNilPreviousComponentWrapper];
         }
         
-        id<HUBComponent> const component = [self.componentRegistry createComponentForModel:componentModel];
-        componentWrapper = [self wrapComponent:component withModel:componentModel];
+        componentWrapper = [self.componentReusePool componentWrapperForModel:componentModel delegate:self parent:nil];
+        [self didAddComponentWrapper:componentWrapper];
     }
     
     CGSize const containerViewSize = self.view.frame.size;
@@ -812,7 +1103,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                          containerViewSize:containerViewSize];
     
     UIView * const componentView = HUBComponentLoadViewIfNeeded(componentWrapper);
-    [componentWrapper configureViewWithModel:componentModel containerViewSize:containerViewSize];
+    [self configureComponentWrapper:componentWrapper withModel:componentModel containerViewSize:containerViewSize];
     componentView.frame = CGRectMake(0, 0, componentViewSize.width, componentViewSize.height);
     
     [self loadImagesForComponentWrapper:componentWrapper
@@ -820,13 +1111,19 @@ NS_ASSUME_NONNULL_BEGIN
     
     if (!shouldReuseCurrentComponent) {
         [self.view addSubview:componentView];
+        [componentWrapper viewDidMoveToSuperview:self.view];
     }
-    
-    if (componentWrapper.isContentOffsetObserver) {
-        [self.contentOffsetObservingComponentWrappers addObject:componentWrapper];
-    }
-    
+
+    [self addComponentWrapperToLookupTables:componentWrapper];
+
     return componentWrapper;
+}
+
+- (void)removeComponentWrapper:(HUBComponentWrapper *)wrapper
+{
+    self.componentWrappersByIdentifier[wrapper.identifier] = nil;
+    self.componentWrappersByModelIdentifier[wrapper.model.identifier] = nil;
+    [wrapper.view removeFromSuperview];
 }
 
 - (void)adjustCollectionViewContentInsetWithProposedTopValue:(CGFloat)topContentInset
@@ -841,7 +1138,7 @@ NS_ASSUME_NONNULL_BEGIN
         self.collectionView.contentInset = contentInsets;
         CGPoint contentOffset = self.collectionView.contentOffset;
         contentOffset.y = -contentInsets.top;
-        self.collectionView.contentOffset = contentOffset;
+        [self setContentOffset:contentOffset animated:NO];
     }
 
     self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
@@ -863,26 +1160,57 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     [self componentWrapperWillAppear:wrapper];
-    [self.delegate viewController:self componentWithModel:wrapper.model willAppearInView:cell];
+
+    id<HUBComponent> const component = cell.component;
+    
+    if (component == nil) {
+        return;
+    }
+
+    UIView * const componentView = HUBComponentLoadViewIfNeeded(component);
+    
+    [self.delegate viewController:self
+               componentWithModel:wrapper.model
+                     layoutTraits:wrapper.layoutTraits
+                 willAppearInView:componentView];
 }
 
 - (void)headerAndOverlayComponentViewsWillAppear
 {
+    id<HUBViewControllerDelegate> const delegate = self.delegate;
+
     if (self.headerComponentWrapper != nil) {
         HUBComponentWrapper * const headerComponentWrapper = self.headerComponentWrapper;
         [self componentWrapperWillAppear:headerComponentWrapper];
+
+        UIView * const componentView = HUBComponentLoadViewIfNeeded(headerComponentWrapper);
+
+        [delegate viewController:self
+              componentWithModel:headerComponentWrapper.model
+                    layoutTraits:headerComponentWrapper.layoutTraits
+                willAppearInView:componentView];
     }
     
     for (HUBComponentWrapper * const overlayComponentWrapper in self.overlayComponentWrappers) {
         [self componentWrapperWillAppear:overlayComponentWrapper];
+
+        UIView * const componentView = HUBComponentLoadViewIfNeeded(overlayComponentWrapper);
+
+        [delegate viewController:self
+              componentWithModel:overlayComponentWrapper.model
+                    layoutTraits:overlayComponentWrapper.layoutTraits
+                willAppearInView:componentView];
     }
 }
 
 - (void)componentWrapperWillAppear:(HUBComponentWrapper *)componentWrapper
 {
     [componentWrapper viewWillAppear];
-    
-    if (componentWrapper.isContentOffsetObserver) {
+
+    BOOL wasContentOffsetUpdated = componentWrapper.appearanceCount == 1 ||
+                                   !CGPointEqualToPoint(self.lastContentOffset, self.collectionView.contentOffset);
+
+    if (componentWrapper.isContentOffsetObserver && wasContentOffsetUpdated) {
         [componentWrapper updateViewForChangedContentOffset:self.collectionView.contentOffset];
     }
 }
@@ -956,14 +1284,15 @@ NS_ASSUME_NONNULL_BEGIN
     if (CGSizeEqualToSize(preferredSize, CGSizeZero)) {
         return;
     }
-    
+
     HUBComponentImageLoadingContext * const context = [[HUBComponentImageLoadingContext alloc] initWithImageType:imageData.type
                                                                                                  imageIdentifier:imageData.identifier
                                                                                                wrapperIdentifier:componentWrapper.identifier
-                                                                                                      childIndex:childIndex];
+                                                                                                      childIndex:childIndex
+                                                                                                       timestamp:[NSDate date].timeIntervalSinceReferenceDate];
     
     NSMutableArray *contextsForURL = self.componentImageLoadingContexts[imageURL];
-    
+
     if (contextsForURL == nil) {
         contextsForURL = [NSMutableArray arrayWithObject:context];
         self.componentImageLoadingContexts[imageURL] = contextsForURL;
@@ -976,7 +1305,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (void)handleLoadedComponentImage:(UIImage *)image forURL:(NSURL *)imageURL fromCache:(BOOL)loadedFromCache context:(HUBComponentImageLoadingContext *)context
+- (void)handleLoadedComponentImage:(UIImage *)image forURL:(NSURL *)imageURL context:(HUBComponentImageLoadingContext *)context
 {
     id<HUBViewModel> const viewModel = self.viewModel;
     
@@ -1020,46 +1349,14 @@ NS_ASSUME_NONNULL_BEGIN
     if (![imageData.URL isEqual:imageURL]) {
         return;
     }
-    
+
+    NSTimeInterval downloadTime = [NSDate date].timeIntervalSinceReferenceDate - context.timestamp;
+    BOOL animated = downloadTime > HUBImageDownloadTimeThreshold;
+
     [componentWrapper updateViewForLoadedImage:image
                                       fromData:imageData
                                          model:componentModel
-                                      animated:!loadedFromCache];
-}
-
-- (BOOL)handleSelectionForComponentWithModel:(id<HUBComponentModel>)componentModel cellIndexPath:(nullable NSIndexPath *)cellIndexPath
-{
-    if (cellIndexPath != nil) {
-        NSIndexPath * const indexPath = cellIndexPath;
-        [self.collectionView cellForItemAtIndexPath:indexPath].highlighted = NO;
-        [self.collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    }
-    
-    BOOL selectionHandled = NO;
-    
-    for (HUBIdentifier * const identifier in componentModel.target.actionIdentifiers) {
-        selectionHandled = [self performActionForTrigger:HUBActionTriggerSelection
-                                        customIdentifier:identifier
-                                              customData:nil
-                                          componentModel:componentModel];
-        
-        if (selectionHandled) {
-            break;
-        }
-    }
-    
-    if (!selectionHandled) {
-        selectionHandled = [self performActionForTrigger:HUBActionTriggerSelection
-                                        customIdentifier:nil
-                                              customData:nil
-                                          componentModel:componentModel];
-    }
-    
-    if (selectionHandled) {
-        [self.delegate viewController:self componentSelectedWithModel:componentModel];
-    }
-    
-    return selectionHandled;
+                                      animated:animated];
 }
 
 - (nullable id<HUBComponentModel>)childModelAtIndex:(NSUInteger)childIndex fromComponentWrapper:(HUBComponentWrapper *)componentWrapper
@@ -1076,7 +1373,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)performActionForTrigger:(HUBActionTrigger)trigger
                customIdentifier:(nullable HUBIdentifier *)customIdentifier
                      customData:(nullable NSDictionary<NSString *, id> *)customData
-                 componentModel:(id<HUBComponentModel>)componentModel
+                 componentModel:(nullable id<HUBComponentModel>)componentModel
 {
     if (self.viewModel == nil) {
         return NO;
@@ -1091,8 +1388,153 @@ NS_ASSUME_NONNULL_BEGIN
                                                                                        viewModel:viewModel
                                                                                   componentModel:componentModel
                                                                                   viewController:self];
+
+    BOOL actionWasHandled = [self.actionHandler handleActionWithContext:context];
+
+    for (HUBComponentWrapper *componentWrapper in self.actionObservingComponentWrappers) {
+        id<HUBComponentActionObserver> observer = componentWrapper;
+        [observer actionPerformedWithContext:context];
+    }
+
+    return actionWasHandled;
+}
+
+- (void)addComponentWrapperToLookupTables:(nullable HUBComponentWrapper *)componentWrapper
+{
+    if (componentWrapper.isContentOffsetObserver) {
+        [self.contentOffsetObservingComponentWrappers addObject:componentWrapper];
+    }
+
+    if (componentWrapper.isActionObserver) {
+        [self.actionObservingComponentWrappers addObject:componentWrapper];
+    }
+}
+
+- (void)removeComponentWrapperFromLookupTables:(nullable HUBComponentWrapper *)componentWrapper
+{
+    if (componentWrapper.isContentOffsetObserver) {
+        [self.contentOffsetObservingComponentWrappers removeObject:componentWrapper];
+    }
+
+    if (componentWrapper.isActionObserver) {
+        [self.actionObservingComponentWrappers removeObject:componentWrapper];
+    }
+}
+
+- (void)scrollToRootBodyComponentAtIndex:(NSUInteger)componentIndex
+                          scrollPosition:(HUBScrollPosition)scrollPosition
+                                animated:(BOOL)animated
+                              completion:(void (^)())completion
+{
+    NSParameterAssert(componentIndex <= (NSUInteger)[self.collectionView numberOfItemsInSection:0]);
+
+    CGPoint const contentOffset = [self.scrollHandler contentOffsetForDisplayingComponentAtIndex:componentIndex
+                                                                                  scrollPosition:scrollPosition
+                                                                                    contentInset:self.collectionView.contentInset
+                                                                                     contentSize:self.collectionView.contentSize
+                                                                                  viewController:self];
     
-    return [self.actionHandler handleActionWithContext:context];
+    // If the target offset is the same, the completion handler can be called instantly.
+    if (CGPointEqualToPoint(contentOffset, self.collectionView.contentOffset)) {
+        completion();
+    // If the scrolling is animated, the animation has to end before the new component can be retrieved.
+    } else if (animated) {
+        self.pendingScrollAnimationCallback = completion;
+        [self setContentOffset:contentOffset animated:animated];
+    // If there's no animations, the UICollectionView will still not update its visible cells until having layouted.
+    } else {
+        [self setContentOffset:contentOffset animated:animated];
+        [self.collectionView setNeedsLayout];
+        [self.collectionView layoutIfNeeded];
+        completion();
+    }
+}
+
+- (void)scrollToRemainingComponentsOfType:(HUBComponentType)componentType
+                            startPosition:(NSUInteger)startPosition
+                                indexPath:(NSIndexPath *)indexPath
+                                component:(nullable HUBComponentWrapper *)componentWrapper
+                           scrollPosition:(HUBScrollPosition)scrollPosition
+                                 animated:(BOOL)animated
+                               completion:(void (^ _Nullable)(NSIndexPath *))completionHandler
+{
+    NSUInteger const childIndex = [indexPath indexAtPosition:startPosition];
+
+    if (startPosition > 0) {
+        NSAssert(childIndex < componentWrapper.model.children.count,
+                 @"Attempted to scroll to child %@ in component %@, but it only has %@ children",
+                 @(childIndex), componentWrapper.model.identifier, @(componentWrapper.model.children.count));
+    }
+
+    __weak HUBViewController *weakSelf = self;
+    void (^stepCompletionHandler)() = ^{
+        HUBViewController *strongSelf = weakSelf;
+
+        HUBComponentWrapper *childComponentWrapper = nil;
+        if (startPosition == 0) {
+            if (componentType == HUBComponentTypeBody) {
+                NSIndexPath * const rootIndexPath = [NSIndexPath indexPathForItem:(NSInteger)childIndex inSection:0];
+                HUBComponentCollectionViewCell * const cell = (HUBComponentCollectionViewCell *)[strongSelf.collectionView cellForItemAtIndexPath:rootIndexPath];
+                childComponentWrapper = [strongSelf componentWrapperFromCell:cell];
+            } else if (componentType == HUBComponentTypeHeader) {
+                childComponentWrapper = strongSelf.headerComponentWrapper;
+            } else if (componentType == HUBComponentTypeOverlay) {
+                childComponentWrapper = strongSelf.overlayComponentWrappers[startPosition];
+            }
+        } else {
+            childComponentWrapper = [componentWrapper visibleChildComponentAtIndex:childIndex];
+        }
+
+        if (completionHandler != nil) {
+            NSUInteger const currentIndexPathLength = startPosition + 1;
+            NSUInteger currentIndexes[currentIndexPathLength];
+            [indexPath getIndexes:currentIndexes range:NSMakeRange(0, currentIndexPathLength)];
+            NSIndexPath * const currentIndexPath = [NSIndexPath indexPathWithIndexes:currentIndexes length:currentIndexPathLength];
+            completionHandler(currentIndexPath);
+        }
+
+        NSUInteger const nextPosition = startPosition + 1;
+        if (childComponentWrapper != nil && nextPosition < indexPath.length) {
+            [strongSelf scrollToRemainingComponentsOfType:componentType
+                                            startPosition:nextPosition
+                                                indexPath:indexPath
+                                                component:childComponentWrapper
+                                           scrollPosition:scrollPosition
+                                                 animated:animated
+                                               completion:completionHandler];
+        }
+    };
+
+    // Any other root components than body components don't need to be scrolled to, as they are always visible.
+    if (startPosition == 0) {
+        if (componentType == HUBComponentTypeBody) {
+            [self scrollToRootBodyComponentAtIndex:childIndex
+                                    scrollPosition:scrollPosition
+                                          animated:animated
+                                        completion:stepCompletionHandler];
+        } else {
+            stepCompletionHandler();
+        }
+    } else {
+        [componentWrapper scrollToComponentAtIndex:childIndex
+                                    scrollPosition:scrollPosition
+                                          animated:animated
+                                        completion:^{
+            /* This solves a case where the UICollectionView hasn't updated its visible cells until the next cycle
+               when changing the content offset without animations. */
+            if (!animated) {
+                dispatch_async(dispatch_get_main_queue(), stepCompletionHandler);
+            } else {
+                stepCompletionHandler();
+            }
+        }];
+    }
+}
+
+- (void)setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated
+{
+    self.lastContentOffset = contentOffset;
+    [self.collectionView setContentOffset:contentOffset animated:animated];
 }
 
 @end

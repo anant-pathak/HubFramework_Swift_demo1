@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// View that acts as a container view for a Hub Framework view controller
 @interface HUBContainerView : UIView
 
+/**
+ *  Collection view contained by the container.
+ *
+ *  When a collectionView is set it's also added as a subview, and its pan gesture
+ *  recognizer is added to this view.
+ */
+@property (nonatomic, strong, nullable) UICollectionView *collectionView;
+
 @end
 
 NS_ASSUME_NONNULL_END
