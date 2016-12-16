@@ -14,7 +14,7 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling, H
     var childDelegate: HUBComponentChildDelegate? // came from "HUBComponentWithChildren"
     
     var layoutTraits: Set<HUBComponentLayoutTrait>{
-        return [.fullWidth,.stackable]
+        return [.fullWidth]
     }
     
     

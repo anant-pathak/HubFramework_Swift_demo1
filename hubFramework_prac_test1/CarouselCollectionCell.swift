@@ -52,6 +52,7 @@ class CarouselCollectionCell:UICollectionViewCell, HUBComponent
     func loadView()
     {
             view = CarouselCollectionCell.instanceFromNib()
+            print( " anant \(self)" )
     }
     
     func preferredViewSize(forDisplaying model: HUBComponentModel, containerViewSize: CGSize) -> CGSize {

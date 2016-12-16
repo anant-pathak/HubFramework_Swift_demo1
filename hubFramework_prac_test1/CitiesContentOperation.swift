@@ -86,7 +86,7 @@ class CitiesContentOperation: NSObject , HUBContentOperation, HUBContentOperatio
         let lkoImage: UIImage = UIImage(named: "lucknow1")!
        
         rowBuilder.mainImageDataBuilder.localImage = lkoImage
-        
+   
         //4 Carousel Builder
         let carouselBuilder:HUBComponentModelBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "carousel1")
         carouselBuilder.componentNamespace = "cities"

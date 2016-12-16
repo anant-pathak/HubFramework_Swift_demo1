@@ -29,10 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //MARK: 2 setting up a feature:
         
 //        //2.1 Feature Cities
-        let home_uri = URL(string: "cities:overview") //cities is the scheme name
         hubManager.featureRegistry.registerFeature(
             withIdentifier: "cities",
-            viewURIPredicate: HUBViewURIPredicate(viewURI: home_uri!)  ,
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_cities)  ,
             title: "cities",
             contentOperationFactories: [CitiesContentOperationFactory()],
             contentReloadPolicy: nil,
@@ -40,28 +39,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             actionHandler: nil,
             viewControllerScrollHandler: nil)
         
-        //2.2 Feature Food
-        let food_uri = URL(string: "cities:food") //
+        //2.2 Feature Food with Custom JSON
         hubManager.featureRegistry.registerFeature(
-            withIdentifier: "food",
-            viewURIPredicate: HUBViewURIPredicate(viewURI: food_uri!)  ,
+            withIdentifier: "food_custom_JSON",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_food_custom_JSON)  ,
+            title: "food",
+            contentOperationFactories: [FoodContentOperationFactory()],
+            contentReloadPolicy: nil,
+            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.bannerSchemaId, //NOTE MAKE IT NIL IF TRYING TO PARSE A NORMAL JSON FILE
+            actionHandler: nil,
+            viewControllerScrollHandler: nil)
+            //For the above "FOOD" feature lets register the custom JSON schema
+            hubManager.jsonSchemaRegistry.registerBannerSchema()
+        
+        //2.3 Feature Food with standard JSON
+        hubManager.featureRegistry.registerFeature(
+            withIdentifier: "food_standard_JSON",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_food_standard_JSON)  ,
             title: "food",
             contentOperationFactories: [FoodContentOperationFactory()],
             contentReloadPolicy: nil,
             customJSONSchemaIdentifier: nil, //NOTE MAKE IT NIL IF TRYING TO PARSE A NORMAL JSON FILE
             actionHandler: nil,
             viewControllerScrollHandler: nil)
-                //For the above "FOOD" feature lets register the custom JSON schema
-        //hubManager.jsonSchemaRegistry.bannerSchemaId
-        hubManager.jsonSchemaRegistry.registerBannerSchema()
-        //2.3 Root Feature regirtry
-        let root_uri = URL(string: "cities:root")
         
+
+        
+        //2.4 Root Feature regirtry
         hubManager.featureRegistry.registerFeature(
             withIdentifier: "root",
-            viewURIPredicate: HUBViewURIPredicate(viewURI: root_uri!),
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_root_home),
             title: "Root feature",
-            contentOperationFactories: [FoodContentOperationFactory()],
+            contentOperationFactories: [RootFeatureOperationFactory()],
             contentReloadPolicy: nil,
             customJSONSchemaIdentifier: nil,
             actionHandler: nil,
@@ -83,8 +92,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Calling a featue to open it:
         var feature_call_uri: URL?
-        feature_call_uri = home_uri
+        //feature_call_uri = home_uri
         //feature_call_uri = food_uri
+        feature_call_uri = Util_URI.url_feature_root_home
         if openView_custom(open: feature_call_uri!)
         {
             print("view successfully opened")

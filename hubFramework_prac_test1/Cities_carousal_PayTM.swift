@@ -118,7 +118,8 @@ class Cities_carousal_PayTM: NSObject, HUBComponentWithChildren, HUBComponentWit
        {
             cell.component = nil
         }
-        
+       print( " anant \(self)" )
+
         return cell
     }
     

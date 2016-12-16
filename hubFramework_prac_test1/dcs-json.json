@@ -21,7 +21,28 @@
                                          }
                                      },
                                      "children": null
-                                 }
+                                 },
+                
+                {
+                "type": "cities:banner",
+                "props": {
+                "catId": "cities:banner",
+                "contentLocation": "/assets/contentModels/IGHS-TH/homepage/banner/banner/Banner/contentmodel.json",
+                "treeContent": {
+                "id": "",
+                "heading": "Anant is a boy",
+                "module": {
+                "resource": {
+                "image": "https://s3-ap-southeast-1.amazonaws.com/tescoghsuseruploads/assets/banner10_v1_984x360.png",
+                "linkNewWindow": "No",
+                "linkText": "http://thtes.co/web_finest_wk30_en"
+                }
+                },
+                "path": "/groceries/ContentModels/IGHS-TH/homepage/banner/banner/Banner/0/contentModel.json"
+                }
+                },
+                "children": null
+                }
                 
                 
                 

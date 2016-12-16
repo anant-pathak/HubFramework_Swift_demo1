@@ -13,28 +13,30 @@ class RootContentOperation_list: NSObject,HUBContentOperation {
     func perform(forViewURI viewURI: URL, featureInfo: HUBFeatureInfo, connectivityState: HUBConnectivityState, viewModelBuilder: HUBViewModelBuilder, previousError: Error?) {
         
         viewModelBuilder.navigationBarTitle = "Hub Framework Demo App"
-        let home_uri = URL(string: "cities:overview") //PICTURES without children
-        let gitHubSearchRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "gitHubSearch")
-        gitHubSearchRowBuilder.title = "Cities"
-        gitHubSearchRowBuilder.subtitle = "Cities Feature"
-        gitHubSearchRowBuilder.targetBuilder.uri = home_uri
         
-        let food_uri = URL(string: "cities:food") //picture with children
-        let prettyPicturesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "prettyPictures")
+        //1. Cities Page
+        let citiesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "root_row_cities")
+        citiesRowBuilder.componentNamespace = "cities"
+        citiesRowBuilder.componentName = "row"
+        citiesRowBuilder.title = "Cities"
+        citiesRowBuilder.subtitle = "Cities Feature"
+        citiesRowBuilder.targetBuilder.uri = Util_URI.url_feature_cities
+        
+        //2. Food_custom_JSON Page
+        let prettyPicturesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "root_row_food")
+        prettyPicturesRowBuilder.componentNamespace = "cities"
+        prettyPicturesRowBuilder.componentName = "row"
         prettyPicturesRowBuilder.title = "Food"
-        prettyPicturesRowBuilder.subtitle = "Food Feature"
-        prettyPicturesRowBuilder.targetBuilder.uri = food_uri
+        prettyPicturesRowBuilder.subtitle = "Food Feature with Custom JSON"
+        prettyPicturesRowBuilder.targetBuilder.uri = Util_URI.url_feature_food_custom_JSON
         
-//        let reallyLongListRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "reallyLongList")
-//        reallyLongListRowBuilder.title = "Really long list"
-//        reallyLongListRowBuilder.subtitle = "A feature that renders 10,000 rows"
-//        reallyLongListRowBuilder.targetBuilder.uri = .reallyLongListViewURI
-//        
-//        let todoListRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "todoList")
-//        todoListRowBuilder.title = "Todo list"
-//        todoListRowBuilder.subtitle = "A feature for adding todo items to a list"
-//        todoListRowBuilder.targetBuilder.uri = .todoListViewURI
-//        
+        //3 Food Standard JSON Page
+        let prettyPicturesRowBuilder2 = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "root_row_food2")
+        prettyPicturesRowBuilder2.componentNamespace = "cities"
+        prettyPicturesRowBuilder2.componentName = "row"
+        prettyPicturesRowBuilder2.title = "Food"
+        prettyPicturesRowBuilder2.subtitle = "Food Feature with standard JSON"
+        prettyPicturesRowBuilder2.targetBuilder.uri = Util_URI.url_feature_food_standard_JSON
         delegate?.contentOperationDidFinish(self)
 
     }
