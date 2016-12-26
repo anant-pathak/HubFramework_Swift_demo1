@@ -14,5 +14,6 @@ struct Util_URI
     static let url_feature_food_custom_JSON: URL = URL(string: "cities:food_custom")!
     static let url_feature_food_standard_JSON: URL = URL(string: "cities:food_standard")!
     static let url_feature_root_home: URL = URL(string: "cities:root")!
-    static let url_feature_freddy: URL = URL(string: "cities:freddy")!
+    static let url_feature_freddy_CustomSchema: URL = URL(string: "cities:freddy1")!
+    static let url_feature_freddy_DataModels: URL = URL(string: "cities:freddy2")!
 }

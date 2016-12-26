@@ -77,10 +77,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             viewControllerScrollHandler: nil
         )
         
-        //2.5 Freddy Feature Registry
+        //2.5 Freddy Feature Registry with custom_schema
         hubManager.featureRegistry.registerFeature(
-            withIdentifier: "freddy",
-            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_freddy),
+            withIdentifier: "freddy_custom",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_freddy_CustomSchema),
+            title: "Freddy feature",
+            contentOperationFactories: [FreddyContentOperationFactory()],
+            contentReloadPolicy: nil,
+            customJSONSchemaIdentifier: hubManager.jsonSchemaRegistry.freddySchemaId,
+            actionHandler: nil,
+            viewControllerScrollHandler: nil
+        )
+       hubManager.jsonSchemaRegistry.registerFreddySchema()
+        
+        //2.6 Freddy Feature Registry
+        hubManager.featureRegistry.registerFeature(
+            withIdentifier: "freddy_json_struct",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_freddy_DataModels),
             title: "Freddy feature",
             contentOperationFactories: [FreddyContentOperationFactory()],
             contentReloadPolicy: nil,
@@ -88,6 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             actionHandler: nil,
             viewControllerScrollHandler: nil
         )
+        //  hubManager.jsonSchemaRegistry.registerFreddySchema() ; hubManager.jsonSchemaRegistry.freddySchemaId
 
         
         

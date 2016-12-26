@@ -37,7 +37,25 @@ class RootContentOperation_list: NSObject,HUBContentOperation {
         prettyPicturesRowBuilder2.title = "Food"
         prettyPicturesRowBuilder2.subtitle = "Food Feature with standard JSON"
         prettyPicturesRowBuilder2.targetBuilder.uri = Util_URI.url_feature_food_standard_JSON
+        
+        //4 Freddy_costom_schema:
+        let freddyRowBuilder1 = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "freddy1")
+        freddyRowBuilder1.componentNamespace = "cities"
+        freddyRowBuilder1.componentName = "row"
+        freddyRowBuilder1.title = "Freddy"
+        freddyRowBuilder1.subtitle = "Custo_Schema"
+        freddyRowBuilder1.targetBuilder.uri = Util_URI.url_feature_freddy_CustomSchema
+        
+        //5 Freddy_dataModels:
+        let freddyRowBuilder2 = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "freddy2")
+        freddyRowBuilder2.componentNamespace = "cities"
+        freddyRowBuilder2.componentName = "row"
+        freddyRowBuilder2.title = "Freddy"
+        freddyRowBuilder2.subtitle = "Models through Freddy"
+        freddyRowBuilder2.targetBuilder.uri = Util_URI.url_feature_freddy_DataModels
+        
         delegate?.contentOperationDidFinish(self)
+
 
     }
 }

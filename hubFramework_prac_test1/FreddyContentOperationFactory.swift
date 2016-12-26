@@ -10,6 +10,16 @@ import UIKit
 import HubFramework
 class FreddyContentOperationFactory: NSObject, HUBContentOperationFactory {
     func createContentOperations(forViewURI viewURI: URL) -> [HUBContentOperation] {
-        return [FreddyContentOperation_freddy()]
+        
+        if(viewURI == Util_URI.url_feature_freddy_CustomSchema)
+        {
+            return [FreddyContentOperation_customSchema()]
+        }
+        if(viewURI == Util_URI.url_feature_freddy_DataModels)
+        {
+            return [FreddyContentOperation_freddy()]
+        }
+        //Default one:
+       return [FreddyContentOperation_freddy()]
     }
 }

@@ -32,8 +32,8 @@ class FreddyContentOperation_freddy: NSObject, HUBContentOperation {
         {
             let json: JSON = try JSON(data: data!)
             let mapi_obj: Mapi_model_file = try Mapi_model_file(json: json)
-            print(mapi_obj.StatusCode)
-            print(mapi_obj.arr_products)
+           // print(mapi_obj.StatusCode)
+           // print(mapi_obj.arr_products)
         }
         catch
         {

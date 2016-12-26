@@ -27,6 +27,9 @@ class FoodContent_standard_JSON_operation: NSObject,HUBContentOperation {
         {
             
         }
+       // print("Ho HO HO ")
+       // print(viewModelBuilder.allBodyComponentModelBuilders()[0].title!)
+        
         delegate!.contentOperationDidFinish(self)
         
     }

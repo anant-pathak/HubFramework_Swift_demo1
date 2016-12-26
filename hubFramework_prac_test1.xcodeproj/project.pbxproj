@@ -34,6 +34,7 @@
 		1629F28C1E0E183F00FC3FF3 /* Mapi_model_file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1629F28B1E0E183F00FC3FF3 /* Mapi_model_file.swift */; };
 		1630486D1E112A5600F08A8A /* mapi_full.json in Resources */ = {isa = PBXBuildFile; fileRef = 1630486C1E112A5600F08A8A /* mapi_full.json */; };
 		1630486F1E112AF800F08A8A /* FreddyContentOperation_customSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630486E1E112AF800F08A8A /* FreddyContentOperation_customSchema.swift */; };
+		163048711E11319700F08A8A /* JSON_custom_schema_freddy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163048701E11319700F08A8A /* JSON_custom_schema_freddy.swift */; };
 		16452A981DD348B90076657C /* Banner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16452A971DD348B90076657C /* Banner.xib */; };
 		16452A9A1DD348F10076657C /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16452A991DD348F10076657C /* Banner.swift */; };
 		16452A9C1DD349990076657C /* ComponentBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16452A9B1DD349990076657C /* ComponentBanner.swift */; };
@@ -82,6 +83,7 @@
 		1629F28B1E0E183F00FC3FF3 /* Mapi_model_file.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapi_model_file.swift; sourceTree = "<group>"; };
 		1630486C1E112A5600F08A8A /* mapi_full.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mapi_full.json; sourceTree = "<group>"; };
 		1630486E1E112AF800F08A8A /* FreddyContentOperation_customSchema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreddyContentOperation_customSchema.swift; sourceTree = "<group>"; };
+		163048701E11319700F08A8A /* JSON_custom_schema_freddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON_custom_schema_freddy.swift; sourceTree = "<group>"; };
 		16452A971DD348B90076657C /* Banner.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Banner.xib; sourceTree = "<group>"; };
 		16452A991DD348F10076657C /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		16452A9B1DD349990076657C /* ComponentBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentBanner.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				1629F28B1E0E183F00FC3FF3 /* Mapi_model_file.swift */,
 				1630486C1E112A5600F08A8A /* mapi_full.json */,
 				1627C16E1E0FB2EC008FF4C9 /* freddy_json.json */,
+				163048701E11319700F08A8A /* JSON_custom_schema_freddy.swift */,
 			);
 			name = Freddy;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				16FC156D1DF9733F00DE2F8E /* CarouselCollectionCell.swift in Sources */,
 				16E52F941DDF00A900CADB76 /* RootFeatureOperationFactory.swift in Sources */,
 				16072D161DF59BC8000AEDF3 /* ComponentButton.swift in Sources */,
+				163048711E11319700F08A8A /* JSON_custom_schema_freddy.swift in Sources */,
 				16111CE91DC1C967000603D6 /* CitiesContentOperationFactory.swift in Sources */,
 				168590731E028F9200F4A45E /* FoodContent_custom_JSON_operation.swift in Sources */,
 				16160CA41DC9F0AE005BBC9E /* CitiesImageContentOperation.swift in Sources */,

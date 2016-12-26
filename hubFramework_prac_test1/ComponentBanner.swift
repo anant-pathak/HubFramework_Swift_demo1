@@ -56,7 +56,8 @@ class ComponentBanner: NSObject , HUBComponent, HUBComponentWithImageHandling, H
         
         let bannerTemp: Banner = self.view as! Banner
         print(model.title)
-        bannerTemp.label.text = model.title
+        bannerTemp.label.text = model.title //model.customData["priduyctdsa"]
+        
         bannerTemp.imageView.image = model.mainImageData?.localImage
         print("Anant  \(bannerTemp.label.text)")
         

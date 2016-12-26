@@ -29,6 +29,8 @@ extension HUBJSONSchemaRegistry{
         schema.componentImageDataSchema.urlPath = schema.createNewPath().go(to: "image").urlPath()
         //go(to: "props").go(to: "treeContent").go(to: "module").go(to: "resource").
         
+        
+        
         registerCustomSchema(schema, forIdentifier: bannerSchemaId)
         
         
