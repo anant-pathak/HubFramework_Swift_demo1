@@ -46,8 +46,8 @@
 #import "HUBComponentReusePool.h"
 #import "HUBActionContextImplementation.h"
 #import "HUBActionHandlerWrapper.h"
-#import "HUBActionPerformer.h"
 #import "HUBViewModelRenderer.h"
+#import "HUBFeatureInfo.h"
 
 static NSTimeInterval const HUBImageDownloadTimeThreshold = 0.07;
 
@@ -57,12 +57,11 @@ NS_ASSUME_NONNULL_BEGIN
     HUBViewModelLoaderDelegate,
     HUBImageLoaderDelegate,
     HUBComponentWrapperDelegate,
-    HUBActionPerformer,
     UICollectionViewDataSource,
     HUBCollectionViewDelegate
 >
 
-@property (nonatomic, copy, readonly) NSURL *viewURI;
+@property (nonatomic, strong, readonly) id<HUBFeatureInfo> featureInfo;
 @property (nonatomic, strong, readonly) HUBViewModelLoaderImplementation *viewModelLoader;
 @property (nonatomic, strong, readonly) HUBCollectionViewFactory *collectionViewFactory;
 @property (nonatomic, strong, readonly) id<HUBComponentRegistry> componentRegistry;
@@ -99,13 +98,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation HUBViewController
 
-@synthesize delegate = _delegate;
-@synthesize featureIdentifier = _featureIdentifier;
-
 #pragma mark - Lifecycle
 
 - (instancetype)initWithViewURI:(NSURL *)viewURI
-              featureIdentifier:(NSString *)featureIdentifier
+                    featureInfo:(id<HUBFeatureInfo>)featureInfo
                 viewModelLoader:(HUBViewModelLoaderImplementation *)viewModelLoader
               viewModelRenderer:(HUBViewModelRenderer *)viewModelRenderer
           collectionViewFactory:(HUBCollectionViewFactory *)collectionViewFactory
@@ -117,7 +113,7 @@ NS_ASSUME_NONNULL_BEGIN
                     imageLoader:(id<HUBImageLoader>)imageLoader
 {
     NSParameterAssert(viewURI != nil);
-    NSParameterAssert(featureIdentifier != nil);
+    NSParameterAssert(featureInfo != nil);
     NSParameterAssert(viewModelLoader != nil);
     NSParameterAssert(viewModelRenderer != nil);
     NSParameterAssert(collectionViewFactory != nil);
@@ -133,7 +129,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
     
     _viewURI = [viewURI copy];
-    _featureIdentifier = [featureIdentifier copy];
+    _featureInfo = featureInfo;
     _viewModelLoader = viewModelLoader;
     _viewModelRenderer = viewModelRenderer;
     _collectionViewFactory = collectionViewFactory;
@@ -269,6 +265,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 #pragma mark - HUBViewController
+
+- (NSString *)featureIdentifier
+{
+    return self.featureInfo.identifier;
+}
 
 - (BOOL)isViewScrolling
 {
@@ -598,6 +599,7 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
     childComponentView.frame = CGRectMake(0, 0, preferredViewSize.width, preferredViewSize.height);
     
     [self loadImagesForComponentWrapper:childComponentWrapper childIndex:nil];
+    [childComponentWrapper viewDidMoveToSuperview:HUBComponentLoadViewIfNeeded(componentWrapper)];
     
     return childComponentWrapper;
 }
@@ -672,9 +674,7 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
 
 - (void)sendComponentWrapperToReusePool:(HUBComponentWrapper *)componentWrapper
 {
-    if (!componentWrapper.isRootComponent) {
-        [self.componentReusePool addComponentWrappper:componentWrapper];
-    }
+    [self.componentReusePool addComponentWrappper:componentWrapper];
 
     if (componentWrapper.view) {
         UIView *componentView = componentWrapper.view;
@@ -715,19 +715,16 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
     
     HUBComponentCollectionViewCell * const cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellReuseIdentifier
                                                                                             forIndexPath:indexPath];
-    
-    if (cell.component == nil) {
-        HUBComponentWrapper * const componentWrapper = [self.componentReusePool componentWrapperForModel:componentModel
-                                                                                                delegate:self
-                                                                                                  parent:nil];
-        
-        self.componentWrappersByCellIdentifier[cell.identifier] = componentWrapper;
-        cell.component = componentWrapper;
-        [componentWrapper viewDidMoveToSuperview:cell];
-        [self didAddComponentWrapper:componentWrapper];
-    }
-    
-    HUBComponentWrapper * const componentWrapper = [self componentWrapperFromCell:cell];
+
+    HUBComponentWrapper * const componentWrapper = [self.componentReusePool componentWrapperForModel:componentModel
+                                                                                            delegate:self
+                                                                                              parent:nil];
+
+    self.componentWrappersByCellIdentifier[cell.identifier] = componentWrapper;
+    cell.component = componentWrapper;
+    [componentWrapper viewDidMoveToSuperview:cell];
+    [self didAddComponentWrapper:componentWrapper];
+
     [self configureComponentWrapper:componentWrapper withModel:componentModel containerViewSize:collectionView.frame.size];
     
     [self loadImagesForComponentWrapper:componentWrapper
@@ -885,6 +882,7 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
     self.collectionView = collectionView;
     collectionView.showsVerticalScrollIndicator = [self.scrollHandler shouldShowScrollIndicatorsInViewController:self];
     collectionView.showsHorizontalScrollIndicator = collectionView.showsVerticalScrollIndicator;
+    collectionView.keyboardDismissMode = [self.scrollHandler keyboardDismissModeForViewController:self];
     collectionView.decelerationRate = [self.scrollHandler scrollDecelerationRateForViewController:self];
     collectionView.dataSource = self;
     collectionView.delegate = self;
@@ -1056,7 +1054,16 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
     CGRect frame = self.view.bounds;
     frame.origin.y = self.collectionView.contentInset.top;
     frame.size.height -= self.visibleKeyboardHeight + CGRectGetMinY(frame);
-    return CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+
+    CGPoint proposedCenterPoint = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+
+    id<HUBViewControllerDelegate> delegate = self.delegate;
+    if (delegate == nil) {
+        return proposedCenterPoint;
+    }
+
+    return [delegate centerPointForOverlayComponentInViewController:self
+                                                proposedCenterPoint:proposedCenterPoint];
 }
 
 - (void)updateOverlayComponentCenterPointsWithKeyboardNotification:(NSNotification *)notification
@@ -1296,10 +1303,7 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
     if (contextsForURL == nil) {
         contextsForURL = [NSMutableArray arrayWithObject:context];
         self.componentImageLoadingContexts[imageURL] = contextsForURL;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.imageLoader loadImageForURL:imageURL targetSize:preferredSize];
-        });
+        [self.imageLoader loadImageForURL:imageURL targetSize:preferredSize];
     } else {
         [contextsForURL addObject:context];
     }
@@ -1384,6 +1388,7 @@ willUpdateSelectionState:(HUBComponentSelectionState)selectionState
     id<HUBActionContext> const context = [[HUBActionContextImplementation alloc] initWithTrigger:trigger
                                                                           customActionIdentifier:customIdentifier
                                                                                       customData:customData
+                                                                                     featureInfo:self.featureInfo
                                                                                          viewURI:self.viewURI
                                                                                        viewModel:viewModel
                                                                                   componentModel:componentModel

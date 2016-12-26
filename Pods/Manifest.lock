@@ -1,12 +1,15 @@
 PODS:
-  - HubFramework (2.0.7)
+  - Freddy (3.0.0)
+  - HubFramework (2.0.9)
 
 DEPENDENCIES:
+  - Freddy
   - HubFramework
 
 SPEC CHECKSUMS:
-  HubFramework: cc408d9336dc32d395206ac9605b59e25f027848
+  Freddy: 367f994c88a90dd3987293b4b1bec94a4530745a
+  HubFramework: 8bd275dc0362755771bf36fb7b33bc45f25144f0
 
-PODFILE CHECKSUM: 45956f2710fe6b1a57a95228efa596fb163c0580
+PODFILE CHECKSUM: 66e73dc659cacd47c2330bb3b2875ae81ef9d6f6
 
 COCOAPODS: 1.0.1

@@ -1,0 +1,3806 @@
+{
+    "StatusCode": 0,
+    "StatusInfo": "Request processed successfully.",
+    "IsFavouritesFilterAvailable": "No",
+    "IsNewProductFilterAvailable": "Yes",
+    "NewProductsFilterExpression": "4294962762+4294961185+4294962475",
+    "PageNumber": 1,
+    "TotalPageCount": 2,
+    "TotalProductCount": 190,
+    "PageProductCount": 100,
+    "Products":
+    [
+     {
+     "BaseProductId": "54648695",
+     "EANBarcode": "5099556017773",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/773/5099556017773/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/773/5099556017773/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/773/5099556017773/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Rustlers Bbq Pork Rib Sandwich 157G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 7/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124864",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 1.00,
+     "PriceDescription": " (£6.37/kg)",
+     "ProductId": "282997603",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 6.37,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/282997603"
+     },
+     {
+     "BaseProductId": "54648672",
+     "EANBarcode": "5390605004066",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/066/5390605004066/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/066/5390605004066/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/066/5390605004066/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Rustlers Chicken Sandwich 150G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 7/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32126033",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 1.00,
+     "PriceDescription": " (£6.67/kg)",
+     "ProductId": "255956866",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 6.67,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/255956866"
+     },
+     {
+     "BaseProductId": "53426251",
+     "EANBarcode": "0000010063125",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/125/0000010063125/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tesco Cranberries 100G",
+     "OfferPromotion": "Half Price Was £1.50 Now 75p",
+     "OfferValidity": "valid from 7/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32119700",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 0.75,
+     "PriceDescription": " (£7.50/kg)",
+     "ProductId": "257399828",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 7.50,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/257399828"
+     },
+     {
+     "BaseProductId": "79904792",
+     "EANBarcode": "5054269894790",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/790/5054269894790/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/790/5054269894790/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/790/5054269894790/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tesco Goose Fat 220G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 14/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102986",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 1.00,
+     "PriceDescription": " (£0.46/100g)",
+     "ProductId": "290068361",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.46,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/290068361"
+     },
+     {
+     "BaseProductId": "78997273",
+     "EANBarcode": "7622210396945",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/945/7622210396945/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/945/7622210396945/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/945/7622210396945/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Philadelphia Sensations Whipped Garlic & Herb 140G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 7/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32105399",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 1.00,
+     "PriceDescription": " (£7.15/kg)",
+     "ProductId": "288405870",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 7.15,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/288405870"
+     },
+     {
+     "BaseProductId": "81491901",
+     "EANBarcode": "5000165369108",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/108/5000165369108/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/108/5000165369108/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/108/5000165369108/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Pilgrims Choice Mature Sliced Cheddar 150G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 7/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32106534",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 1.00,
+     "PriceDescription": " (£6.67/kg)",
+     "ProductId": "293258293",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 6.67,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293258293"
+     },
+     {
+     "BaseProductId": "79872995",
+     "EANBarcode": "5057008584372",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/372/5057008584372/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/372/5057008584372/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/372/5057008584372/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tesco Finest West Country Cheese Gift Selection",
+     "OfferPromotion": "Half Price Was £10.00 Now £5.00",
+     "OfferValidity": "valid from 22/12/2016 until 31/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32141973",
+     "OfferValidFrom": "2016-12-22",
+     "OfferValidUntil": "2016-12-31",
+     "Price": 5.00,
+     "PriceDescription": " (£5.00/each)",
+     "ProductId": "294142399",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "This product is available for delivery from Wednesday 23rd November to Friday 23rd December.",
+     "UnitType": "each",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/294142399"
+     },
+     {
+     "BaseProductId": "81945521",
+     "EANBarcode": "5057008584303",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/303/5057008584303/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/303/5057008584303/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/303/5057008584303/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tesco Cheese And Ale Gift Selection",
+     "OfferPromotion": "Better Than Half Price Was £5.00 Now £2.00",
+     "OfferValidity": "valid from 19/12/2016 until 30/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32139614",
+     "OfferValidFrom": "2016-12-19",
+     "OfferValidUntil": "2016-12-30",
+     "Price": 2.00,
+     "PriceDescription": " (£2.00/each)",
+     "ProductId": "294142186",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "True",
+     "IsFavourite": "False",
+     "UnitPrice": 2.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "This product is available for delivery from Wednesday 23rd November to Friday 23rd December.",
+     "UnitType": "each",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/294142186"
+     },
+     {
+     "BaseProductId": "81945509",
+     "EANBarcode": "5057008584266",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/266/5057008584266/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/266/5057008584266/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/266/5057008584266/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tesco Finest Spruce Smoked Red Leicester Truckle 300G",
+     "OfferPromotion": "Half Price Was £4.00 Now £2.00",
+     "OfferValidity": "valid from 12/12/2016 until 26/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32130776",
+     "OfferValidFrom": "2016-12-12",
+     "OfferValidUntil": "2016-12-26",
+     "Price": 2.00,
+     "PriceDescription": " (£6.67/kg)",
+     "ProductId": "294142140",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "True",
+     "IsFavourite": "False",
+     "UnitPrice": 6.67,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/294142140"
+     },
+     {
+     "BaseProductId": "81852772",
+     "EANBarcode": "4025500199722",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/722/4025500199722/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/722/4025500199722/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/722/4025500199722/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Muller Bliss Corner Limited Edition 4X110g",
+     "OfferPromotion": "Half Price Was £2.50 Now £1.25",
+     "OfferValidity": "valid from 7/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32116716",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 1.25,
+     "PriceDescription": " (£1.14/100g)",
+     "ProductId": "293992610",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.14,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293992610"
+     },
+     {
+     "BaseProductId": "77378656",
+     "EANBarcode": "4025500181857",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/857/4025500181857/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/857/4025500181857/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/857/4025500181857/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Muller Corner Bliss Strawberry 4X110g",
+     "OfferPromotion": "Half Price Was £2.50 Now £1.25",
+     "OfferValidity": "valid from 7/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32116717",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 1.25,
+     "PriceDescription": " (£0.28/100g)",
+     "ProductId": "285025546",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.28,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/285025546"
+     },
+     {
+     "BaseProductId": "72706127",
+     "EANBarcode": "0244200000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0244200000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0244200000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0244200000000/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0244200000000/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0244200000000/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "UNAVAILABLE: Tesco Large Beef Roasting Joint With Basting Fat",
+     "OfferPromotion": "Half Price PER KG Was £10.00 PER KG Now £5.00 PER KG",
+     "OfferValidity": "valid from 2/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32118406",
+     "OfferValidFrom": "2016-12-02",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 17.50,
+     "PriceDescription": " (£5.00/kg)",
+     "ProductId": "275492600",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/275492600"
+     },
+     {
+     "BaseProductId": "51594416",
+     "EANBarcode": "0236580000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0236580000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0236580000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0236580000000/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0236580000000/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0236580000000/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "UNAVAILABLE: Tesco Medium Beef Roasting Joint With Basting Fat",
+     "OfferPromotion": "Half Price PER KG Was £10.00 PER KG Now £5.00 PER KG",
+     "OfferValidity": "valid from 2/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32118404",
+     "OfferValidFrom": "2016-12-02",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 4.00,
+     "PriceDescription": " (£5.00/kg)",
+     "ProductId": "258139435",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/258139435"
+     },
+     {
+     "BaseProductId": "51329951",
+     "EANBarcode": "0230850000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0230850000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0230850000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0230850000000/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "UNAVAILABLE: Tesco Lamb Half Leg - Price Shown Per Kilograms",
+     "OfferPromotion": "Half Price Was £10.00 Now £5.00",
+     "OfferValidity": "valid from 2/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32118409",
+     "OfferValidFrom": "2016-12-02",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 6.00,
+     "PriceDescription": " (£5.00/kg)",
+     "ProductId": "287349315",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/287349315"
+     },
+     {
+     "BaseProductId": "52904361",
+     "EANBarcode": "0240860000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0240860000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0240860000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0240860000000/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0240860000000/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0240860000000/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "UNAVAILABLE: Tesco Lamb Whole Leg-Price Shown Per Kilograms",
+     "OfferPromotion": "Half Price PER KG Was £10.00 PER KG Now £5.00 PER KG",
+     "OfferValidity": "valid from 2/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32118407",
+     "OfferValidFrom": "2016-12-02",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 12.00,
+     "PriceDescription": " (£5.00/kg)",
+     "ProductId": "267460149",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/267460149"
+     },
+     {
+     "BaseProductId": "52363274",
+     "EANBarcode": "5010236155165",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/165/5010236155165/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/165/5010236155165/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/165/5010236155165/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Bernard Matthews Sliced Turkey Breast 140G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 7/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32092464",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 1.00,
+     "PriceDescription": " (£0.71/100g)",
+     "ProductId": "276306366",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.71,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/276306366"
+     },
+     {
+     "BaseProductId": "73588955",
+     "EANBarcode": "4025500175795",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/795/4025500175795/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/795/4025500175795/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/795/4025500175795/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/795/4025500175795/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/795/4025500175795/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Cadbury Pots Of Joy 4 Pack Caramel 4 X 70G",
+     "OfferPromotion": "Better Than Half Price Was £2.40 Now £1.00",
+     "OfferValidity": "valid from 7/12/2016 until 26/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32113764",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-26",
+     "Price": 1.00,
+     "PriceDescription": " (£0.36/100g)",
+     "ProductId": "277267968",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.36,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/277267968"
+     },
+     {
+     "BaseProductId": "53483366",
+     "EANBarcode": "5024530005316",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/316/5024530005316/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/316/5024530005316/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/316/5024530005316/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Pizza Express American Pizza 250G",
+     "OfferPromotion": "Half Price Was £4.50 Now £2.25",
+     "OfferValidity": "valid from 7/12/2016 until 26/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32106671",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-26",
+     "Price": 2.25,
+     "PriceDescription": " (£0.90/100g)",
+     "ProductId": "261385173",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.90,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/261385173"
+     },
+     {
+     "BaseProductId": "53605385",
+     "EANBarcode": "0234770000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0234770000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0234770000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0234770000000/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Counter Tesco British Beef Bone In Rib Joint",
+     "OfferPromotion": "Half Price Was £19.00 Now £9.50",
+     "OfferValidity": "valid from 2/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32095885",
+     "OfferValidFrom": "2016-12-02",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 25.65,
+     "PriceDescription": " (£9.50/kg)",
+     "ProductId": "256898915",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 9.50,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "CatchWeight": 2.7,
+     "CatchWeightList":
+     [
+      {
+      "Price": "£20.90",
+      "Weight": 2.2
+      },
+      {
+      "Price": "£23.28",
+      "Weight": 2.45
+      },
+      {
+      "Price": "£25.65",
+      "Weight": 2.7
+      }
+      ],
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/256898915"
+     },
+     {
+     "BaseProductId": "56809560",
+     "EANBarcode": "0236800000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0236800000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0236800000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0236800000000/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "UNAVAILABLE: Counter Tesco British Lamb Leg",
+     "OfferPromotion": "Half Price Was £10.00 Now £5.00",
+     "OfferValidity": "valid from 2/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32096070",
+     "OfferValidFrom": "2016-12-02",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 14.50,
+     "PriceDescription": " (£5.00/kg)",
+     "ProductId": "268969952",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/268969952"
+     },
+     {
+     "BaseProductId": "50457218",
+     "EANBarcode": "0290670000000",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/000/0290670000000/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/000/0290670000000/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/000/0290670000000/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 3,
+     "Name": "UNAVAILABLE: Counter Whole Salmon",
+     "OfferPromotion": "Half Price Was £9.00 Now £4.50",
+     "OfferValidity": "valid from 14/12/2016 until 2/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32115329",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-02",
+     "Price": 20.25,
+     "PriceDescription": " (£4.50/kg)",
+     "ProductId": "254294233",
+     "ProductType": "CatchWeightProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 4.50,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/254294233"
+     },
+     {
+     "BaseProductId": "79839448",
+     "EANBarcode": "7622210445346",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/346/7622210445346/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/346/7622210445346/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/346/7622210445346/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/346/7622210445346/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/346/7622210445346/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Belvita Soft Bakes Chocolate Chip 250G",
+     "OfferPromotion": "Half Price Was £2.79 Now £1.39",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124960",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.39,
+     "PriceDescription": " (£0.56/100g)",
+     "ProductId": "289954626",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.56,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289954626"
+     },
+     {
+     "BaseProductId": "78055046",
+     "EANBarcode": "7622210328328",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/328/7622210328328/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/328/7622210328328/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/328/7622210328328/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/328/7622210328328/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/328/7622210328328/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Belvita Tops Choco Hazelnut 250G",
+     "OfferPromotion": "Half Price Was £2.79 Now £1.39",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124954",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.39,
+     "PriceDescription": " (£0.56/100g)",
+     "ProductId": "286416094",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.56,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/286416094"
+     },
+     {
+     "BaseProductId": "78054992",
+     "EANBarcode": "7622210328304",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/304/7622210328304/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/304/7622210328304/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/304/7622210328304/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/304/7622210328304/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/304/7622210328304/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Belvita Tops Strawberry Jam 250G",
+     "OfferPromotion": "Half Price Was £2.79 Now £1.39",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124939",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.39,
+     "PriceDescription": " (£0.56/100g)",
+     "ProductId": "286415976",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.56,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/286415976"
+     },
+     {
+     "BaseProductId": "55458601",
+     "EANBarcode": "5000168098784",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/784/5000168098784/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/784/5000168098784/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/784/5000168098784/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/784/5000168098784/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/784/5000168098784/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Go Ahead Apple Bakes 6X35g",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124965",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.47/100g)",
+     "ProductId": "251232560",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.47,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/251232560"
+     },
+     {
+     "BaseProductId": "60351996",
+     "EANBarcode": "5000168135717",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/717/5000168135717/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/717/5000168135717/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/717/5000168135717/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/717/5000168135717/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/717/5000168135717/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mcvitie Go Ahead Strawberry Bakes 6X35g",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124950",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.47/100g)",
+     "ProductId": "261582803",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.47,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/261582803"
+     },
+     {
+     "BaseProductId": "57459332",
+     "EANBarcode": "5000168182346",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/346/5000168182346/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/346/5000168182346/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/346/5000168182346/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/346/5000168182346/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/346/5000168182346/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Go Ahead Crispy Apple Slices 5 Pack 195G",
+     "OfferPromotion": "Half Price Was £1.69 Now 84p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124944",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.84,
+     "PriceDescription": " (£0.43/100g)",
+     "ProductId": "255007867",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.43,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/255007867"
+     },
+     {
+     "BaseProductId": "57446480",
+     "EANBarcode": "5000168182360",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/360/5000168182360/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/360/5000168182360/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/360/5000168182360/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/360/5000168182360/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/360/5000168182360/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Go Ahead Crispy Orange Slices 5 Pack 218G",
+     "OfferPromotion": "Half Price Was £1.69 Now 84p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124942",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.84,
+     "PriceDescription": " (£0.39/100g)",
+     "ProductId": "283419752",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.39,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/283419752"
+     },
+     {
+     "BaseProductId": "79838870",
+     "EANBarcode": "7613035332737",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/737/7613035332737/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/737/7613035332737/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/737/7613035332737/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/737/7613035332737/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/737/7613035332737/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Nestle Breakaway Caramac 8 X 19.1G",
+     "OfferPromotion": "Half Price Was £1.69 Now 84p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32127130",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.84,
+     "PriceDescription": " (£0.55/100g)",
+     "ProductId": "289953368",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.55,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289953368"
+     },
+     {
+     "BaseProductId": "50841506",
+     "EANBarcode": "7613033591877",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/877/7613033591877/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/877/7613033591877/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/877/7613033591877/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/877/7613033591877/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/877/7613033591877/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Blue Riband Biscuit 8 Pack 154.4G",
+     "OfferPromotion": "Half Price Was £1.69 Now 84p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32127131",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.84,
+     "PriceDescription": " (£0.54/100g)",
+     "ProductId": "272719650",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.54,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/272719650"
+     },
+     {
+     "BaseProductId": "50841253",
+     "EANBarcode": "7613033593611",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/611/7613033593611/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/611/7613033593611/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/611/7613033593611/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/611/7613033593611/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/611/7613033593611/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Nestle Breakaway Milk Chocolate Biscuit 8 Pack 152.8G",
+     "OfferPromotion": "Half Price Was £1.69 Now 84p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32127128",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.84,
+     "PriceDescription": " (£0.55/100g)",
+     "ProductId": "272708450",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.55,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/272708450"
+     },
+     {
+     "BaseProductId": "50915691",
+     "EANBarcode": "5000168187280",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/280/5000168187280/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/280/5000168187280/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/280/5000168187280/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/280/5000168187280/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/280/5000168187280/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mcvities Penguin Milk Chocolate Biscuit 8 Pack 196.8G",
+     "OfferPromotion": "Half Price Was £1.39 Now 69p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124947",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.69,
+     "PriceDescription": " (£0.35/100g)",
+     "ProductId": "289205552",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.35,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289205552"
+     },
+     {
+     "BaseProductId": "64767279",
+     "EANBarcode": "5010035061377",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/377/5010035061377/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/377/5010035061377/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/377/5010035061377/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/377/5010035061377/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/377/5010035061377/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Fox's Crinkles Ginger Biscuits 200G",
+     "OfferPromotion": "Half Price Was 99p Now 49p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124919",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.49,
+     "PriceDescription": " (£0.25/100g)",
+     "ProductId": "271737998",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.25,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/271737998"
+     },
+     {
+     "BaseProductId": "80166217",
+     "EANBarcode": "5010035065771",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/771/5010035065771/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/771/5010035065771/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/771/5010035065771/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/771/5010035065771/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/771/5010035065771/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Fox's Bourbon Creams Biscuits 200G",
+     "OfferPromotion": "Half Price Was 80p Now 40p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124961",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.40,
+     "PriceDescription": " (£0.20/100g)",
+     "ProductId": "290594083",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.20,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/290594083"
+     },
+     {
+     "BaseProductId": "79295468",
+     "EANBarcode": "5000168188102",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/102/5000168188102/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/102/5000168188102/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/102/5000168188102/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/102/5000168188102/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/102/5000168188102/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mcvities Milk Chocolate Digestives 500G",
+     "OfferPromotion": "Half Price Was £2.29 Now £1.14",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124922",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.14,
+     "PriceDescription": " (£0.23/100g)",
+     "ProductId": "288899785",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.23,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/288899785"
+     },
+     {
+     "BaseProductId": "79552717",
+     "EANBarcode": "5000168188713",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/713/5000168188713/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/713/5000168188713/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/713/5000168188713/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/713/5000168188713/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/713/5000168188713/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mcvities Chocolate Hobnobs 431G",
+     "OfferPromotion": "Half Price Was £2.29 Now £1.14",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124915",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.14,
+     "PriceDescription": " (£0.27/100g)",
+     "ProductId": "289446836",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.27,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289446836"
+     },
+     {
+     "BaseProductId": "80065636",
+     "EANBarcode": "0072417855894",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/894/0072417855894/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/894/0072417855894/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/894/0072417855894/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Maryland Cookies 400G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124964",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.25/100g)",
+     "ProductId": "290380687",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.25,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/290380687"
+     },
+     {
+     "BaseProductId": "79853776",
+     "EANBarcode": "5010035065320",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/320/5010035065320/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/320/5010035065320/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/320/5010035065320/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/320/5010035065320/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/320/5010035065320/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Fox's Fabulously Assortment Biscuits 300G",
+     "OfferPromotion": "Half Price Was £4.00 Now £2.00",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32124962",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 2.00,
+     "PriceDescription": " (£0.67/100g)",
+     "ProductId": "289969252",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.67,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289969252"
+     },
+     {
+     "BaseProductId": "67609394",
+     "EANBarcode": "5050974001324",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/324/5050974001324/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/324/5050974001324/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/324/5050974001324/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/324/5050974001324/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/324/5050974001324/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Ryvita Cracker For Cheese Golden Rye 175G",
+     "OfferPromotion": "Half Price Was £1.25 Now 62p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32127447",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.62,
+     "PriceDescription": " (£0.35/100g)",
+     "ProductId": "268347283",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.35,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/268347283"
+     },
+     {
+     "BaseProductId": "79932314",
+     "EANBarcode": "5050974503590",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/590/5050974503590/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/590/5050974503590/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/590/5050974503590/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/590/5050974503590/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/590/5050974503590/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Ryvita Green And Black Olive Crackers 150G",
+     "OfferPromotion": "Half Price Was £1.29 Now 64p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32127448",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.64,
+     "PriceDescription": " (£0.43/100g)",
+     "ProductId": "290111794",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.43,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/290111794"
+     },
+     {
+     "BaseProductId": "75740207",
+     "EANBarcode": "0072417160967",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/967/0072417160967/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/967/0072417160967/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/967/0072417160967/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Burtons Fish And Chips 6X25g",
+     "OfferPromotion": "Half Price Was £1.89 Now 94p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32120451",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.94,
+     "PriceDescription": " (£0.63/100g)",
+     "ProductId": "293753795",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.63,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293753795"
+     },
+     {
+     "BaseProductId": "75230327",
+     "EANBarcode": "0072417160899",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/899/0072417160899/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/899/0072417160899/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/899/0072417160899/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Cathedral City Baked Bites 22G X 6 Pack",
+     "OfferPromotion": "Half Price Was £1.89 Now 94p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102636",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.94,
+     "PriceDescription": " (£0.71/100g)",
+     "ProductId": "293850242",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.71,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293850242"
+     },
+     {
+     "BaseProductId": "50612409",
+     "EANBarcode": "5012005290107",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/107/5012005290107/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/107/5012005290107/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/107/5012005290107/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Walkers French Fries Variety 6X18g",
+     "OfferPromotion": "Half Price Was £1.50 Now 75p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102635",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.75,
+     "PriceDescription": " (£0.69/100g)",
+     "ProductId": "254928412",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.69,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/254928412"
+     },
+     {
+     "BaseProductId": "81595174",
+     "EANBarcode": "0072417163289",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/289/0072417163289/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/289/0072417163289/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/289/0072417163289/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Burton's Chicken 'N' Chips 6X25g",
+     "OfferPromotion": "Half Price Was £1.89 Now 94p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32120452",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.94,
+     "PriceDescription": " (£0.63/100g)",
+     "ProductId": "293460283",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.63,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293460283"
+     },
+     {
+     "BaseProductId": "51321677",
+     "EANBarcode": "5017764115005",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/005/5017764115005/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/005/5017764115005/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/005/5017764115005/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Kettle Chips Lightly Salted 150G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 23/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32105211",
+     "OfferValidFrom": "2016-11-23",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.66/100g)",
+     "ProductId": "256463468",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.66,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/256463468"
+     },
+     {
+     "BaseProductId": "67552730",
+     "EANBarcode": "5053990101832",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/832/5053990101832/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/832/5053990101832/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/832/5053990101832/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Pringles Original 190G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 12/12/2016 until 1/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32126482",
+     "OfferValidFrom": "2016-12-12",
+     "OfferValidUntil": "2017-01-01",
+     "Price": 0.99,
+     "PriceDescription": " (£0.52/100g)",
+     "ProductId": "268283426",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.52,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/268283426"
+     },
+     {
+     "BaseProductId": "75157316",
+     "EANBarcode": "5000328197685",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/685/5000328197685/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/685/5000328197685/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/685/5000328197685/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Sensations Oven Roast Chicken And Thyme 150G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101510",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.66/100g)",
+     "ProductId": "288016201",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.66,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/288016201"
+     },
+     {
+     "BaseProductId": "60862306",
+     "EANBarcode": "5000328882499",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/499/5000328882499/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/499/5000328882499/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/499/5000328882499/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Sensations Peking Spare Rib 110G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101511",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.90/100g)",
+     "ProductId": "264340436",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.90,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/264340436"
+     },
+     {
+     "BaseProductId": "66646114",
+     "EANBarcode": "5000328173450",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/450/5000328173450/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/450/5000328173450/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/450/5000328173450/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Doritos Bbq 200G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 23/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32096871",
+     "OfferValidFrom": "2016-11-23",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.50/100g)",
+     "ProductId": "267360509",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.50,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/267360509"
+     },
+     {
+     "BaseProductId": "81623228",
+     "EANBarcode": "5000328647302",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/302/5000328647302/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/302/5000328647302/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/302/5000328647302/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Doritos Sizzling Salsa Tort Chips 200G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 25/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32121964",
+     "OfferValidFrom": "2016-11-25",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.50/100g)",
+     "ProductId": "293516915",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.50,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293516915"
+     },
+     {
+     "BaseProductId": "58114059",
+     "EANBarcode": "5000328601380",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/380/5000328601380/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/380/5000328601380/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/380/5000328601380/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Doritos Hot Salsa Dip 300G",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 23/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32096872",
+     "OfferValidFrom": "2016-11-23",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.33/100g)",
+     "ProductId": "267031312",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.33,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/267031312"
+     },
+     {
+     "BaseProductId": "81767858",
+     "EANBarcode": "5010511476756",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/756/5010511476756/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/756/5010511476756/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/756/5010511476756/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Butterkist Chocolate Mallow Popcorn",
+     "OfferPromotion": "Half Price Was £1.49 Now 74p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101797",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.74,
+     "PriceDescription": " (£0.44/100g)",
+     "ProductId": "293811060",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.44,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293811060"
+     },
+     {
+     "BaseProductId": "51261958",
+     "EANBarcode": "5010511475889",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/889/5010511475889/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/889/5010511475889/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/889/5010511475889/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Butterkist Cinema Sweet Popcorn 100G",
+     "OfferPromotion": "Half Price Was £1.49 Now 74p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101796",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.74,
+     "PriceDescription": " (£7.40/kg)",
+     "ProductId": "292945472",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 7.40,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/292945472"
+     },
+     {
+     "BaseProductId": "52009038",
+     "EANBarcode": "5023274051634",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/634/5023274051634/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/634/5023274051634/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/634/5023274051634/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Butterkist Toffee Popcorn 200G",
+     "OfferPromotion": "Half Price Was £1.49 Now 74p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101794",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.74,
+     "PriceDescription": " (£0.37/100g)",
+     "ProductId": "250055120",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.37,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/250055120"
+     },
+     {
+     "BaseProductId": "81524599",
+     "EANBarcode": "5010511475841",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/841/5010511475841/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/841/5010511475841/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/841/5010511475841/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Butterkist Yoghurt Popcorn 160G",
+     "OfferPromotion": "Half Price Was £1.49 Now 74p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101798",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.74,
+     "PriceDescription": " (£0.46/100g)",
+     "ProductId": "293318107",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.46,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293318107"
+     },
+     {
+     "BaseProductId": "77425215",
+     "EANBarcode": "5010511475896",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/896/5010511475896/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/896/5010511475896/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/896/5010511475896/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Butterkist Sweet And Salted Popcorn 100G",
+     "OfferPromotion": "Half Price Was £1.49 Now 74p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101801",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.74,
+     "PriceDescription": " (£0.74/100g)",
+     "ProductId": "285117870",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.74,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/285117870"
+     },
+     {
+     "BaseProductId": "78683264",
+     "EANBarcode": "0072417162244",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/244/0072417162244/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/244/0072417162244/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/244/0072417162244/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Burtons Fish & Chips Pickled Onion Snack 6 X 25G",
+     "OfferPromotion": "Half Price Was £1.89 Now 94p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32120450",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.94,
+     "PriceDescription": " (£0.63/100g)",
+     "ProductId": "293850220",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.63,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293850220"
+     },
+     {
+     "BaseProductId": "51453653",
+     "EANBarcode": "5000168131092",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/092/5000168131092/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/092/5000168131092/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/092/5000168131092/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/092/5000168131092/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/092/5000168131092/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Jacobs Mini Cheddars 12X25g",
+     "OfferPromotion": "Half Price Was £2.75 Now £1.37",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102521",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.37,
+     "PriceDescription": " (£0.46/100g)",
+     "ProductId": "251228859",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.46,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/251228859"
+     },
+     {
+     "BaseProductId": "70745596",
+     "EANBarcode": "7613034259127",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/127/7613034259127/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/127/7613034259127/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/127/7613034259127/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/127/7613034259127/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/127/7613034259127/OutofPack/Lidoff_540x540.jpg"
+      },
+      {
+      "Name": "Aspirational",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/127/7613034259127/Aspirational_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/127/7613034259127/Aspirational_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Dairy Box 720G",
+     "OfferPromotion": "Half Price Was £15.00 Now £7.50",
+     "OfferValidity": "valid from 9/11/2016 until 31/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32107579",
+     "OfferValidFrom": "2016-11-09",
+     "OfferValidUntil": "2016-12-31",
+     "Price": 7.50,
+     "PriceDescription": " (£1.05/100g)",
+     "ProductId": "279832694",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.05,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/279832694"
+     },
+     {
+     "BaseProductId": "79801504",
+     "EANBarcode": "5410976402015",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/015/5410976402015/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/015/5410976402015/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/015/5410976402015/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "UNAVAILABLE: Guylian Belgian Classics 430G",
+     "OfferPromotion": "Half Price Was £7.00 Now £3.50",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32091964",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 3.50,
+     "PriceDescription": " (£0.81/100g)",
+     "ProductId": "289862585",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.81,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289862585"
+     },
+     {
+     "BaseProductId": "74730647",
+     "EANBarcode": "4014400922462",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/462/4014400922462/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/462/4014400922462/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/462/4014400922462/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Bendicks Mint Crisp Boxed Chocolates 138G",
+     "OfferPromotion": "Half Price Was £5.00 Now £2.50",
+     "OfferValidity": "valid from 31/8/2016 until 4/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32065930",
+     "OfferValidFrom": "2016-08-31",
+     "OfferValidUntil": "2017-01-04",
+     "Price": 2.50,
+     "PriceDescription": " (£1.82/100g)",
+     "ProductId": "293216907",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.82,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293216907"
+     },
+     {
+     "BaseProductId": "50009548",
+     "EANBarcode": "5055037001198",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/198/5055037001198/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/198/5055037001198/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/198/5055037001198/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/198/5055037001198/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/198/5055037001198/OutofPack/Lidoff_540x540.jpg"
+      },
+      {
+      "Name": "Aspirational",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/198/5055037001198/Aspirational_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/198/5055037001198/Aspirational_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Elizabeth Shaw Famous Names Liqueurs 165G",
+     "OfferPromotion": "Half Price Was £5.00 Now £2.50",
+     "OfferValidity": "valid from 2/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32089543",
+     "OfferValidFrom": "2016-11-02",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 2.50,
+     "PriceDescription": " (£1.52/100g)",
+     "ProductId": "265088806",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.52,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/265088806"
+     },
+     {
+     "BaseProductId": "70816138",
+     "EANBarcode": "5055037001457",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/457/5055037001457/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/457/5055037001457/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/457/5055037001457/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/457/5055037001457/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/457/5055037001457/OutofPack/Lidoff_540x540.jpg"
+      },
+      {
+      "Name": "Aspirational",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/457/5055037001457/Aspirational_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/457/5055037001457/Aspirational_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Elizabeth Shaw Mint Collection 200G",
+     "OfferPromotion": "Half Price Was £5.00 Now £2.50",
+     "OfferValidity": "valid from 21/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32141245",
+     "OfferValidFrom": "2016-12-21",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 2.50,
+     "PriceDescription": " (£1.25/100g)",
+     "ProductId": "271645732",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.25,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/271645732"
+     },
+     {
+     "BaseProductId": "57371740",
+     "EANBarcode": "7613034259301",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/301/7613034259301/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/301/7613034259301/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/301/7613034259301/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/301/7613034259301/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/301/7613034259301/OutofPack/Lidoff_540x540.jpg"
+      },
+      {
+      "Name": "Aspirational",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/301/7613034259301/Aspirational_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/301/7613034259301/Aspirational_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Dairy Box Boxed Chocolates 180G",
+     "OfferPromotion": "Half Price Was £4.00 Now £2.00",
+     "OfferValidity": "valid from 14/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32127101",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 2.00,
+     "PriceDescription": " (£1.12/100g)",
+     "ProductId": "279818032",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.12,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/279818032"
+     },
+     {
+     "BaseProductId": "50487326",
+     "EANBarcode": "8710800974402",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/402/8710800974402/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/402/8710800974402/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/402/8710800974402/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/402/8710800974402/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/402/8710800974402/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Fruit-Tella 4Pkx41g",
+     "OfferPromotion": "Half Price Was £1.19 Now 59p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32122400",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.59,
+     "PriceDescription": " (£0.36/100g)",
+     "ProductId": "251773725",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.36,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/251773725"
+     },
+     {
+     "BaseProductId": "77575307",
+     "EANBarcode": "4602606010023",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/023/4602606010023/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/023/4602606010023/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/023/4602606010023/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/023/4602606010023/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/023/4602606010023/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mentos Choco And Mint 3 Pack 114G",
+     "OfferPromotion": "Half Price Was £1.35 Now 67p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32122402",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.67,
+     "PriceDescription": " (£0.59/100g)",
+     "ProductId": "285419927",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.59,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/285419927"
+     },
+     {
+     "BaseProductId": "80918446",
+     "EANBarcode": "4602606011648",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/648/4602606011648/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/648/4602606011648/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/648/4602606011648/IDShot_540x540.jpg"
+      },
+      {
+      "Name": "Out of Pack/ Lid off",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/648/4602606011648/OutofPack/Lidoff_225x225.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/648/4602606011648/OutofPack/Lidoff_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mentos Choco Caramel 3 Pack 114G",
+     "OfferPromotion": "Half Price Was £1.35 Now 67p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32122406",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.67,
+     "PriceDescription": " (£0.59/100g)",
+     "ProductId": "292095987",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.59,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/292095987"
+     },
+     {
+     "BaseProductId": "51767466",
+     "EANBarcode": "5011476100502",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/502/5011476100502/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/502/5011476100502/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/502/5011476100502/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Nestle Shredded Wheat Cereal Bitesize 750G",
+     "OfferPromotion": "Half Price Was £3.19 Now £1.59",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101303",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.59,
+     "PriceDescription": " (£0.21/100g)",
+     "ProductId": "259039402",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.21,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/259039402"
+     },
+     {
+     "BaseProductId": "73445497",
+     "EANBarcode": "7613032021511",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/511/7613032021511/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/511/7613032021511/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/511/7613032021511/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Nestle Honey Cheerios Cereal 375G",
+     "OfferPromotion": "Half Price Was £2.49 Now £1.24",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32133357",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.24,
+     "PriceDescription": " (£0.33/100g)",
+     "ProductId": "276973485",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.33,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/276973485"
+     },
+     {
+     "BaseProductId": "81493409",
+     "EANBarcode": "5053827160261",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/261/5053827160261/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/261/5053827160261/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/261/5053827160261/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Kelloggs Granola Fruit 450G",
+     "OfferPromotion": "Half Price Was £2.99 Now £1.49",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32105425",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.49,
+     "PriceDescription": " (£0.33/100g)",
+     "ProductId": "293273429",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.33,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293273429"
+     },
+     {
+     "BaseProductId": "81493482",
+     "EANBarcode": "5053827160414",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/414/5053827160414/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/414/5053827160414/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/414/5053827160414/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Kelloggs Muesli Fruit 700G",
+     "OfferPromotion": "Half Price Was £2.99 Now £1.49",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32105426",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.49,
+     "PriceDescription": " (£0.21/100g)",
+     "ProductId": "293273602",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.21,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293273602"
+     },
+     {
+     "BaseProductId": "72675974",
+     "EANBarcode": "5000108810988",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/988/5000108810988/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/988/5000108810988/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/988/5000108810988/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Quaker Oats Big Bowl Original 385G",
+     "OfferPromotion": "Half Price Was £2.45 Now £1.22",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101437",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.22,
+     "PriceDescription": " (£0.32/100g)",
+     "ProductId": "275433896",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.32,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/275433896"
+     },
+     {
+     "BaseProductId": "72675934",
+     "EANBarcode": "5000108468226",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/226/5000108468226/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/226/5000108468226/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/226/5000108468226/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Quaker Oats Big Bowl Golden Syrup 397G",
+     "OfferPromotion": "Half Price Was £2.45 Now £1.22",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32101438",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.22,
+     "PriceDescription": " (£0.31/100g)",
+     "ProductId": "275433798",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.31,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/275433798"
+     },
+     {
+     "BaseProductId": "79698061",
+     "EANBarcode": "5000354406317",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/317/5000354406317/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/317/5000354406317/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/317/5000354406317/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Bisto Favourite Tin 255G",
+     "OfferPromotion": "Half Price Was £4.00 Now £2.00",
+     "OfferValidity": "valid from 14/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32099643",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 2.00,
+     "PriceDescription": " (£0.78/100g)",
+     "ProductId": "289669175",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.78,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289669175"
+     },
+     {
+     "BaseProductId": "67394231",
+     "EANBarcode": "5010793377598",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/598/5010793377598/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/598/5010793377598/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/598/5010793377598/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Cook Italian Chopped Tomatoes 4 Pack 4X400g",
+     "OfferPromotion": "Half Price Was £3.00 Now £1.50",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32099179",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.50,
+     "PriceDescription": " (£0.94/kg)",
+     "ProductId": "268125563",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.94,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/268125563"
+     },
+     {
+     "BaseProductId": "62458395",
+     "EANBarcode": "5000232819109",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/109/5000232819109/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/109/5000232819109/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/109/5000232819109/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Napolina Passata 500G",
+     "OfferPromotion": "Half Price Was £1.00 Now 50p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32103762",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.50,
+     "PriceDescription": " (£1.00/kg)",
+     "ProductId": "263741025",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/263741025"
+     },
+     {
+     "BaseProductId": "60871144",
+     "EANBarcode": "5000354163869",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/869/5000354163869/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/869/5000354163869/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/869/5000354163869/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Loyd Grossman Bolognese 660G",
+     "OfferPromotion": "Half Price Was £2.79 Now £1.39",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102413",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.39,
+     "PriceDescription": " (£0.21/100g)",
+     "ProductId": "262114038",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.21,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/262114038"
+     },
+     {
+     "BaseProductId": "55705344",
+     "EANBarcode": "5000354154645",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/645/5000354154645/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/645/5000354154645/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/645/5000354154645/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Loyd Grossman Tomato And Basil Pasta Sauce 660G",
+     "OfferPromotion": "Half Price Was £2.79 Now £1.39",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102412",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.39,
+     "PriceDescription": " (£0.21/100g)",
+     "ProductId": "251708401",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.21,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/251708401"
+     },
+     {
+     "BaseProductId": "51273007",
+     "EANBarcode": "5011157630229",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/229/5011157630229/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/229/5011157630229/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/229/5011157630229/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tilda Basmati Rice 1Kg",
+     "OfferPromotion": "Half Price Was £4.75 Now £2.37",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32107731",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 2.37,
+     "PriceDescription": " (£2.37/kg)",
+     "ProductId": "256502509",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 2.37,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/256502509"
+     },
+     {
+     "BaseProductId": "54677888",
+     "EANBarcode": "5011157671222",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/222/5011157671222/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/222/5011157671222/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/222/5011157671222/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tilda Basmati Brown Rice 1Kg",
+     "OfferPromotion": "Half Price Was £4.95 Now £2.47",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32107732",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 2.47,
+     "PriceDescription": " (£2.47/kg)",
+     "ProductId": "258472736",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 2.47,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/258472736"
+     },
+     {
+     "BaseProductId": "61170386",
+     "EANBarcode": "5010034522800",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/800/5010034522800/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/800/5010034522800/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/800/5010034522800/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Uncle Bens Express Risotto Bacon Mushroom 250G",
+     "OfferPromotion": "Better Than Half Price Was £2.29 Now £1.00",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32106746",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.00,
+     "PriceDescription": " (£4.00/kg)",
+     "ProductId": "262420672",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 4.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/262420672"
+     },
+     {
+     "BaseProductId": "61170436",
+     "EANBarcode": "5010034522909",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/909/5010034522909/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/909/5010034522909/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/909/5010034522909/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Uncle Bens Express Risotto Chicken Mushroom 250G",
+     "OfferPromotion": "Better Than Half Price Was £2.29 Now £1.00",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32106747",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.00,
+     "PriceDescription": " (£4.00/kg)",
+     "ProductId": "262420729",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 4.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/262420729"
+     },
+     {
+     "BaseProductId": "61170471",
+     "EANBarcode": "5010034522701",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/701/5010034522701/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/701/5010034522701/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/701/5010034522701/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Uncle Bens Express Risotto Italian Herb 250G",
+     "OfferPromotion": "Better Than Half Price Was £2.29 Now £1.00",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32106748",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.00,
+     "PriceDescription": " (£4.00/kg)",
+     "ProductId": "262420764",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 4.00,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/262420764"
+     },
+     {
+     "BaseProductId": "70592902",
+     "EANBarcode": "5000254018788",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/788/5000254018788/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/788/5000254018788/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/788/5000254018788/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Dr. Oetker Liquid Glucose 140G",
+     "OfferPromotion": "Better Than Half Price Was £1.68 Now 80p",
+     "OfferValidity": "valid from 23/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32097467",
+     "OfferValidFrom": "2016-11-23",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.80,
+     "PriceDescription": " (£5.72/kg)",
+     "ProductId": "271189056",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 5.72,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/271189056"
+     },
+     {
+     "BaseProductId": "51349610",
+     "EANBarcode": "3415581152128",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/128/3415581152128/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/128/3415581152128/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/128/3415581152128/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Haagen-Dazs Cookies & Cream Ice Cream 500Ml",
+     "OfferPromotion": "Half Price Was £4.00 Now £2.00",
+     "OfferValidity": "valid from 6/12/2016 until 26/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32102648",
+     "OfferValidFrom": "2016-12-06",
+     "OfferValidUntil": "2016-12-26",
+     "Price": 2.00,
+     "PriceDescription": " (£0.40/100ml)",
+     "ProductId": "258961175",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.40,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/258961175"
+     },
+     {
+     "BaseProductId": "79791480",
+     "EANBarcode": "5010228002354",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/354/5010228002354/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/354/5010228002354/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/354/5010228002354/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Mccain Roasts 800G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 6/12/2016 until 26/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32106958",
+     "OfferValidFrom": "2016-12-06",
+     "OfferValidUntil": "2016-12-26",
+     "Price": 1.00,
+     "PriceDescription": " (£1.25/kg)",
+     "ProductId": "289838321",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.25,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/289838321"
+     },
+     {
+     "BaseProductId": "71526330",
+     "EANBarcode": "5000116106080",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/080/5000116106080/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/080/5000116106080/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/080/5000116106080/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Birds Eye 4 Hearty Farmhouse Vegetable Mix 540G",
+     "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+     "OfferValidity": "valid from 6/12/2016 until 26/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32099565",
+     "OfferValidFrom": "2016-12-06",
+     "OfferValidUntil": "2016-12-26",
+     "Price": 1.00,
+     "PriceDescription": " (£1.86/kg)",
+     "ProductId": "273122933",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.86,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "kg",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/273122933"
+     },
+     {
+     "BaseProductId": "51179373",
+     "EANBarcode": "8717700002457",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/457/8717700002457/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/457/8717700002457/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/457/8717700002457/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "7Up Light 6 X 330 Ml Pack",
+     "OfferPromotion": "Half Price Was £3.19 Now £1.59",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32107269",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.59,
+     "PriceDescription": " (£0.06/100ml)",
+     "ProductId": "264525113",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.06,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/264525113"
+     },
+     {
+     "BaseProductId": "50867666",
+     "EANBarcode": "5010041000933",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/933/5010041000933/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/933/5010041000933/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/933/5010041000933/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tango Orange 6 X 330 Ml Pack",
+     "OfferPromotion": "Half Price Was £3.19 Now £1.59",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32107272",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.59,
+     "PriceDescription": " (£0.08/100ml)",
+     "ProductId": "254856548",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.08,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/254856548"
+     },
+     {
+     "BaseProductId": "52416967",
+     "EANBarcode": "5010438011078",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/078/5010438011078/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/078/5010438011078/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/078/5010438011078/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 20,
+     "Name": "Vimto Light 2 Litre Bottle",
+     "OfferPromotion": "Half Price Was £1.70 Now 85p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32107959",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.85,
+     "PriceDescription": " (£0.04/100ml)",
+     "ProductId": "251154266",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.04,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/251154266"
+     },
+     {
+     "BaseProductId": "73314952",
+     "EANBarcode": "5022313108254",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/254/5022313108254/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/254/5022313108254/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/254/5022313108254/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Tropicana Trop 50 Orange And Mango Juice Drink 1Ltr",
+     "OfferPromotion": "Half Price Was £2.48 Now £1.24",
+     "OfferValidity": "valid from 7/12/2016 until 27/12/2016",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32121972",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2016-12-27",
+     "Price": 1.24,
+     "PriceDescription": " (£0.12/100ml)",
+     "ProductId": "276686076",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.12,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/276686076"
+     },
+     {
+     "BaseProductId": "65904652",
+     "EANBarcode": "5010663807033",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/033/5010663807033/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/033/5010663807033/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/033/5010663807033/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Ocean Spray Blueberry Juice Drink 1 Litre",
+     "OfferPromotion": "Half Price Was £1.35 Now 67p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32113150",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.67,
+     "PriceDescription": " (£0.07/100ml)",
+     "ProductId": "266597882",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.07,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/266597882"
+     },
+     {
+     "BaseProductId": "78304034",
+     "EANBarcode": "5010102118348",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/348/5010102118348/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/348/5010102118348/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/348/5010102118348/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Robinsons Orange And Mango Double Concentrate Squash 1.75L",
+     "OfferPromotion": "Half Price Was £3.75 Now £1.87",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32112344",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.87,
+     "PriceDescription": " (£0.11/100ml)",
+     "ProductId": "286942259",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.11,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/286942259"
+     },
+     {
+     "BaseProductId": "56002961",
+     "EANBarcode": "5000332505766",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/766/5000332505766/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/766/5000332505766/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/766/5000332505766/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Ocean Spray Cranberry & Raspberry 1 Litre",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32112922",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.10/100ml)",
+     "ProductId": "252268896",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.10,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/252268896"
+     },
+     {
+     "BaseProductId": "81828228",
+     "EANBarcode": "5022019250110",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/110/5022019250110/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/110/5022019250110/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/110/5022019250110/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Belvoir Presse Citrus Chardon 750Ml",
+     "OfferPromotion": "Half Price Was £2.29 Now £1.14",
+     "OfferValidity": "valid from 7/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32112777",
+     "OfferValidFrom": "2016-12-07",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 1.14,
+     "PriceDescription": " (£1.52/100ml)",
+     "ProductId": "293952657",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "True",
+     "IsFavourite": "False",
+     "UnitPrice": 1.52,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/293952657"
+     },
+     {
+     "BaseProductId": "58883530",
+     "EANBarcode": "5010663804452",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/452/5010663804452/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/452/5010663804452/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/452/5010663804452/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Ocean Spray Cranberry And Pomegranate Ce Drink 1 Litre",
+     "OfferPromotion": "Half Price Was £1.35 Now 67p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32113151",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.67,
+     "PriceDescription": " (£0.07/100ml)",
+     "ProductId": "260177594",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.07,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/260177594"
+     },
+     {
+     "BaseProductId": "70603004",
+     "EANBarcode": "5010102116313",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/313/5010102116313/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/313/5010102116313/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/313/5010102116313/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 10,
+     "Name": "UNAVAILABLE: Britvic J20 Seasonal 4X275ml",
+     "OfferPromotion": "Half Price Was £4.00 Now £2.00",
+     "OfferValidity": "valid from 23/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32085389",
+     "OfferValidFrom": "2016-11-23",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 2.00,
+     "PriceDescription": " (£0.18/100ml)",
+     "ProductId": "272601126",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.18,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "N",
+     "DeleteEnabled": "N",
+     "Message": "Sorry, this product is currently not available",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/272601126"
+     },
+     {
+     "BaseProductId": "74832170",
+     "EANBarcode": "5010388202182",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/182/5010388202182/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/182/5010388202182/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/182/5010388202182/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Shloer Light Red Grape 750Ml",
+     "OfferPromotion": "Half Price Was £1.99 Now 99p",
+     "OfferValidity": "valid from 2/11/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32093142",
+     "OfferValidFrom": "2016-11-02",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.99,
+     "PriceDescription": " (£0.13/100ml)",
+     "ProductId": "280004055",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.13,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/280004055"
+     },
+     {
+     "BaseProductId": "54718941",
+     "EANBarcode": "5010102105416",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/416/5010102105416/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/416/5010102105416/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/416/5010102105416/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Robinsons Fruit Shoots Blackcurrant And Apple No Added Sugar 4X200ml",
+     "OfferPromotion": "Half Price Was £1.89 Now 94p",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32112921",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 0.94,
+     "PriceDescription": " (£0.12/100ml)",
+     "ProductId": "256660315",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 0.12,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100ml",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/256660315"
+     },
+     {
+     "BaseProductId": "50054384",
+     "EANBarcode": "8711000516911",
+     "CheaperAlternativeProductId": "",
+     "HealthierAlternativeProductId": "",
+     "ImagePath": "https://img.tesco.com/Groceries/pi/911/8711000516911/IDShot_90x90.jpg",
+     "AlternativeImages":
+     [
+      {
+      "Name": "ID Shot",
+      "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/911/8711000516911/IDShot_90x90.jpg",
+      "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/911/8711000516911/IDShot_540x540.jpg"
+      }
+      ],
+     "MaximumPurchaseQuantity": 99,
+     "Name": "Maxwell House Instant Coffee 200G",
+     "OfferPromotion": "Half Price Was £4.60 Now £2.30",
+     "OfferValidity": "valid from 14/12/2016 until 3/1/2017",
+     "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+     "OfferID": "A32087705",
+     "OfferValidFrom": "2016-12-14",
+     "OfferValidUntil": "2017-01-03",
+     "Price": 2.30,
+     "PriceDescription": " (£1.15/100g)",
+     "ProductId": "254889653",
+     "ProductType": "QuantityOnlyProduct",
+     "IsNew": "False",
+     "IsFavourite": "False",
+     "UnitPrice": 1.15,
+     "CarbonDataAvailable": 0,
+     "AddEnabled": "Y",
+     "DeleteEnabled": "Y",
+     "Message": "",
+     "UnitType": "100g",
+     "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/254889653"
+     }
+     
+     ]
+}

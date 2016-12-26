@@ -19,7 +19,15 @@ class FoodContent_custom_JSON_operation: NSObject, HUBContentOperation {
         let jsonURL = Bundle.main.url(forResource: json_file_name, withExtension: "json")
         // Bundle.main.path(forResource: "city-images", ofType: "json")
         let jsonData = NSData(contentsOf: jsonURL!)
-        viewModelBuilder.addJSONData(jsonData as! Data)
+        do
+        {
+                try viewModelBuilder.addJSON(data: jsonData as! Data)
+        }
+        catch
+        {
+            
+        }
+        
         delegate!.contentOperationDidFinish(self)
         
     }

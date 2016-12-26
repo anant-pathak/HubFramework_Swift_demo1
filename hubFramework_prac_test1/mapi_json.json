@@ -1,0 +1,91 @@
+{
+    "StatusCode": 0,
+    "StatusInfo": "Request processed successfully.",
+    "IsFavouritesFilterAvailable": "No",
+    "IsNewProductFilterAvailable": "Yes",
+    "NewProductsFilterExpression": "4294962762+4294961185+4294962475",
+    "PageNumber": 1,
+    "TotalPageCount": 5,
+    "TotalProductCount": 415,
+    "PageProductCount": 100,
+    "Products":
+    [
+         {
+         "BaseProductId": "53426251",
+         "EANBarcode": "0000010063125",
+         "CheaperAlternativeProductId": "",
+         "HealthierAlternativeProductId": "",
+         "ImagePath": "https://img.tesco.com/Groceries/pi/125/0000010063125/IDShot_90x90.jpg",
+         "AlternativeImages":
+         [
+          {
+          "Name": "ID Shot",
+          "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/IDShot_90x90.jpg",
+          "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/IDShot_540x540.jpg"
+          },
+          {
+          "Name": "Out of Pack/ Lid off",
+          "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/OutofPack/Lidoff_225x225.jpg",
+          "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/125/0000010063125/OutofPack/Lidoff_540x540.jpg"
+          }
+          ],
+         "MaximumPurchaseQuantity": 99,
+         "Name": "Tesco Cranberries 100G",
+         "OfferPromotion": "Half Price Was £1.50 Now 75p",
+         "OfferValidity": "valid from 7/12/2016 until 27/12/2016",
+         "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+         "OfferID": "A32119700",
+         "OfferValidFrom": "2016-12-07",
+         "OfferValidUntil": "2016-12-27",
+         "Price": 0.75,
+         "PriceDescription": " (£7.50/kg)",
+         "ProductId": "257399828",
+         "ProductType": "QuantityOnlyProduct",
+         "IsNew": "False",
+         "IsFavourite": "False",
+         "UnitPrice": 7.50,
+         "CarbonDataAvailable": 0,
+         "AddEnabled": "Y",
+         "DeleteEnabled": "Y",
+         "Message": "",
+         "UnitType": "kg",
+         "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/257399828"
+         },
+         {
+         "BaseProductId": "79904792",
+         "EANBarcode": "5054269894790",
+         "CheaperAlternativeProductId": "",
+         "HealthierAlternativeProductId": "",
+         "ImagePath": "https://img.tesco.com/Groceries/pi/790/5054269894790/IDShot_90x90.jpg",
+         "AlternativeImages":
+         [
+          {
+          "Name": "ID Shot",
+          "ThumbImageUrl": "https://img.tesco.com/Groceries/pi/790/5054269894790/IDShot_90x90.jpg",
+          "HighestResolutionUrl": "https://img.tesco.com/Groceries/pi/790/5054269894790/IDShot_540x540.jpg"
+          }
+          ],
+         "MaximumPurchaseQuantity": 99,
+         "Name": "UNAVAILABLE: Tesco Goose Fat 220G",
+         "OfferPromotion": "Half Price Was £2.00 Now £1.00",
+         "OfferValidity": "valid from 14/12/2016 until 27/12/2016",
+         "OfferLabelImagePath": "https://www.tesco.com/Groceries/UIAssets/I/Sites/Retail/Superstore/Online/Product/pos/halfprice.png",
+         "OfferID": "A32102986",
+         "OfferValidFrom": "2016-12-14",
+         "OfferValidUntil": "2016-12-27",
+         "Price": 1.00,
+         "PriceDescription": " (£0.46/100g)",
+         "ProductId": "290068361",
+         "ProductType": "QuantityOnlyProduct",
+         "IsNew": "False",
+         "IsFavourite": "False",
+         "UnitPrice": 0.46,
+         "CarbonDataAvailable": 0,
+         "AddEnabled": "N",
+         "DeleteEnabled": "N",
+         "Message": "Sorry, this product is currently not available",
+         "UnitType": "100g",
+         "ExtendedInfoUrl": "https://mobile.tesco.com/Embed/product/290068361"
+         }
+     ]
+}

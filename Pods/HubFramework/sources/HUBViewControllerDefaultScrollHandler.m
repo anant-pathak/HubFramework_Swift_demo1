@@ -36,6 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
     return YES;
 }
 
+- (UIScrollViewKeyboardDismissMode)keyboardDismissModeForViewController:(HUBViewController *)viewController
+{
+    return UIScrollViewKeyboardDismissModeNone;
+}
+
 - (CGFloat)scrollDecelerationRateForViewController:(HUBViewController *)viewController
 {
     return UIScrollViewDecelerationRateNormal;
@@ -45,6 +50,12 @@ NS_ASSUME_NONNULL_BEGIN
                          proposedContentInsets:(UIEdgeInsets)proposedContentInsets
 {
     return proposedContentInsets;
+}
+
+- (CGPoint)centerPointForOverlayComponentInViewController:(HUBViewController *)viewController
+                                      proposedCenterPoint:(CGPoint)proposedCenterPoint
+{
+    return proposedCenterPoint;
 }
 
 - (void)scrollingWillStartInViewController:(HUBViewController *)viewController

@@ -77,6 +77,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             viewControllerScrollHandler: nil
         )
         
+        //2.5 Freddy Feature Registry
+        hubManager.featureRegistry.registerFeature(
+            withIdentifier: "freddy",
+            viewURIPredicate: HUBViewURIPredicate(viewURI: Util_URI.url_feature_freddy),
+            title: "Freddy feature",
+            contentOperationFactories: [FreddyContentOperationFactory()],
+            contentReloadPolicy: nil,
+            customJSONSchemaIdentifier: nil,
+            actionHandler: nil,
+            viewControllerScrollHandler: nil
+        )
+
+        
         
         //3 opening the viewController
 //        let citiesRowBuilder = viewModelBuilder.builderForBodyComponentModel(withIdentifier: "cities")
